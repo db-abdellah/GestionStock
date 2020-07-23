@@ -14,23 +14,64 @@
 
     </div>
     <div class="card-body">
-        <label>Fournisseur</label>
-        <select class="form-control">
-            @foreach (GestionStock.Models.Entities.Fournisseur item in Model.fournisseurList)
-            {
-                <option value="@item.id">@item.Nom @item.prenom</option>
-            }
-        </select>
+        <div>
+
+
+            <label>Fournisseur</label>
+
+            <select class="form-control">
+                @foreach (GestionStock.Models.Entities.Fournisseur item in Model.fournisseurList)
+                {
+                    <option value="@item.id">@item.Nom @item.prenom</option>
+                }
+            </select>
+            <hr />
+            <label>Document</label>
+
+            <input class="form-control " type="text" placeholder="Numéro de document" />
+            
+        </div>
+
         <hr />
-        <label>Produit</label>
+        <label class="float-left">Produit</label>
+        <button class="btn btn-info float-right" onclick="">Ajouter</button>
+        <br />
+        <br />
         <select class="form-control">
             @foreach (GestionStock.Models.Entities.Produit item in Model.ProduitList)
             {
                 <option value="@item.id">@item.nom</option>
             }
         </select>
-    </div>
-    <div class="card-footer">
+        <hr />
+        <div>
+            <table>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="float-right">
+
+            <h5>Total 0.00 DH</h5>
+
+        </div>
 
     </div>
+    <div class="card-footer">
+        <button class="btn btn-primary float-right" onclick="">Valider</button>
+    </div>
 </div>
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+        });
+
+    </script>
+}
+
+
