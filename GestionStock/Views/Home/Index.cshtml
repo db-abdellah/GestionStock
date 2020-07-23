@@ -1,0 +1,11 @@
+﻿@model GestionStock.Models.Entities.Utilisateur
+@{
+    ViewData["Title"] = "Home Page";
+    ViewData["fonction"] = Model.fonction.ToString();
+    String fullName= Model.nom +" "+ Model.prenom;
+    ViewData["nom"] = fullName;
+
+
+}
+
+

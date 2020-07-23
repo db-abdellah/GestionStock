@@ -1,0 +1,99 @@
+﻿@model GestionStock.Models.Entities.Utilisateur
+
+@{
+    ViewData["Title"] = "Modification d'utilisateur";
+    ViewData["fonction"] = ViewBag.utilisateur.fonction;
+    String fullName = ViewBag.utilisateur.nom.ToString() + " " + ViewBag.utilisateur.prenom.ToString();
+    ViewData["nom"] = fullName;
+
+}
+
+<div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Modification d'utilisateur</h3>
+
+
+    </div>
+    <div class="card-body ">
+
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div hidden class="form-group">
+                    <label asp-for="id" class="control-label"></label>
+                    <input asp-for="id" class="form-control" />
+                    <span asp-validation-for="id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Nom</label>
+                    <input asp-for="nom" class="form-control" />
+                    <span asp-validation-for="nom" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Prénom</label>
+                    <input asp-for="prenom" class="form-control" />
+                    <span asp-validation-for="prenom" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Nom d'utilisateur</label>
+                    <input asp-for="login" class="form-control" />
+                    <span asp-validation-for="login" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Mot de passe</label>
+                    <input asp-for="password" class="form-control" />
+                    <span asp-validation-for="password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Adresse</label>
+                    <input asp-for="adresse" class="form-control" />
+                    <span asp-validation-for="adresse" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Téléphone</label>
+                    <input asp-for="telephone"  type="text" class="form-control" />
+                    <span asp-validation-for="telephone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Date de création</label>
+                    <input asp-for="date" disabled class="form-control" />
+                    <span asp-validation-for="date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @if (Model.fonction == "operateur")
+                    {
+                        @Html.RadioButtonFor(model => model.fonction, "operateur", true)    @Html.Label("Operateur")
+                        <br />
+                        @Html.RadioButtonFor(model => model.fonction, "magasinier", false)    @Html.Label("Magasinier")
+                        <br />
+                        @Html.RadioButtonFor(model => model.fonction, "administrateur", false)    @Html.Label("Administrateur")
+                        <br />
+                    }
+                    @if (Model.fonction == "magasinier")
+                    {
+                        @Html.RadioButtonFor(model => model.fonction, "operateur", false)  @Html.Label("Operateur")
+                        <br />
+                        @Html.RadioButtonFor(model => model.fonction, "magasinier", true)  @Html.Label("Magasinier")
+                        <br />
+                        @Html.RadioButtonFor(model => model.fonction, "administrateur", false)   @Html.Label("Administrateur")
+                        <br />
+                    }
+                    @if (Model.fonction == "administrateur")
+                    {
+                        @Html.RadioButtonFor(model => model.fonction, "operateur", false)    @Html.Label("Operateur")
+                        <br />
+                        @Html.RadioButtonFor(model => model.fonction, "magasinier", false)   @Html.Label("Magasinier")
+                        <br />
+                        @Html.RadioButtonFor(model => model.fonction, "administrateur", true)    @Html.Label("Administrateur")
+                        <br />
+                    }
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Enregistrer" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

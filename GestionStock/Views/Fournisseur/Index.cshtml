@@ -1,0 +1,94 @@
+﻿@model GestionStock.Models.Models.FournisseursModel;
+
+@{
+    ViewData["Title"] = "List des fournisseurs";
+    ViewData["fonction"] = Model.utilisateur.fonction;
+    String fullName =Model.utilisateur.nom.ToString() +" "+Model.utilisateur.prenom.ToString();
+    ViewData["nom"] = fullName;
+
+}
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">List des fournisseurs</h3>
+        <div class="card-tools">
+            <div class="input-group input-group-sm">
+                <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="search" onkeyup="Search()" />
+            </div>
+        </div>
+
+    </div>
+    <div class="card-body table-responsive p-0">
+        <table class="table" id="table">
+            <thead>
+                <tr>
+                    <th hidden>
+                       Id
+                    </th>
+                    <th>
+                    Nom Complet
+                    </th>
+                    <th>
+                        Téléphone
+                    </th>
+                    <th><a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Fournisseur" asp-action="Create">Nouveau fournisseur</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.fournisseurs)
+                {
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nom) @Html.DisplayFor(modelItem => item.prenom)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.telephone)
+                        </td>
+                        <td class="float-right">
+                            <a class="btn btn-success toastsDefaultSuccess" asp-controller="Fournisseur" asp-action="Details" asp-route-id=@item.id>Details</a>
+                            <a class="btn btn-info toastsDefaultInfo" asp-controller="Fournisseur" asp-action="Edit" asp-route-id=@item.id> Modifier</a>
+                            <a class="btn btn-danger swalDefaultError" asp-controller="Projet" asp-action="Edit" asp-route-id=@item.id> Supprimer</a>
+                         
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+
+
+        function Search() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchBar");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+    </script>
+}
+

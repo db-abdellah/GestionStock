@@ -1,0 +1,56 @@
+﻿@model GestionStock.Models.Entities.Fournisseur
+
+@{
+    ViewData["Title"] = "List des fournisseurs";
+    ViewData["fonction"] = ViewBag.utilisateur.fonction;
+    String fullName = ViewBag.utilisateur.nom.ToString() + " " + ViewBag.utilisateur.prenom.ToString();
+    ViewData["nom"] = fullName;
+
+}
+
+<div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Nouveau fournisseur</h3>
+       
+
+    </div>
+    <div class="card-body ">
+       
+        
+            <div class="col-md-4">
+                <form asp-action="Create" class="form-horizontal">
+
+                    <div class="form-group">
+                        <label class="control-label">Nom</label>
+                        <input asp-for="Nom" class="form-control" />
+                        <span asp-validation-for="Nom" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Prénom</label>
+                        <input asp-for="prenom" class="form-control" />
+                        <span asp-validation-for="prenom" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Adresse</label>
+                        <input asp-for="adresse" class="form-control" />
+                        <span asp-validation-for="adresse" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Téléphone</label>
+                        <input asp-for="telephone" class="form-control" />
+                        <span asp-validation-for="telephone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Valider" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        
+
+      
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+    </div>
+</div>

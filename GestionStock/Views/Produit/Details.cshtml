@@ -1,0 +1,46 @@
+﻿@model GestionStock.Models.Models.ProduitModel;
+
+@{
+    ViewData["Title"] = "Détails de Produits";
+    ViewData["fonction"] = Model.utilisateur.fonction;
+    String fullName = Model.utilisateur.nom.ToString() + " " + Model.utilisateur.prenom.ToString();
+    ViewData["nom"] = fullName;
+
+}
+
+
+    <div class="callout callout-info">
+
+        <h4>@Model.produit.nom </h4>
+
+
+       
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Id
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.produit.id)
+            </dd>
+            <dt class="col-sm-2">
+                Catégorie
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.produit.categorie)
+            </dd>
+            <dt class="col-sm-2">
+                Nom
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.produit.nom)
+            </dd>
+            <dt class="col-sm-2">
+                Prix d'achat
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.produit.prixAchat)
+            </dd>
+        </dl>
+    </div>
+

@@ -1,0 +1,110 @@
+﻿@model GestionStock.Models.Models.UtilisateursModel;
+
+@{
+    ViewData["Title"] = "List des fournisseurs";
+    ViewData["fonction"] = Model.utilisateur.fonction;
+    String fullName = Model.utilisateur.nom.ToString() + " " + Model.utilisateur.prenom.ToString();
+    ViewData["nom"] = fullName;
+
+}
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Tableau d'utilisateurs</h3>
+        <div class="card-tools">
+            <div class="input-group input-group-sm">
+                <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="search" onkeyup="Search()" />
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card-body table-responsive p-0">
+        <table class="table table-head-fixed text-nowrap" id="table">
+            <thead>
+                <tr>
+                    <th hidden>
+                        Id
+                    </th>
+                    <th>
+                        Nom Complet
+                    </th>
+
+
+                    <th>
+                        Téléphone
+                    </th>
+
+                    <th>
+                        Fonction
+                    </th>
+                    <th> <a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Utilisateur" asp-action="Create">Nouvel utilisateur</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.utilisateurList)
+                {
+                    <tr>
+                        <td hidden>
+                            @Html.DisplayFor(modelItem => item.id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nom)  @Html.DisplayFor(modelItem => item.prenom)
+
+
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.telephone)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.fonction)
+                        </td>
+                        <td>
+                            <div class="float-lg-right">
+                                <a class="btn btn-success toastsDefaultSuccess" asp-controller="Utilisateur" asp-action="Details" asp-route-id=@item.id>Details</a>
+                                <a class="btn btn-info toastsDefaultInfo" asp-controller="Utilisateur" asp-action="Edit" asp-route-id=@item.id> Modifier</a>
+                                <a class="btn btn-danger swalDefaultError" asp-controller="Projet" asp-action="Edit" asp-route-idProjet=@item.id> Supprimer</a>
+
+
+                            </div>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+
+
+        function Search() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchBar");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+    </script>
+}

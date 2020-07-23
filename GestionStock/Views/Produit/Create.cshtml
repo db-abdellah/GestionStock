@@ -1,0 +1,47 @@
+﻿@model GestionStock.Models.Entities.Produit
+@{
+    ViewData["Title"] = "Nouveau produit";
+    ViewData["fonction"] = ViewBag.utilisateur.fonction;
+    String fullName = ViewBag.utilisateur.nom.ToString() + " " + ViewBag.utilisateur.prenom.ToString();
+    ViewData["nom"] = fullName;
+
+}
+
+<div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Nouveau produit</h3>
+
+
+    </div>
+    <div class="card-body ">
+
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Nom</label>
+                    <input asp-for="nom" class="form-control" />
+                    <span asp-validation-for="nom" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Prix d'achat</label>
+                    <input asp-for="prixAchat" type="number"  step="0.01" class="form-control" />
+                    <span asp-validation-for="prixAchat" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Catégorie</label>
+                    <input asp-for="categorie" class="form-control" />
+                    <span asp-validation-for="categorie" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Valider" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

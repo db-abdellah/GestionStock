@@ -1,0 +1,110 @@
+body {
+    background-color: rgba(36,0,70,1);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+div.logbox {
+    border-radius: 25px;
+    margin: auto;
+    margin-top: 7%;
+    background-color: #000;
+    height:480px;
+    width: 350px;
+    box-sizing: border-box;
+    padding: 70px 30px;
+    background: #10002b;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(123,44,191,1);
+    text-align: center;
+}
+
+img.avatar {
+    height: 100px;
+    width: 100px;
+    margin-top: -40px;
+}
+
+
+
+div.image {
+    padding-bottom: 10%;
+    text-align-last: center;
+    padding-bottom: 20%;
+}
+
+
+
+.forum p {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    color: #FFF;
+    text-align:left;
+}
+
+.forum input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+    .forum input[type="text"], input[type="password"] {
+        border: none;
+        border-bottom: 1px solid #FFF;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: lightgray;
+        font-size: 15px;
+        border-color: rgba(123,44,191,1);
+        margin-bottom : 10%;
+    }
+
+.forum button {
+    border: none;
+    outline: inherit;
+    height: 40px;
+    width: 100%;
+    color: #000;
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 0 auto;
+    background: #FFF;
+    margin-top:5%;
+}
+
+    .forum button:hover {
+        cursor: pointer;
+        background: rgba(123,44,191,1);
+        color: #FFF;
+    }
+
+div .link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #A9A9A9;
+    text-align: center;
+}
+
+    .link a:hover {
+        color: #00ff80;
+    }
+
+#error {
+    color: red;
+    position: center;
+    
+    vertical-align: middle;
+    margin: 0 auto;
+    font-size: 10px;
+   
+    width:100%;
+}
