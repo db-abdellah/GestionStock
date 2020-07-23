@@ -1,0 +1,71 @@
+﻿@model IEnumerable<GestionStock.Models.Entities.Stock>
+
+@{
+    ViewData["Title"] = "Stock";
+    ViewData["fonction"] = ViewBag.utilisateur.fonction;
+    String fullName = ViewBag.utilisateur.nom.ToString() + " " + ViewBag.utilisateur.prenom.ToString();
+    ViewData["nom"] = fullName;
+
+}
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Stock</h3>
+            <div class="card-tools">
+                <div class="input-group input-group-sm">
+                    <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="search" onkeyup="Search()" />
+                </div>
+            </div>
+
+        </div>
+        <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrap" id="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.idProduit)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.nomProduit)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.qteReel)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.qteEstimee)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.idProduit)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nomProduit)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.qteReel)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.qteEstimee)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            </div>
+            </div>

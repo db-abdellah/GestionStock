@@ -3,20 +3,33 @@
 @{ 
     Layout = "";
 }
+   @{ 
+       String rowId = "row" + Model.produit.id;
+       String totalId = "total" + Model.produit.id;
+       String qteId = "qte" + Model.produit.id;
+       String prixId = "prix" + Model.produit.id;
+       
+   }
 
-<tr >
+
+
+
+
+<tr id="@rowId ">
     <td>
         <label> @Model.produit.nom</label>
     </td>
     <td>
-        <input class="form-control" type="number" max="@Model.stock.qteEstimee" min="0" name="Qte" />
+        <input class="form-control" type="number"  min="0" name="Qte" id="@qteId" onfocus="calcule(@Model.produit.id)" onclick="calcule(@Model.produit.id);" />
+    </td>
+    <td> 
+        <span id="@prixId"> @Model.produit.prixAchat  </span><span>DH</span>
+    </td>
+    <td >
+        <span id="@totalId"  class="total">0.00 </span><span>DH</span>
     </td>
     <td>
-
-    </td>
-
-    <td>
-        <button class="btn btn-danger">supprimer</button>
+        <button id="@Model.produit.id" class="btn btn-danger" onclick="deleteRow(this)">supprimer</button>
     </td>
 </tr>
 

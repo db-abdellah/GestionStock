@@ -14,7 +14,7 @@
 
     </div>
     <div class="card-body">
-        <div>
+        <div class="col-md-6 float-left">
 
 
             <label>Fournisseur</label>
@@ -25,43 +25,72 @@
                     <option value="@item.id">@item.Nom @item.prenom</option>
                 }
             </select>
-            <hr />
+            <br />
+
+        </div>
+
+        <div class="col-md-6 float-left">
             <label>Document</label>
 
             <input class="form-control " type="text" placeholder="Numéro de document" />
+            <br />
             
         </div>
+        <label>Produit</label>
+        <br />
+        <div class="form-check-inline " style="width:100%">
 
-        <hr />
-        <label class="float-left">Produit</label>
-        <button class="btn btn-info float-right" onclick="ajouterProduit()">Ajouter</button>
-        <br />
-        <br />
-        <select class="form-control" id="produitId">
-            @foreach (GestionStock.Models.Entities.Produit item in Model.ProduitList)
-            {
-                <option value="@item.id">@item.nom</option>
-            }
-        </select>
-        <hr />
+            
+
+
+            
+            <select class="form-control float-lg-left" id="produitId">
+                @foreach (GestionStock.Models.Entities.Produit item in Model.ProduitList)
+                {
+                    <option value="@item.id">@item.nom</option>
+                }
+            </select>
+
+            <button class="btn btn-info align-self-lg-center" onclick="ajouterProduit()">Ajouter</button>
+        </div>
         <div>
-            <table id="container" class="table table-hover text-nowrap>
-                <tbody>
-                </tbody>
-            </table>
+            <hr />
+            <div class="table-responsive p-0">
+                <table id="container" class="table table-hover text-nowrap">
+                    <tbody>
+                        <tr>
+                            <th>
+                                Nom du produit
+                            </th>
+                            <th class="align-self-center">
+                                Quantité
+                            </th>
+                            <th class="align-self-center">
+                                Prix unitaire
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+                            <th>
+
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+            <div class="float-right">
 
-        <div class="float-right">
+                <h5>Total <span id="totalFacture">0.00</span>DH</h5>
 
-            <h5>Total 0.00 DH</h5>
+            </div>
 
         </div>
-
+        <div class="card-footer">
+            <button class="btn btn-primary float-right" onclick="">Valider</button>
+        </div>
     </div>
-    <div class="card-footer">
-        <button class="btn btn-primary float-right" onclick="">Valider</button>
-    </div>
-</div>
 
 
 @section Scripts
@@ -70,6 +99,7 @@
 
         function ajouterProduit() {
             var produitId = $("#produitId").val();
+            
             alert(produitId);
             $.ajax({
                 type: "GET",
@@ -84,7 +114,50 @@
                 }
             });
         }
-        
+
+        function deleteRow(caller) {
+            var parent = caller.parentNode;
+            parent.parentNode.remove();
+            setTotal();
+
+        }
+
+
+        function calcule(idProduit) {
+
+
+            var totalId = "total";
+            totalId = totalId.concat(idProduit);
+            var prixId = "prix";
+            prixId = prixId.concat(idProduit);
+            var quantiteId = "qte";
+            quantiteId = quantiteId.concat(idProduit);
+           
+            var quantite = $('#' + quantiteId).val();
+            var prix = $('#' + prixId).html();
+            var total = quantite * prix
+            total = parseFloat(total);
+            $('#' + totalId).html(total);
+            setTotal();
+            
+
+           
+        }
+
+        function setTotal() {
+            var totalList = document.getElementsByClassName("total");
+            var totalFacture = parseFloat(0);
+            for (var i = 0; i < totalList.length; i++) {
+                var total = parseFloat(totalList.item(i).innerHTML);
+                console.log(totalList.item(i).innerHTML);
+                totalFacture = total + totalFacture;
+                
+            }
+            console.log(totalFacture);
+            $('#totalFacture').html(totalFacture);
+           
+            
+        }
 
     </script>
 }
