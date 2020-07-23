@@ -13,39 +13,49 @@ using Newtonsoft.Json;
 
 namespace GestionStock.Controllers
 {
-    public class UtilisateurController : Controller
+    public class AchatController : Controller
     {
-
-        private static UtilisateurBusiness UtilisateurBusiness = new UtilisateurBusinessImp();
-        // GET: UtilisateurController
+        private static FournisseurBusiness fournisseurBusiness = new FournisseurBusinessImp();
+        private static ProduitBusiness produitBusiness= new ProduitBusinessImp();
+        // GET: AchatController
         public ActionResult Index()
         {
-            UtilisateursModel model = new UtilisateursModel();
-            model.utilisateurList = UtilisateurBusiness.getUtilisateurs();
+            AchatModel model = new AchatModel();
             model.utilisateur = GetChefFromCookie();
+            model.fournisseurList = fournisseurBusiness.getFournisseurs();
+            model.ProduitList = produitBusiness.getProduits();
+
+            return View(model);
+        }
+        public ActionResult Achat()
+        {
+            AchatModel model = new AchatModel();
+            model.utilisateur = GetChefFromCookie();
+            model.fournisseurList = fournisseurBusiness.getFournisseurs();
+            model.ProduitList = produitBusiness.getProduits();
+
             return View(model);
         }
 
-      
-        // GET: UtilisateurController/Create
-        public ActionResult Create()
+        // GET: AchatController/Details/5
+        public ActionResult Details(int id)
         {
-
-            Utilisateur util = GetChefFromCookie();
-            ViewBag.utilisateur = util;
             return View();
         }
 
-        // POST: UtilisateurController/Create
+        // GET: AchatController/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: AchatController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Utilisateur utilisateur)
+        public ActionResult Create(IFormCollection collection)
         {
             try
             {
-                Utilisateur util = GetChefFromCookie();
-                ViewBag.utilisateur = util;
-                UtilisateurBusiness.saveUtilisateur(utilisateur);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -54,40 +64,34 @@ namespace GestionStock.Controllers
             }
         }
 
-        // GET: UtilisateurController/Edit/5
+        // GET: AchatController/Edit/5
         public ActionResult Edit(int id)
         {
-            Utilisateur util = GetChefFromCookie();
-            ViewBag.utilisateur = util;
-            Utilisateur utilisateur = UtilisateurBusiness.getUtilisateurById(id);
-            return View(utilisateur);
+            return View();
         }
 
-        // POST: UtilisateurController/Edit/5
+        // POST: AchatController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Utilisateur utilisateur)
+        public ActionResult Edit(int id, IFormCollection collection)
         {
-          
-                Utilisateur util = GetChefFromCookie();
-                ViewBag.utilisateur = util;
-                UtilisateurBusiness.updateUtilisateur(utilisateur);
+            try
+            {
                 return RedirectToAction(nameof(Index));
-            
+            }
+            catch
+            {
+                return View();
+            }
         }
 
-        // GET: UtilisateurController/Delete/5
+        // GET: AchatController/Delete/5
         public ActionResult Delete(int id)
         {
-            Utilisateur util = GetChefFromCookie();
-            ViewBag.utilisateur = util;
-            Utilisateur utilisateur = UtilisateurBusiness.getUtilisateurById(id);
-            
-            return View(utilisateur);
-            
+            return View();
         }
 
-        // POST: UtilisateurController/Delete/5
+        // POST: AchatController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
@@ -101,19 +105,6 @@ namespace GestionStock.Controllers
                 return View();
             }
         }
-
-        [VerifyUserAttribute]
-        public ActionResult Details(int id)
-        {
-            UtilisateurModel model = new UtilisateurModel();
-            model.utilisateur = UtilisateurBusiness.getUtilisateurById(id);
-            model.Chef = GetChefFromCookie();
-            return View(model);
-        }
-
-        
-
-
 
         //----------------------------------------------------------------------
         [VerifyUserAttribute]

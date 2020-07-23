@@ -1,0 +1,36 @@
+﻿@model GestionStock.Models.Models.AchatModel;
+
+@{
+    ViewData["Title"] = "Nouvelle Achat";
+    ViewData["fonction"] = Model.utilisateur.fonction;
+    String fullName = Model.utilisateur.nom.ToString() + " " + Model.utilisateur.prenom.ToString();
+    ViewData["nom"] = fullName;
+
+}
+
+<div class="card card-lightblue">
+    <div class="card-header">
+        <h3 class="card-title">Nouvelle Achat</h3>
+
+    </div>
+    <div class="card-body">
+        <label>Fournisseur</label>
+        <select class="form-control">
+            @foreach (GestionStock.Models.Entities.Fournisseur item in Model.fournisseurList)
+            {
+                <option value="@item.id">@item.Nom @item.prenom</option>
+            }
+        </select>
+        <hr />
+        <label>Produit</label>
+        <select class="form-control">
+            @foreach (GestionStock.Models.Entities.Produit item in Model.ProduitList)
+            {
+                <option value="@item.id">@item.nom</option>
+            }
+        </select>
+    </div>
+    <div class="card-footer">
+
+    </div>
+</div>
