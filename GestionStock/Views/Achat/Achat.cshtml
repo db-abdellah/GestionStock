@@ -34,10 +34,10 @@
 
         <hr />
         <label class="float-left">Produit</label>
-        <button class="btn btn-info float-right" onclick="">Ajouter</button>
+        <button class="btn btn-info float-right" onclick="ajouterProduit()">Ajouter</button>
         <br />
         <br />
-        <select class="form-control">
+        <select class="form-control" id="produitId">
             @foreach (GestionStock.Models.Entities.Produit item in Model.ProduitList)
             {
                 <option value="@item.id">@item.nom</option>
@@ -45,7 +45,7 @@
         </select>
         <hr />
         <div>
-            <table>
+            <table id="container" class="table table-hover text-nowrap>
                 <tbody>
                 </tbody>
             </table>
@@ -67,9 +67,24 @@
 @section Scripts
 {
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('.js-example-basic-single').select2();
-        });
+
+        function ajouterProduit() {
+            var produitId = $("#produitId").val();
+            alert(produitId);
+            $.ajax({
+                type: "GET",
+                url: "/Achat/AchatProduit",
+                data: { idProduit: produitId },
+                success: function (data) {
+                    $("#container").append(data);
+
+                },
+                error: function () {
+                    alert("something wrong happened");
+                }
+            });
+        }
+        
 
     </script>
 }

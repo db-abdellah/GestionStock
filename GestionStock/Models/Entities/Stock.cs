@@ -9,6 +9,7 @@ namespace GestionStock.Models.Entities
     {
         public int id { get; set; }
         public int idProduit { get; set; }
+        public string nomProduit { set; get; }
         public int qteReel { get; set; }
         public int qteEstimee { get; set; }
     }

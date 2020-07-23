@@ -1,0 +1,24 @@
+﻿@model GestionStock.Models.Models.AchatProduitModel;
+
+@{ 
+    Layout = "";
+}
+
+<tr >
+    <td>
+        <label> @Model.produit.nom</label>
+    </td>
+    <td>
+        <input class="form-control" type="number" max="@Model.stock.qteEstimee" min="0" name="Qte" />
+    </td>
+    <td>
+
+    </td>
+
+    <td>
+        <button class="btn btn-danger">supprimer</button>
+    </td>
+</tr>
+
+
+

@@ -17,6 +17,7 @@ namespace GestionStock.Controllers
     {
         private static FournisseurBusiness fournisseurBusiness = new FournisseurBusinessImp();
         private static ProduitBusiness produitBusiness= new ProduitBusinessImp();
+        private static StockBusiness stockBusiness= new StockBusinessImp();
         // GET: AchatController
         public ActionResult Index()
         {
@@ -43,10 +44,13 @@ namespace GestionStock.Controllers
             return View();
         }
 
-        // GET: AchatController/Create
-        public ActionResult Create()
+        // Partial View 
+        public ActionResult AchatProduit(int idProduit)
         {
-            return View();
+            AchatProduitModel model = new AchatProduitModel();
+            model.produit= produitBusiness.getProduitById(idProduit);
+            model.stock = stockBusiness.getStockByProduitId(idProduit);
+            return PartialView(model);
         }
 
         // POST: AchatController/Create
