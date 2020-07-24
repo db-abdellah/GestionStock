@@ -10,59 +10,61 @@
 
 <div class="card card-primary">
     <div class="card-header">
-        <h3 class="card-title">List des Produits</h3>
-        <div class="card-tools">
-            <div class="input-group input-group-sm">
-                <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="search" onkeyup="Search()" />
+        <div class="col-md-6 float-left">
+            <h3 class="card-title">List des Produits</h3>
             </div>
+            <div class="col-md-6 float-right">
+                <div class="input-group input-group-sm">
+                    <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="search" onkeyup="Search()" />
+                </div>
+            </div>
+
         </div>
-
-    </div>
-    <div class="card-body table-responsive p-0">
-        <table class="table table-hover text-nowrap" id=" table">
-            <thead>
-                <tr>
-                    <th hidden>
-                        Id
-                    </th>
-                    <th>
-                      Nom
-                    </th>
-                    <th>
-                        Catégorie
-                    </th>
-                    <th>
-                       Prix d'achat
-                    </th>
-                    <th><a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Produit" asp-action="Create">Nouveau produit</a></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.produits)
-                {
+        <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrap" id=" table">
+                <thead>
                     <tr>
-
-                        <td>
-                            @Html.DisplayFor(modelItem => item.nom)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.categorie)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.prixAchat) DH
-                        </td>
-                        <td class="float-right">
-                            <a class="btn btn-success toastsDefaultSuccess" asp-controller="Produit" asp-action="Details" asp-route-id=@item.id>Details</a>
-                            <a class="btn btn-info toastsDefaultInfo" asp-controller="Produit" asp-action="Edit" asp-route-id=@item.id> Modifier</a>
-                            <a class="btn btn-danger swalDefaultError" asp-controller="Projet" asp-action="Edit" asp-route-idProjet=@item.id> Supprimer</a>
-
-                        </td>
+                        <th hidden>
+                            Id
+                        </th>
+                        <th>
+                            Nom
+                        </th>
+                        <th>
+                            Catégorie
+                        </th>
+                        <th>
+                            Prix d'achat
+                        </th>
+                        <th><a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Produit" asp-action="Create">Nouveau produit</a></th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.produits)
+                    {
+                        <tr>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nom)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.categorie)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.prixAchat) DH
+                            </td>
+                            <td class="float-right">
+                                <a class="btn btn-success toastsDefaultSuccess" asp-controller="Produit" asp-action="Details" asp-route-id=@item.id>Details</a>
+                                <a class="btn btn-info toastsDefaultInfo" asp-controller="Produit" asp-action="Edit" asp-route-id=@item.id> Modifier</a>
+                                <a class="btn btn-danger swalDefaultError" asp-controller="Projet" asp-action="Edit" asp-route-idProjet=@item.id> Supprimer</a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
 
 

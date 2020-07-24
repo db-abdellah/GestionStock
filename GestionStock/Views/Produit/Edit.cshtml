@@ -13,8 +13,15 @@
 
     </div>
     <div class="card-body ">
+        <div id="ErrorContainer" hidden="hidden">
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" onclick="hideErrorMessage()" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+                Prière de remplir tous les champs
+            </div>
+        </div>
         <div class="col-md-4">
-            <form asp-action="Edit">
+            <form asp-action="Edit" id="mainForm">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div hidden class="form-group">
                     <label asp-for="id" class="control-label"></label>
@@ -33,15 +40,65 @@
                     <span asp-validation-for="categorie" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label  class="control-label">Prix d'achat</label>
+                    <label class="control-label">Prix d'achat</label>
                     <input asp-for="prixAchat" class="form-control" />
                     <span asp-validation-for="prixAchat" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Enregistrer" class="btn btn-primary" />
+                    <input type="button" onclick="SubmitForm()" value="Enregistrer" class="btn btn-primary" />
                 </div>
             </form>
         </div>
     </div>
 
-   </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+
+
+    <script type="text/javascript">
+
+        var MyRes = false;
+
+        function SubmitForm() {
+            hideErrorMessage();
+
+            if (inputCheck()) {
+                $("#mainForm").submit();
+
+
+            }
+
+
+
+
+        }
+
+        function inputCheck() {
+            document.getElementById("ErrorContainer").hidden = true;
+            var nom = $("#nom").val();
+            var categorie = $("#categorie").val();
+            var prix = $("#prixAchat").val();
+
+            if (nom.length == 0 || categorie.length == 0 || prix.length == 0) {
+
+                document.getElementById("ErrorContainer").hidden = false;
+                $('body').scrollTop(0);
+                return false;
+            }
+            return true;
+        }
+
+
+
+        function hideErrorMessage() {
+
+            document.getElementById("ErrorContainer").hidden = true;
+        }
+
+
+    </script>
+}
+

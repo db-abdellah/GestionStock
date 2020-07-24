@@ -18,15 +18,15 @@ namespace GestionStock.Controllers
         private static FournisseurBusiness fournisseurBusiness = new FournisseurBusinessImp();
         private static ProduitBusiness produitBusiness= new ProduitBusinessImp();
         private static StockBusiness stockBusiness= new StockBusinessImp();
+        private static AchatBusiness achatBusiness= new AchatBusinessImp();
+        private static DocumentBusiness documentBusiness = new DocumentBusinessImp();
         // GET: AchatController
         public ActionResult Index()
         {
-            AchatModel model = new AchatModel();
-            model.utilisateur = GetChefFromCookie();
-            model.fournisseurList = fournisseurBusiness.getFournisseurs();
-            model.ProduitList = produitBusiness.getProduits();
-
-            return View(model);
+            List<Document> documentList = documentBusiness.getAllDocuments();
+            Utilisateur util = GetChefFromCookie();
+            ViewBag.utilisateur = util;
+            return View(documentList);
         }
         public ActionResult Achat()
         {
@@ -36,6 +36,24 @@ namespace GestionStock.Controllers
             model.ProduitList = produitBusiness.getProduits();
 
             return View(model);
+        }
+
+        [HttpPost]
+        public JsonResult facture(float totalFacture,string numDocument,int fournisseurId)
+        {
+            int idFacture = achatBusiness.saveFacture(totalFacture, numDocument, fournisseurId);
+            return Json(idFacture);
+
+
+        }
+        [HttpPost]
+        [VerifyUserAttribute]
+        public JsonResult factureDetails(float total, int idFacture, int idProduit, int quantite)
+        {
+            achatBusiness.saveDetails(total, idFacture, idProduit, quantite);
+            return Json("true");
+
+
         }
 
         // GET: AchatController/Details/5

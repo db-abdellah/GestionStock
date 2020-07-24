@@ -3,14 +3,16 @@
 @{
     ViewData["Title"] = "List des fournisseurs";
     ViewData["fonction"] = Model.utilisateur.fonction;
-    String fullName =Model.utilisateur.nom.ToString() +" "+Model.utilisateur.prenom.ToString();
+    String fullName = Model.utilisateur.nom.ToString() + " " + Model.utilisateur.prenom.ToString();
     ViewData["nom"] = fullName;
 
 }
 <div class="card card-primary">
     <div class="card-header">
-        <h3 class="card-title">List des fournisseurs</h3>
-        <div class="card-tools">
+        <div class="col-md-6 float-left">
+            <h3 class="card-title">List des fournisseurs</h3>
+        </div>
+        <div class="col-md-6 float-right">
             <div class="input-group input-group-sm">
                 <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="search" onkeyup="Search()" />
             </div>
@@ -22,10 +24,10 @@
             <thead>
                 <tr>
                     <th hidden>
-                       Id
+                        Id
                     </th>
                     <th>
-                    Nom Complet
+                        Nom Complet
                     </th>
                     <th>
                         Téléphone
@@ -49,7 +51,7 @@
                             <a class="btn btn-success toastsDefaultSuccess" asp-controller="Fournisseur" asp-action="Details" asp-route-id=@item.id>Details</a>
                             <a class="btn btn-info toastsDefaultInfo" asp-controller="Fournisseur" asp-action="Edit" asp-route-id=@item.id> Modifier</a>
                             <a class="btn btn-danger swalDefaultError" asp-controller="Projet" asp-action="Edit" asp-route-id=@item.id> Supprimer</a>
-                         
+
 
                         </td>
                     </tr>

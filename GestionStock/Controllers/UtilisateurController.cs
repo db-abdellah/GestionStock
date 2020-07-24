@@ -16,17 +16,27 @@ namespace GestionStock.Controllers
     public class UtilisateurController : Controller
     {
 
-        private static UtilisateurBusiness UtilisateurBusiness = new UtilisateurBusinessImp();
+        private static UtilisateurBusiness utilisateurBusiness = new UtilisateurBusinessImp();
         // GET: UtilisateurController
         public ActionResult Index()
         {
             UtilisateursModel model = new UtilisateursModel();
-            model.utilisateurList = UtilisateurBusiness.getUtilisateurs();
+            model.utilisateurList = utilisateurBusiness.getUtilisateurs();
             model.utilisateur = GetChefFromCookie();
             return View(model);
         }
 
-      
+        [HttpPost]
+        public JsonResult loginCheck(string login)
+        {
+            int check= utilisateurBusiness.checkNewLogin(login);
+            if (check==1)
+
+                return Json("true");
+            else
+                return Json("false");
+        }
+
         // GET: UtilisateurController/Create
         public ActionResult Create()
         {
@@ -45,7 +55,7 @@ namespace GestionStock.Controllers
             {
                 Utilisateur util = GetChefFromCookie();
                 ViewBag.utilisateur = util;
-                UtilisateurBusiness.saveUtilisateur(utilisateur);
+                utilisateurBusiness.saveUtilisateur(utilisateur);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -59,7 +69,7 @@ namespace GestionStock.Controllers
         {
             Utilisateur util = GetChefFromCookie();
             ViewBag.utilisateur = util;
-            Utilisateur utilisateur = UtilisateurBusiness.getUtilisateurById(id);
+            Utilisateur utilisateur = utilisateurBusiness.getUtilisateurById(id);
             return View(utilisateur);
         }
 
@@ -71,7 +81,7 @@ namespace GestionStock.Controllers
           
                 Utilisateur util = GetChefFromCookie();
                 ViewBag.utilisateur = util;
-                UtilisateurBusiness.updateUtilisateur(utilisateur);
+                utilisateurBusiness.updateUtilisateur(utilisateur);
                 return RedirectToAction(nameof(Index));
             
         }
@@ -81,7 +91,7 @@ namespace GestionStock.Controllers
         {
             Utilisateur util = GetChefFromCookie();
             ViewBag.utilisateur = util;
-            Utilisateur utilisateur = UtilisateurBusiness.getUtilisateurById(id);
+            Utilisateur utilisateur = utilisateurBusiness.getUtilisateurById(id);
             
             return View(utilisateur);
             
@@ -106,7 +116,7 @@ namespace GestionStock.Controllers
         public ActionResult Details(int id)
         {
             UtilisateurModel model = new UtilisateurModel();
-            model.utilisateur = UtilisateurBusiness.getUtilisateurById(id);
+            model.utilisateur = utilisateurBusiness.getUtilisateurById(id);
             model.Chef = GetChefFromCookie();
             return View(model);
         }

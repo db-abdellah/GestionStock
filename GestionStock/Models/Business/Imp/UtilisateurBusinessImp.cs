@@ -13,6 +13,11 @@ namespace GestionStock.Models.Business.Imp
     {
         UtilisateurDao utilDao = new UtilisateurDaoImp();
 
+        public int checkNewLogin(string login)
+        {
+            return utilDao.checkNewLogin( login);
+        }
+
         public Utilisateur getUtilisateurById(int id)
         {
             return utilDao.getUtilisateurById(id);

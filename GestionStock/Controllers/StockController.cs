@@ -20,6 +20,7 @@ namespace GestionStock.Controllers
         {
             Utilisateur util = GetChefFromCookie();
             ViewBag.utilisateur = util;
+            
             List<Stock> listStock = stockBusiness.getAllStock();
             return View(listStock);
         }

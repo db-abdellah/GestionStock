@@ -15,23 +15,26 @@
 
 
 
-<tr id="@rowId ">
-    <td>
-        <label> @Model.produit.nom</label>
-    </td>
-    <td>
-        <input class="form-control" type="number"  min="0" name="Qte" id="@qteId" onfocus="calcule(@Model.produit.id)" onclick="calcule(@Model.produit.id);" />
-    </td>
-    <td> 
-        <span id="@prixId"> @Model.produit.prixAchat  </span><span>DH</span>
-    </td>
-    <td >
-        <span id="@totalId"  class="total">0.00 </span><span>DH</span>
-    </td>
-    <td>
-        <button id="@Model.produit.id" class="btn btn-danger" onclick="deleteRow(this)">supprimer</button>
-    </td>
-</tr>
+    <tr id="@rowId " class="ItemRow">
+        <td hidden class="idProduit">@Model.produit.id</td>
+           
+        
+        <td>
+            <label> @Model.produit.nom</label>
+        </td>
+        <td>
+            <input class="form-control qte" type="number" min="0" name="Qte" value="0" id="@qteId" onfocus="calcule(@Model.produit.id)" onclick="calcule(@Model.produit.id);" />
+        </td>
+        <td>
+            <span id="@prixId"> @Model.produit.prixAchat  </span><span>DH</span>
+        </td>
+        <td>
+            <span id="@totalId" class="total">0.00 </span><span>DH</span>
+        </td>
+        <td>
+            <button id="@Model.produit.id" class="btn btn-danger" onclick="deleteRow(this)">supprimer</button>
+        </td>
+    </tr>
 
 
 

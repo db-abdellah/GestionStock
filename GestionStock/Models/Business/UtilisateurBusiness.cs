@@ -13,5 +13,6 @@ namespace GestionStock.Models.Business
         Utilisateur getUtilisateurById(int id);
         void saveUtilisateur(Utilisateur utilisateur);
         void updateUtilisateur(Utilisateur utilisateur);
+        int checkNewLogin(string login);
     }
 }

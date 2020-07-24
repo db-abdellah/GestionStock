@@ -12,6 +12,19 @@ namespace GestionStock.Models.DAO.Imp
 {
     public class UtilisateurDaoImp : UtilisateurDao
     {
+        public int checkNewLogin(string login)
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+
+                List<Utilisateur> util = connection.Query<Utilisateur>($"SELECT id FROM utilisateur WHERE login='{login}' ;").ToList();
+                if(util.Count>=1)
+                     return 1;
+
+                return 0;
+            }
+        }
+
         public Utilisateur getUtilisateurById(int id)
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())

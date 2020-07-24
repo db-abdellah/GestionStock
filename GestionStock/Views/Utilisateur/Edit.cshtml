@@ -15,9 +15,15 @@
 
     </div>
     <div class="card-body ">
-
+        <div id="ErrorContainer" hidden="hidden">
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" onclick="hideErrorMessage()" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+                Prière de remplir tous les champs
+            </div>
+        </div>
         <div class="col-md-4">
-            <form asp-action="Edit">
+            <form asp-action="Edit" id="mainForm">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div hidden class="form-group">
                     <label asp-for="id" class="control-label"></label>
@@ -25,75 +31,128 @@
                     <span asp-validation-for="id" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Nom</label>
+                    <label class="control-label">Nom:</label>
                     <input asp-for="nom" class="form-control" />
                     <span asp-validation-for="nom" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Prénom</label>
+                    <label class="control-label">Prénom:</label>
                     <input asp-for="prenom" class="form-control" />
                     <span asp-validation-for="prenom" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Nom d'utilisateur</label>
+                    <label class="control-label">Nom d'utilisateur:</label>
                     <input asp-for="login" class="form-control" />
                     <span asp-validation-for="login" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Mot de passe</label>
+                    <label class="control-label">Mot de passe:</label>
                     <input asp-for="password" class="form-control" />
                     <span asp-validation-for="password" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Adresse</label>
+                    <label class="control-label">Adresse:</label>
                     <input asp-for="adresse" class="form-control" />
                     <span asp-validation-for="adresse" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Téléphone</label>
-                    <input asp-for="telephone"  type="text" class="form-control" />
+                    <label class="control-label">Téléphone:</label>
+                    <input asp-for="telephone" type="text" class="form-control" />
                     <span asp-validation-for="telephone" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Date de création</label>
+                    <label class="control-label">Date de création:</label>
                     <input asp-for="date" disabled class="form-control" />
                     <span asp-validation-for="date" class="text-danger"></span>
                 </div>
                 <div class="form-group">
+                    <label class="control-label">Fonction d'utilisateur:</label><br/>
                     @if (Model.fonction == "operateur")
                     {
-                        @Html.RadioButtonFor(model => model.fonction, "operateur", true)    @Html.Label("Operateur")
+                        @Html.RadioButtonFor(model => model.fonction, "operateur", true) <span>&nbsp;</span> @Html.Label("Operateur")
                         <br />
-                        @Html.RadioButtonFor(model => model.fonction, "magasinier", false)    @Html.Label("Magasinier")
+                        @Html.RadioButtonFor(model => model.fonction, "magasinier", false) <span>&nbsp;</span> @Html.Label("Magasinier")
                         <br />
-                        @Html.RadioButtonFor(model => model.fonction, "administrateur", false)    @Html.Label("Administrateur")
+                        @Html.RadioButtonFor(model => model.fonction, "administrateur", false) <span>&nbsp;</span>@Html.Label("Administrateur")
                         <br />
                     }
                     @if (Model.fonction == "magasinier")
                     {
-                        @Html.RadioButtonFor(model => model.fonction, "operateur", false)  @Html.Label("Operateur")
+                        @Html.RadioButtonFor(model => model.fonction, "operateur", false) <span>&nbsp;</span>@Html.Label("Operateur")
                         <br />
-                        @Html.RadioButtonFor(model => model.fonction, "magasinier", true)  @Html.Label("Magasinier")
+                        @Html.RadioButtonFor(model => model.fonction, "magasinier", true) <span>&nbsp;</span>@Html.Label("Magasinier")
                         <br />
-                        @Html.RadioButtonFor(model => model.fonction, "administrateur", false)   @Html.Label("Administrateur")
+                        @Html.RadioButtonFor(model => model.fonction, "administrateur", false) <span>&nbsp;</span> @Html.Label("Administrateur")
                         <br />
                     }
                     @if (Model.fonction == "administrateur")
                     {
-                        @Html.RadioButtonFor(model => model.fonction, "operateur", false)    @Html.Label("Operateur")
+                        @Html.RadioButtonFor(model => model.fonction, "operateur", false) <span>&nbsp;</span> @Html.Label("Operateur")
                         <br />
-                        @Html.RadioButtonFor(model => model.fonction, "magasinier", false)   @Html.Label("Magasinier")
+                        @Html.RadioButtonFor(model => model.fonction, "magasinier", false) <span>&nbsp;</span> @Html.Label("Magasinier")
                         <br />
-                        @Html.RadioButtonFor(model => model.fonction, "administrateur", true)    @Html.Label("Administrateur")
+                        @Html.RadioButtonFor(model => model.fonction, "administrateur", true) <span>&nbsp;</span>@Html.Label("Administrateur")
                         <br />
                     }
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Enregistrer" class="btn btn-primary" />
+                    <input type="button" onclick="SubmitForm()" value="Enregistrer" class="btn btn-primary" />
                 </div>
             </form>
         </div>
     </div>
 </div>
 
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+
+
+    <script type="text/javascript">
+
+        var MyRes = false;
+
+        function SubmitForm() {
+            hideErrorMessage();
+
+            if (inputCheck()) {
+                $("#mainForm").submit();
+                
+
+            }
+
+
+
+
+        }
+
+        function inputCheck() {
+            document.getElementById("ErrorContainer").hidden = true;
+            var nom = $("#nom").val();
+            var prenom = $("#prenom").val();
+            var login = $("#login").val();
+            var password = $("#password").val();
+            var adresse = $("#adresse").val();
+            var telephone = $("#telephone").val();
+
+            if (nom.length == 0 || prenom.length == 0 || login.length == 0 || password.length == 0 || adresse.length == 0 || telephone.length == 0) {
+
+                document.getElementById("ErrorContainer").hidden = false;
+                $('body').scrollTop(0);
+                return false;
+            }
+            return true;
+        }
+
+
+
+        function hideErrorMessage() {
+           
+            document.getElementById("ErrorContainer").hidden = true;
+        }
+       
+
+    </script>
+}
 

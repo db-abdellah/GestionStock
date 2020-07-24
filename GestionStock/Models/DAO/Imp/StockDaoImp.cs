@@ -15,7 +15,7 @@ namespace GestionStock.Models.DAO
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
             {
-                String query = $"SELECT stock.id ,stock.QteReel,stock.QteEstimee ,produit.nom FROM stock ,produit WHERE produit.id=stock.idProduit ";
+                String query = $"SELECT stock.id ,stock.QteReel,stock.QteEstimee ,produit.nom as nomProduit FROM stock ,produit WHERE produit.id=stock.idProduit ;";
                 List<Stock> stockList = connection.Query<Stock>(query).ToList();
                 return stockList;
             }
