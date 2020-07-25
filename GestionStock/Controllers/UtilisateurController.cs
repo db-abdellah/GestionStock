@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using GestionStock.Models.Business;
@@ -86,6 +86,8 @@ namespace GestionStock.Controllers
             
         }
 
+        
+
         // GET: UtilisateurController/Delete/5
         public ActionResult Delete(int id)
         {
@@ -121,7 +123,18 @@ namespace GestionStock.Controllers
             return View(model);
         }
 
-        
+        [HttpPost]
+        public JsonResult SupprimerUtil(int idUtil)
+        {
+
+
+            utilisateurBusiness.DeleteUserById(idUtil);
+            return Json("true");
+
+
+
+
+        }
 
 
 

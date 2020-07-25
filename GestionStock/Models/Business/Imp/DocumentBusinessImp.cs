@@ -12,6 +12,12 @@ namespace GestionStock.Models.Business
     public class DocumentBusinessImp : DocumentBusiness
     {
         private static  DocumentDao documentDao = new DocumentDaoImp();
+
+        public void DeleteDocumentById(int idDocument)
+        {
+            documentDao.DeleteDocumentById(idDocument);
+        }
+
         public List<Document> getAllDocuments()
         {
             return documentDao.getAllDocuments();

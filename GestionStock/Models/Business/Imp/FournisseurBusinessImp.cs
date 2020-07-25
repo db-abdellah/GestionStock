@@ -12,6 +12,11 @@ namespace GestionStock.Models.Business.Imp
     {   
         private FournisseurDao  fournisseurDao=  new FournisseurDaoImp();
 
+        public void DeleteFournisseurById(int idFournisseur)
+        {
+            fournisseurDao.DeleteFournisseurById( idFournisseur);
+        }
+
         public Fournisseur getFournisseurById( int id)
         {
             return fournisseurDao.GetFournisseurById(id);

@@ -18,6 +18,11 @@ namespace GestionStock.Models.Business.Imp
             return utilDao.checkNewLogin( login);
         }
 
+        public void DeleteUserById(int idUtil)
+        {
+            utilDao.DeleteUserById( idUtil);
+        }
+
         public Utilisateur getUtilisateurById(int id)
         {
             return utilDao.getUtilisateurById(id);

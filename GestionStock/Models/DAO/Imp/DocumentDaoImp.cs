@@ -11,6 +11,21 @@ namespace GestionStock.Models.DAO.Imp
 {
     public class DocumentDaoImp : DocumentDao
     {
+        public void DeleteDocumentById(int idDocument)
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                String query = $"DELETE FROM document WHERE id = {idDocument}; ";
+                connection.Execute(query);
+                 query = $"DELETE FROM achat WHERE idFacture = {idDocument}; ";
+                connection.Execute(query);
+
+
+
+
+            }
+        }
+
         public List<Document> getAllDocuments()
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())

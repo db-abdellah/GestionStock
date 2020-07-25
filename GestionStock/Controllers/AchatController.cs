@@ -47,7 +47,6 @@ namespace GestionStock.Controllers
 
         }
         [HttpPost]
-        [VerifyUserAttribute]
         public JsonResult factureDetails(float total, int idFacture, int idProduit, int quantite)
         {
             achatBusiness.saveDetails(total, idFacture, idProduit, quantite);
@@ -107,10 +106,19 @@ namespace GestionStock.Controllers
             }
         }
 
-        // GET: AchatController/Delete/5
-        public ActionResult Delete(int id)
+
+
+        [HttpPost]
+        public JsonResult SupprimerDocument(int idDocument)
         {
-            return View();
+
+
+            documentBusiness.DeleteDocumentById(idDocument);
+            return Json("true");
+
+
+
+
         }
 
         // POST: AchatController/Delete/5

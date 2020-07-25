@@ -56,7 +56,7 @@
                             <td class="float-right">
                                 <a class="btn btn-success toastsDefaultSuccess" asp-controller="Produit" asp-action="Details" asp-route-id=@item.id>Details</a>
                                 <a class="btn btn-info toastsDefaultInfo" asp-controller="Produit" asp-action="Edit" asp-route-id=@item.id> Modifier</a>
-                                <a class="btn btn-danger swalDefaultError" asp-controller="Projet" asp-action="Edit" asp-route-idProjet=@item.id> Supprimer</a>
+                                <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">Supprimer</button>
 
                             </td>
                         </tr>
@@ -95,6 +95,36 @@
                 }
             }
         }
+
+        function Delete(id) {
+
+            var result = confirm("Êtes-vous sûr de vouloir supprimer ce produit?");
+            if (result == true) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Produit/SupprimerProduit",
+                    data: { 'idProduit': id },
+                    cache: false,
+
+
+                    success: function (result) {
+                        location.reload();
+
+
+                    },
+                    error: function (xhr) {
+                        location.reload();
+
+
+                    },
+                    failure: function (response) {
+                        alert("something unexpected happend");
+                    },
+                });
+            } else
+                retuen;
+        }
+
 
     </script>
 }

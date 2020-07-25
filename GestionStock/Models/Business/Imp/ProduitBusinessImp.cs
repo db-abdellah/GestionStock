@@ -12,6 +12,11 @@ namespace GestionStock.Models.Business.Imp
     {
         private ProduitDao produitDao = new ProduitDaoImp();
 
+        public void DeleteProduitById(int idProduit)
+        {
+            produitDao.DeleteProduitById(idProduit);
+        }
+
         public Produit getProduitById(int idProjet)
         {
             return produitDao.getProduitById(idProjet);

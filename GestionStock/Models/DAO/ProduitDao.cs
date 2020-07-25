@@ -12,5 +12,6 @@ namespace GestionStock.Models.DAO
         Produit getProduitById(int idProjet);
         void saveProduit(Produit produit);
         void updateProduit(Produit produit);
+        void DeleteProduitById(int idProduit);
     }
 }

@@ -120,7 +120,6 @@
         function ajouterProduit() {
             var produitId = $("#produitId").val();
 
-            alert(produitId);
             $.ajax({
                 type: "GET",
                 url: "/Achat/AchatProduit",
@@ -173,11 +172,9 @@
             var totalFacture = parseFloat(0);
             for (var i = 0; i < totalList.length; i++) {
                 var total = parseFloat(totalList.item(i).innerHTML);
-                console.log(totalList.item(i).innerHTML);
                 totalFacture = total + totalFacture;
 
             }
-            console.log(totalFacture);
             $('#totalFacture').html(totalFacture);
             
             
@@ -196,12 +193,7 @@
             
             
             saveFacture();
-            document.getElementById("succesMessage").hidden = false;
-            $("#container  tr").remove();
-            document.getElementById("submitBtn").disabled = true;
-            $('#numDocument').attr('value', '');
-             $('#totalFacture').html("0.00");
-            document.getElementById('numDocument').value = '';
+           
 
         }
 
@@ -222,6 +214,7 @@
                 success: function (result) {
 
                     saveDetails(result);
+                    console.log(result);
 
                 }
 
@@ -238,7 +231,9 @@
                 var total = parseFloat(totalList.item(i).innerHTML);
                 var id = parseInt(idList.item(i).innerHTML);
                 var qte = parseInt(qteList.item(i).value);
-
+                console.log(total);
+                console.log(id);
+                console.log(qte);
 
                 $.ajax({
                     type: "POST",
@@ -253,6 +248,13 @@
                     }
 
                 });
+
+                document.getElementById("succesMessage").hidden = false;
+                $("#container  tr").remove();
+                document.getElementById("submitBtn").disabled = true;
+                $('#numDocument').attr('value', '');
+                $('#totalFacture').html("0.00");
+                document.getElementById('numDocument').value = '';
             }
         }
 

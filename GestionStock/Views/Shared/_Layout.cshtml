@@ -182,17 +182,17 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a asp-controller="Stock" asp-action="Index" class="nav-link">
                                 <i class="nav-icon fa fa-server"></i>
                                 <p>
                                     Gestion Stock
                                 </p>
                             </a>
                         </li>
-                        @if (ViewData["fonction"].ToString() == "magasinier"|| ViewData["fonction"].ToString() == "administrateur")
+                        @if (ViewData["fonction"].ToString() == "magasinier" || ViewData["fonction"].ToString() == "administrateur")
                         {
                             <li class="nav-item has-treeview">
-                                 <a  asp-controller="Fournisseur" asp-action="Index" class="nav-link">
+                                <a asp-controller="Fournisseur" asp-action="Index" class="nav-link">
                                     <i class="nav-icon fa fa-book"></i>
                                     <p>
                                         Gestion Fournisseur
@@ -200,7 +200,7 @@
                                 </a>
                             </li>
                             <li class="nav-item has-treeview">
-                                <a  asp-controller="Produit" asp-action="Index" class="nav-link">
+                                <a asp-controller="Produit" asp-action="Index" class="nav-link">
                                     <i class="nav-icon fa fa-cart-plus"></i>
                                     <p>
                                         Gestion Produits
@@ -208,10 +208,19 @@
                                     </p>
                                 </a>
                             </li>
-                        }
-                        @if(ViewData["fonction"].ToString() == "administrateur") { 
                             <li class="nav-item has-treeview">
-                                <a  asp-controller="Utilisateur" asp-action="Index" class="nav-link">
+                                <a asp-controller="Achat" asp-action="Index" class="nav-link">
+                                    <i class="nav-icon fa fa-clone"></i>
+                                    <p>
+                                        Gestion des documents
+                                    </p>
+                                </a>
+                            </li>
+                        }
+                        @if (ViewData["fonction"].ToString() == "administrateur")
+                        {
+                            <li class="nav-item has-treeview">
+                                <a asp-controller="Utilisateur" asp-action="Index" class="nav-link">
                                     <i class="nav-icon 	fa fa-address-card"></i>
                                     <p>
                                         Gestion Utilisateurs

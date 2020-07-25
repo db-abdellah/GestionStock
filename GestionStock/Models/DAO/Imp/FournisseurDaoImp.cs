@@ -11,6 +11,20 @@ namespace GestionStock.Models.DAO.Imp
 {
     public class FournisseurDaoImp : FournisseurDao
     {
+        public void DeleteFournisseurById(int idFournisseur)
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                String query = $"DELETE FROM fournisseur WHERE id = {idFournisseur}; ";
+                connection.Execute(query);
+               
+
+
+
+
+            }
+        }
+
         public Fournisseur GetFournisseurById(int id)
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())

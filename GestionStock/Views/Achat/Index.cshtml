@@ -37,7 +37,8 @@
                     <th>
                         Date de......
                     </th>
-                    <th></th>
+                    <th> <a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Achat" asp-action="Achat">Nouvel achat</a></th>
+                </tr>
                 </tr>
             </thead>
             <tbody>
@@ -59,8 +60,7 @@
                         </td>
                         <td class="float-right">
                             <a class="btn btn-success toastsDefaultSuccess" asp-controller="Achat" asp-action="Details" asp-route-id=@item.id>Details</a>
-                            <a class="btn btn-info toastsDefaultInfo" asp-controller="Achat" asp-action="Edit" asp-route-id=@item.id> Modifier</a>
-                            <a class="btn btn-danger swalDefaultError" asp-controller="Achat" asp-action="Edit" asp-route-id=@item.id> Supprimer</a>
+                            <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">Supprimer</button>
 
 
                         </td>
@@ -98,6 +98,35 @@
                     }
                 }
             }
+        }
+
+        function Delete(id) {
+
+            var result = confirm("Êtes-vous sûr de vouloir supprimer ce projet?");
+            if (result == true) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Achat/SupprimerDocument",
+                    data: { 'idDocument': id },
+                    cache: false,
+
+
+                    success: function (result) {
+                          location.reload();
+                       
+
+                    },
+                    error: function (xhr) {
+                        location.reload();
+                       
+
+                    },
+                    failure: function (response) {
+                        alert("something unexpected happend");
+                    },
+                });
+            } else
+                retuen;
         }
 
     </script>

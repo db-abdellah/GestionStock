@@ -15,5 +15,6 @@ namespace GestionStock.Models.DAO
         void saveUtilisateur(Utilisateur utilisateur);
         void updateUtilisateur(Utilisateur utilisateur);
         int checkNewLogin(string login);
+        void DeleteUserById(int idUtil);
     }
 }

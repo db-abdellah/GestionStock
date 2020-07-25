@@ -49,15 +49,12 @@ namespace GestionStock.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Produit produit)
         {
-            try
-            {
+            
+                Utilisateur util = GetChefFromCookie();
+                ViewBag.utilisateur = util;
                 produitBusiness.saveProduit(produit);
                 return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            
         }
 
         // GET: ProduitController/Edit/5
@@ -108,7 +105,18 @@ namespace GestionStock.Controllers
             }
         }
 
+        [HttpPost]
+        public JsonResult SupprimerProduit(int idProduit)
+        {
 
+
+            produitBusiness.DeleteProduitById(idProduit);
+            return Json("true");
+
+
+
+
+        }
 
         //----------------------------------------------------------------------
         [VerifyUserAttribute]

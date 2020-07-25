@@ -89,12 +89,18 @@ namespace GestionStock.Controllers
             }
         }
 
-        // GET: FournisseurController/Delete/5
-        public ActionResult Delete(int id)
+        [HttpPost]
+        public JsonResult SupprimerFournisseur(int idFournisseur)
         {
-            return View();
-        }
 
+
+            fournisseurBusiness.DeleteFournisseurById(idFournisseur);
+            return Json("true");
+
+
+
+
+        }
         // POST: FournisseurController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]

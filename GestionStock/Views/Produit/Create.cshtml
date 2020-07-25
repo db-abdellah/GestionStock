@@ -27,19 +27,24 @@
 
 
                 <div class="form-group">
-                    <label class="control-label">Nom</label>
+                    <label class="control-label">Nom:</label>
                     <input asp-for="nom" class="form-control" />
                     <span asp-validation-for="nom" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Prix d'achat</label>
-                    <input asp-for="prixAchat" type="number" step="0.1"  min="0.00" class="form-control" />
+                    <label class="control-label">Prix d'achat:</label>
+                    <input asp-for="prixAchat" type="number" step="0.1" min="0.00" class="form-control" />
                     <span asp-validation-for="prixAchat" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Catégorie</label>
+                    <label class="control-label">Catégorie:</label>
                     <input asp-for="categorie" class="form-control" />
                     <span asp-validation-for="categorie" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Quantité estimé:</label>
+                    <input asp-for="qteEstime" class="form-control" />
+                    <span asp-validation-for="qteEstime" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <input type="button" onclick="SubmitForm()" value="Valider" class="btn btn-primary" />

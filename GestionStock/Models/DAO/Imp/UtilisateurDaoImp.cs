@@ -25,6 +25,20 @@ namespace GestionStock.Models.DAO.Imp
             }
         }
 
+        public void DeleteUserById(int idUtil)
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                String query = $"DELETE FROM utilisateur WHERE id = {idUtil}; ";
+                connection.Execute(query);
+                
+
+
+
+
+            }
+        }
+
         public Utilisateur getUtilisateurById(int id)
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())

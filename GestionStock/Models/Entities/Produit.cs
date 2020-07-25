@@ -11,5 +11,7 @@ namespace GestionStock.Models.Entities
         public String categorie { get; set; }
         public String nom { get; set; }
         public String  prixAchat { get; set; }
+
+        public int qteEstime { get; set; }
     }
 }

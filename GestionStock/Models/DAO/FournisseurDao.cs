@@ -12,5 +12,6 @@ namespace GestionStock.Models.DAO
         Fournisseur GetFournisseurById( int id);
         void saveFournisseur(Fournisseur fournisseur);
         void updateFournisseur(Fournisseur fournisseur);
+        void DeleteFournisseurById(int idFournisseur);
     }
 }
