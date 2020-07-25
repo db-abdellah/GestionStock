@@ -10,7 +10,7 @@ namespace GestionStock.Models.Business
     {
         List<Produit> getProduits();
         Produit getProduitById(int idProjet);
-        void saveProduit(Produit produit);
+        int saveProduit(Produit produit);
         void updateProduit(Produit produit);
         void DeleteProduitById(int idProduit);
     }

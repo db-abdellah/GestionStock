@@ -19,7 +19,7 @@
 
     </div>
     <div class="card-body table-responsive p-0">
-        <table class="table table-hover text-nowrap" id="table">
+        <table class="table table-hover text-nowrap"  style="text-align:center" id="table">
 
             <thead>
                 <tr>
@@ -37,7 +37,10 @@
                     <th>
                         Date de......
                     </th>
-                    <th> <a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Achat" asp-action="Achat">Nouvel achat</a></th>
+                    <th> <a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Achat" asp-action="Achat">
+    <i class="fa fa-plus">
+    </i>&nbsp;Nouvel achat
+</a></th>
                 </tr>
                 </tr>
             </thead>
@@ -59,8 +62,15 @@
                             @Html.DisplayFor(modelItem => item.date)
                         </td>
                         <td class="float-right">
-                            <a class="btn btn-success toastsDefaultSuccess" asp-controller="Achat" asp-action="Details" asp-route-id=@item.id>Details</a>
-                            <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">Supprimer</button>
+                            <a class="btn btn-success toastsDefaultSuccess" asp-controller="Achat" asp-action="Details" asp-route-id=@item.id>
+                                <i class="fa fa-info-circle ">
+                                </i>&nbsp; Details
+                            </a>
+                            <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">
+                                <i class="fas fa-trash">
+                                </i>
+                                Supprimer
+                            </button>
 
 
                         </td>

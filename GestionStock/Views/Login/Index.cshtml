@@ -3,85 +3,109 @@
 @{
     Layout = "";
 }
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/login/login.css" />
-    <meta charset="UTF-8">
-    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Kodinger">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Page d'identification</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/login/css/my-login.css">
 </head>
-<body>
-    <div class="logbox">
-        <div class="image">
-            <img class="avatar" src="~/lib/bootstrap/dist/Images/userIcon.png">
-        </div>
-        <div class="log">
-            <div class="forum">
-                <p>Nom d'utilisateur:</p>
-                <input type="text" id="username" required class="validate" autocomplete="off" placeholder="Entrez votre nom d'utilisateur" />
-                <br />
-                <p>Mot de passe:</p>
-                <input type="password" id="password" required class="validate" autocomplete="off" placeholder="Entrez votre mot de passe" />
-                <br />
-                <p id="error" hidden="hidden">Incorrect Username or password</p>
-                <button onclick="Login()" name="Login"> Login</button>
-            </div>
 
+<body class="my-login-page">
+    <section class="h-100">
+        <div class="container h-100">
+            <div class="row justify-content-md-center h-100">
+                <div class="card-wrapper">
+                    <div class="brand">
+                        <img src="~/login/img/téléchargement.jfif" alt="logo">
+                    </div>
+                    <div class="card fat">
+                        <div class="card-body">
+                            <h4 class="card-title">Identification</h4>
+                            <div class="forum">
+                                <label for="email">Nom d'utilisateur:</label>
+                                <input type="text" id="username" class="form-control" required placeholder="Nom d'utilisateur" autofocus />
+                                <br />
+                                <label for="password">Mot de passe:</label>
+                                <a asp-controller="Login" asp-action="Help" class="float-right">
+                                    Mot de passe oublié ?
+                                </a>
+                                <input type="password" id="password" class="form-control" name="password" required data-eye />
+                                <br />
+                                <div style="text-align:center">
+                                    <p id="error" style="color:red ; font-size:11px; "></p>
+                                    <br />
+                                </div>
+                                <button onclick="Login()" class="btn btn-primary btn-block" name="Login"> Login</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        Copyright &copy; 2020 &mdash; Casa Bache
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script type="text/javascript">
-
+       
         function initialisation() {
             document.getElementById("error").hidden = true;
         }
-
         initialisation();
 
-        function Login() {
-
-            var username = $("#username").val();
-            var password = $("#password").val();
-            if (checkInput(username, password)) {
-            $.ajax({
-                type: "POST",
-                url: "/Login/LoginCheck",
-                data: { 'username': username, 'password': password },
-                cache: false,
 
 
-                success: function (result) {
-                   
-                    if (result == "Utilisateur") {
-                        window.location.href = "/Home/Index";
-                        initialisation();
-                        return;
-                    }
-                    else {
-                        document.getElementById("error").innerHTML = "Le nom d'utilisateur ou le mot de passe entré est incorrect";
-                        document.getElementById("error").hidden = false;
+            function Login() {
 
-                    }
+                var username = $("#username").val();
+                var password = $("#password").val();
+                if (checkInput(username, password)) {
 
-                },
-                error: function (xhr) {
-                    //debugger;
-                    console.log(xhr.responseText);
-                    alert("Error has occurred..");
 
-                },
-                failure: function (response) {
-                    alert(response.responseText);
-                },
-        });
+                    $.ajax({
+                        type: "POST",
+                        url: "/Login/LoginCheck",
+                        data: { 'username': username, 'password': password },
+                        cache: false,
+
+
+                        success: function (result) {
+                            console.log(result);
+                            if (result == "true") {
+
+                                window.location.href = "/Home/Index";
+
+                                return;
+                            }
+                            if (result == "false") {
+
+
+                                document.getElementById("error").innerHTML = "Le nom d'utilisateur ou le mot de passe entré est incorrect";
+                                document.getElementById("error").hidden = false;
+                                return;
+                            }
+
+                        },
+                        error: function (xhr) {
+                            //debugger;
+                            console.log(xhr.responseText);
+                            alert("Error has occurred..");
+
+                        },
+                        failure: function (response) {
+                            alert(response.responseText);
+                        },
+                    });
+                }
             }
-        }
-
-        function checkInput(username,password) {
-
+        function checkInput(username, password) {
             if (username == 0) {
                 document.getElementById("error").innerHTML = "Veuillez entrer le nom d'utilisateur";
                 document.getElementById("error").hidden = false;
@@ -92,9 +116,9 @@
                 document.getElementById("error").hidden = false;
                 return false;
             }
-
             return true;
         }
+
     </script>
 </body>
 

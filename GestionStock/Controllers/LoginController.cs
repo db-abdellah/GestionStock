@@ -24,13 +24,13 @@ namespace GestionStock.Controllers
             return View();
         }
 
+        [VerifyUserAttribute]
+        public IActionResult Help()
+        {
 
-
-
-
-
-
-
+            //ViewBag.utilisateur = utilisateur.nomUtilisateur ;
+            return View();
+        }
 
         [HttpPost]
 
@@ -42,12 +42,12 @@ namespace GestionStock.Controllers
 
             if (util == null )
 
-                return Json("/login/Index");
+                return Json("false");
 
             if (util != null)
             {
                 HttpContext.Session.SetString("Utilisateur", JsonConvert.SerializeObject(util));
-                return Json("Utilisateur");
+                return Json("true");
             }
            
             return null;

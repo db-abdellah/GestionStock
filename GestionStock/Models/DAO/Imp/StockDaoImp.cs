@@ -44,5 +44,19 @@ namespace GestionStock.Models.DAO
                 return stock[0];
             }
         }
+
+        public void UpdateQteReel(int idStock, int quantite)
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                String query =
+                    $"UPDATE stock  SET QteReel = '{quantite}' WHERE id = {idStock} ";
+                connection.Execute(query);
+
+
+
+
+            }
+        }
     }
 }

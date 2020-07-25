@@ -25,6 +25,15 @@ namespace GestionStock.Controllers
             return View(listStock);
         }
 
+        [HttpPost]
+        public JsonResult UpdateQteReel( int idStock,  int quantite)
+        {
+            stockBusiness.UpdateQteReel( idStock, quantite);
+            return Json("true");
+
+
+        }
+
         // GET: StockController/Details/5
         public ActionResult Details(int id)
         {

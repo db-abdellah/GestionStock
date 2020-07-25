@@ -24,5 +24,10 @@ namespace GestionStock.Models.Business.Imp
         {
             return stockDao.getStockByProduitId( idProduit);
         }
+
+        public void UpdateQteReel(int idStock, int quantite)
+        {
+            stockDao.UpdateQteReel( idStock,  quantite);
+        }
     }
 }

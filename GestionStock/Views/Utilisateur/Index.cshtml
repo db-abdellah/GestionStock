@@ -21,7 +21,7 @@
     </div>
 
     <div class="card-body table-responsive p-0">
-        <table class="table table-hover text-nowrap" id="table">
+        <table class="table table-hover text-nowrap"  style="text-align:center" id="table">
             <thead>
                 <tr>
                     <th hidden>
@@ -39,7 +39,9 @@
                     <th>
                         Fonction
                     </th>
-                    <th> <a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Utilisateur" asp-action="Create">Nouvel utilisateur</a></th>
+                    <th> <a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Utilisateur" asp-action="Create">
+                             <i class="fa fa-plus">
+                             </i>&nbsp;Nouvel utilisateur</a></th>
                 </tr>
             </thead>
             <tbody>
@@ -64,10 +66,21 @@
                         </td>
                         <td>
                             <div class="float-lg-right">
-                                <a class="btn btn-success toastsDefaultSuccess" asp-controller="Utilisateur" asp-action="Details" asp-route-id=@item.id>Details</a>
-                                <a class="btn btn-info toastsDefaultInfo" asp-controller="Utilisateur" asp-action="Edit" asp-route-id=@item.id> Modifier</a>
-                                <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">Supprimer</button>
-                               
+                                <a class="btn btn-success toastsDefaultSuccess" asp-controller="Utilisateur" asp-action="Details" asp-route-id=@item.id>
+                                    <i class="fa fa-info-circle ">
+                                    </i>&nbsp; Details
+                                </a>
+                                <a class="btn btn-info toastsDefaultInfo" asp-controller="Utilisateur" asp-action="Edit" asp-route-id=@item.id>
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Modifier
+                                </a>
+                                <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Supprimer
+                                </button>
+
 
                             </div>
 

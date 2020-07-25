@@ -71,7 +71,7 @@
         <div>
             <hr />
             <div class="table-responsive p-0">
-                <table  class="table table-hover text-nowrap">
+                <table  class="table table-hover text-nowrap"  style="text-align:center">
 
                     <tr>
                         <th>
@@ -231,9 +231,7 @@
                 var total = parseFloat(totalList.item(i).innerHTML);
                 var id = parseInt(idList.item(i).innerHTML);
                 var qte = parseInt(qteList.item(i).value);
-                console.log(total);
-                console.log(id);
-                console.log(qte);
+               
 
                 $.ajax({
                     type: "POST",

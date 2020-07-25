@@ -27,9 +27,9 @@ namespace GestionStock.Models.Business.Imp
             return produitDao.getProduits();
         }
 
-        public void saveProduit(Produit produit)
+        public int saveProduit(Produit produit)
         {
-            produitDao.saveProduit(produit);
+           return produitDao.saveProduit(produit);
         }
 
         public void updateProduit(Produit produit)

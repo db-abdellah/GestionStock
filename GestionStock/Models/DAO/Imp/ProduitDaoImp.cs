@@ -17,8 +17,8 @@ namespace GestionStock.Models.DAO.Imp
             {
                 String query = $"DELETE FROM produit WHERE id = {idProduit}; ";
                 connection.Execute(query);
-                //query = $"DELETE FROM stock WHERE idProduit = {idProduit}; ";
-                //connection.Execute(query);
+                query = $"DELETE FROM stock WHERE idProduit = {idProduit}; ";
+                connection.Execute(query);
 
 
 
@@ -50,7 +50,7 @@ namespace GestionStock.Models.DAO.Imp
             }
         }
 
-        public void saveProduit(Produit produit)
+        public int saveProduit(Produit produit)
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
             {
@@ -66,7 +66,7 @@ namespace GestionStock.Models.DAO.Imp
                 connection.Execute(query);
 
 
-
+                return idProduit;
 
             }
         }

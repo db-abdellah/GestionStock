@@ -11,5 +11,6 @@ namespace GestionStock.Models.Business
         List<Stock> getAllStock();
         Stock getStockByProduitId(int idProduit);
         Stock getStockById(int idStock);
+        void UpdateQteReel(int idStock, int quantite);
     }
 }
