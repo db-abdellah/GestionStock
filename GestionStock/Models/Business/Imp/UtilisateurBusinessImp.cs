@@ -33,9 +33,9 @@ namespace GestionStock.Models.Business.Imp
             return utilDao.getUtilisateurs();
         }
 
-        public void saveUtilisateur(Utilisateur utilisateur)
+        public int  saveUtilisateur(Utilisateur utilisateur)
         {
-            utilDao.saveUtilisateur(utilisateur);
+           return utilDao.saveUtilisateur(utilisateur);
         }
 
         public void updateUtilisateur(Utilisateur utilisateur)

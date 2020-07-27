@@ -9,6 +9,7 @@ using GestionStock.Models.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 
 namespace GestionStock.Controllers
@@ -17,6 +18,14 @@ namespace GestionStock.Controllers
     {
 
         private static UtilisateurBusiness utilisateurBusiness = new UtilisateurBusinessImp();
+
+        private IHostEnvironment _env;
+
+        public UtilisateurController(IHostEnvironment env)
+        {
+            _env = env;
+
+        }
         // GET: UtilisateurController
         public ActionResult Index()
         {
@@ -49,19 +58,24 @@ namespace GestionStock.Controllers
         // POST: UtilisateurController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Utilisateur utilisateur)
+        public ActionResult Create(Utilisateur utilisateur , IFormFile file)
         {
-            try
-            {
-                Utilisateur util = GetChefFromCookie();
+              Utilisateur util = GetChefFromCookie();
                 ViewBag.utilisateur = util;
-                utilisateurBusiness.saveUtilisateur(utilisateur);
-                return RedirectToAction(nameof(Index));
-            }
-            catch
+                int idUtilisateur= utilisateurBusiness.saveUtilisateur(utilisateur);
+            if (file != null)
             {
-                return View();
+
+                var dir = _env.ContentRootPath + @"/wwwroot/images/Utilisateur";
+
+                using (var filestream = new FileStream(Path.Combine(dir, idUtilisateur + ".jpeg"), FileMode.Create, FileAccess.Write))
+                {
+                    file.CopyTo(filestream);
+
+                }
             }
+                    return RedirectToAction(nameof(Index));
+          
         }
 
         // GET: UtilisateurController/Edit/5
@@ -76,10 +90,21 @@ namespace GestionStock.Controllers
         // POST: UtilisateurController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Utilisateur utilisateur)
+        public ActionResult Edit(Utilisateur utilisateur, IFormFile file)
         {
-          
-                Utilisateur util = GetChefFromCookie();
+
+            if (file != null)
+            {
+
+                var dir = _env.ContentRootPath + @"/wwwroot/images/Utilisateur";
+
+                using (var filestream = new FileStream(Path.Combine(dir, utilisateur.id + ".jpeg"), FileMode.Create, FileAccess.Write))
+                {
+                    file.CopyTo(filestream);
+
+                }
+            }
+            Utilisateur util = GetChefFromCookie();
                 ViewBag.utilisateur = util;
                 utilisateurBusiness.updateUtilisateur(utilisateur);
                 return RedirectToAction(nameof(Index));

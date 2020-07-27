@@ -1,4 +1,5 @@
 ﻿using GestionStock.Models.Entities;
+using GestionStock.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace GestionStock.Models.DAO
         int saveProduit(Produit produit);
         void updateProduit(Produit produit);
         void DeleteProduitById(int idProduit);
+        ESModel getProduitsAndStock();
     }
 }

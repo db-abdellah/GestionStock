@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using GestionStock.Handlers;
 using GestionStock.Models.Entities;
+using GestionStock.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -46,6 +47,27 @@ namespace GestionStock.Models.DAO.Imp
                 List<Produit> produits = connection.Query<Produit>($"SELECT * FROM produit  ").ToList();
 
                 return produits;
+
+            }
+        }
+
+        public ESModel getProduitsAndStock()
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                ESModel model = new ESModel();
+                String query = $"SELECT * FROM `produit` ORDER BY id ";
+                model.ProduitList = connection.Query<Produit>(query).ToList();
+                
+                query = $"SELECT * FROM `stock` Order by idProduit; ";
+                model.stockList  = connection.Query<Stock>(query).ToList();
+
+                return model;
+                 
+              
+
+
+
 
             }
         }

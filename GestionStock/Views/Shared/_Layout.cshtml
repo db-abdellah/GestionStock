@@ -44,7 +44,9 @@
             </ul>
 
 
-
+            @{
+                String userImage = "/images/Utilisateur/" + ViewData["UserId"].ToString()+ ".jpeg";
+             }
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Messages Dropdown Menu -->
@@ -143,18 +145,17 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
-            </a>
+           
 
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-
+                    <div class="image">
+                        <img src="@userImage" class="img-circle elevation-2"  onerror="this.src='/images/icon.png' ">
+                    </div>
                     <div class="info">
-                        <a href="#" class="d-block"> @ViewData["nom"]</a>
+                        <a asp-controller="Home" asp-action="Index" class="d-block">@ViewData["nom"]</a>
                     </div>
                 </div>
 
@@ -166,7 +167,7 @@
 
 
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a asp-controller="Entree" asp-action="Index" class="nav-link">
                                 <i class="nav-icon fa fa-share"></i>
                                 <p>
                                     Entrée Atelier
@@ -174,7 +175,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a  asp-controller="Entree" asp-action="Sortie" class="nav-link">
                                 <i class="nav-icon fa fa-reply"></i>
                                 <p>
                                     Retour Atielier

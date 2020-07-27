@@ -1,6 +1,7 @@
 ﻿using GestionStock.Models.DAO;
 using GestionStock.Models.DAO.Imp;
 using GestionStock.Models.Entities;
+using GestionStock.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,11 @@ namespace GestionStock.Models.Business.Imp
         public List<Produit> getProduits()
         {
             return produitDao.getProduits();
+        }
+
+        public ESModel getProduitsAndStock()
+        {
+            return produitDao.getProduitsAndStock();
         }
 
         public int saveProduit(Produit produit)

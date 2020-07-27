@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "List des Produits";
     ViewData["fonction"] = Model.utilisateur.fonction;
+    ViewData["UserId"] = Model.utilisateur.id;
     String fullName = Model.utilisateur.nom.ToString() + " " + Model.utilisateur.prenom.ToString();
     ViewData["nom"] = fullName;
 

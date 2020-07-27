@@ -1,0 +1,189 @@
+﻿@model GestionStock.Models.Models.ESModel;
+
+@{
+    ViewData["Title"] = "Sortie Atelier";
+    ViewData["UserId"] = Model.utilisateur.id;
+    ViewData["fonction"] = Model.utilisateur.fonction;
+    String fullName = Model.utilisateur.nom.ToString() + " " + Model.utilisateur.prenom.ToString();
+    ViewData["nom"] = fullName;
+    String imagePath = "";
+
+}
+<div class="card card-solid">
+    <div class="card-header">
+        <div class="col-md-6 float-left">
+            <h3 class="card-title">List des Produits :</h3>
+        </div>
+        <div class="col-md-6 float-right">
+            <div class="input-group input-group-sm">
+                <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="search" onkeyup="Search()" />
+            </div>
+        </div>
+
+    </div>
+    <div class="card-body pb-0">
+        <div class="row d-flex align-items-stretch" id="table">
+            @for (int i = 0; i < Model.ProduitList.Count; i++)
+            {
+                imagePath = "/images/Produits/" + Model.ProduitList[i].id + ".jpeg";
+
+                <div class=" col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+                    <div class="card bg-light ">
+                        <div class="card-header text-muted border-bottom-0 ">
+                            @Model.ProduitList[i].categorie
+                        </div>
+                        <div class="card-body pt-0">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="lead nomProduit"><b>@Model.ProduitList[i].nom</b></h2>
+                                    <p class="text-muted text-sm"><b>Quantité en stock: </b> </p>
+                                    <p class="text-muted text-sm">@Model.stockList[i].qteEstimee  </p>
+
+                                </div>
+                                <div class="col-5 text-center float-right">
+                                    <img src="@imagePath" style="height:100px;width:150px;object-fit:contain" class=" profile-user-img img-circle img-fluid" onerror="this.src='/images/error.png' ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="text-right">
+                                <form>
+                                    <span hidden>@Model.ProduitList[i].id</span>
+                                    <input style="float:left ;width:50%" type="number" disabled step="1" min="0" value="0" name="qteEntree" class="form-control" />&nbsp;
+                                    <button type="button" class="btn btn-md btn-primary " onclick="Initialisation(this)" style="float:right">Ajouter</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+
+        $("#searchResult").eq(0).hide();
+        function SearchProduit() {
+            var input = document.getElementById("searchBar");
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById("table");
+            var produitCard = table.getElementsByClassName("mainBody");
+            $(".nomProduit").each(function (index) {
+                var produit = $(this).text();
+
+
+
+                if (produit.toUpperCase().indexOf(filter) > -1) {
+                    this.parents[4].show();
+                } else {
+                    this.parents[4].hide();
+                }
+
+
+            });
+        }
+        function Search() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchBar");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table");
+            tr = table.getElementsByClassName("searchHelper");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByClassName("nomProduit")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    console.log(txtValue);
+                    console.log(txtValue.toUpperCase().indexOf(filter));
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        // tr[i].style.display = "";
+                        table[0][i].style.display = ""
+                        // $(".searchHelper").eq(i).siblings().show();
+
+                    } else {
+                        //tr[i].style.display = "none";
+                        table[0][i].style.display = "none";
+                        //$(".searchHelper").eq(i).siblings().hide();
+
+                    }
+                }
+            }
+        }
+        function valider(caller) {
+            var qte = caller.parentElement.getElementsByTagName("input")[0].value;
+            var id = caller.parentElement.getElementsByTagName("span")[0].innerHTML;
+            console.log(qte);
+            console.log(id);
+            entreeProduit(qte, id);
+        }
+
+        function Initialisation(caller) {
+
+            caller.parentElement.getElementsByTagName("input")[0].disabled = false;
+            caller.innerHTML = "Valider";
+            caller.setAttribute("onClick", "valider(this)");
+        }
+
+
+        function entreeProduit(qte, idProduit) {
+
+
+
+
+            $.ajax({
+                type: "POST",
+                url: "/Entree/SortieAtelier",
+                data: { 'qte': qte, 'idProduit': idProduit },
+                cache: false,
+
+
+                success: function (result) {
+                    location.reload();
+
+
+                },
+                error: function (xhr) {
+                    location.reload();
+
+
+                },
+                failure: function (response) {
+                    alert("something unexpected happend");
+                },
+            });
+
+
+        }
+    </script>
+}

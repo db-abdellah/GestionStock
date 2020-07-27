@@ -63,10 +63,10 @@ namespace GestionStock.Controllers
                 Utilisateur util = GetChefFromCookie();
                 ViewBag.utilisateur = util;
                 int idProduit = produitBusiness.saveProduit(produit);
-                if(file.Length>0)
+                if(file != null)
             {
 
-                var dir = _env.ContentRootPath + @"/images/Produits";
+                var dir = _env.ContentRootPath + @"/wwwroot/images/Produits";
 
                 using (var filestream = new FileStream(Path.Combine(dir, idProduit +".jpeg"), FileMode.Create, FileAccess.Write))
                 {
@@ -94,10 +94,10 @@ namespace GestionStock.Controllers
         {
             try
             {
-                if (file.Length > 0)
+                if (file != null)
                 {
 
-                    var dir = _env.ContentRootPath + @"/images/Produits";
+                    var dir = _env.ContentRootPath + @"/wwwroot/images/Produits";
 
                     using (var filestream = new FileStream(Path.Combine(dir, produit.id + ".jpeg"), FileMode.Create, FileAccess.Write))
                     {

@@ -76,17 +76,20 @@ namespace GestionStock.Models.DAO.Imp
             }
         }
 
-        public void saveUtilisateur(Utilisateur util)
+        public int saveUtilisateur(Utilisateur util)
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
             {
                 String query =
-                    $"INSERT INTO utilisateur(nom,prenom,login,password,adresse,telephone,fonction,date) VALUES('{util.nom}','{util.prenom} ','{util.login}','{util.password}', '{util.adresse}', '{util.telephone}', '{util.fonction}', CURRENT_TIMESTAMP) ";
+                    $"INSERT INTO utilisateur(nom,prenom,login,password,adresse,telephone,fonction,date) VALUES('{util.nom}','{util.prenom} ','{util.login}','{util.password}', '{util.adresse}', '{util.telephone}', '{util.fonction}', CURRENT_TIMESTAMP); SELECT LAST_INSERT_ID() as id; ";
                 connection.Execute(query);
 
+                dynamic result = connection.Query(query).First();
 
 
+                int idUtilisateur = (int)result.id;
 
+                return idUtilisateur;
             }
         }
 

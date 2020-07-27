@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Stock";
     ViewData["fonction"] = ViewBag.utilisateur.fonction;
+    ViewData["UserId"] = ViewBag.utilisateur.id;
     String fullName = ViewBag.utilisateur.nom.ToString() + " " + ViewBag.utilisateur.prenom.ToString();
     ViewData["nom"] = fullName;
 

@@ -3,73 +3,58 @@
 @{
     ViewData["Title"] = "Détails d'utilisateur";
     ViewData["fonction"] = Model.Chef.fonction;
+    ViewData["UserId"] = Model.utilisateur.id;
     String fullName = Model.Chef.nom.ToString() + " " + Model.Chef.prenom.ToString();
     ViewData["nom"] = fullName;
-
+    String imagePath = "/images/Utilisateur/" + Model.utilisateur.id + ".jpeg";
 }
 
-<div class="callout callout-info">
 
-    <h4>@Model.utilisateur.nom @Model.utilisateur.prenom</h4>
 
-    <div>
-        <hr />
-        <dl class="row">
-            <dt class="col-sm-2">
-                Id d'utilisateur :
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.utilisateur.id)
-            </dd>
-            <dt class="col-sm-2">
-                Nom :
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.utilisateur.nom)
-            </dd>
-            <dt class="col-sm-2">
-                Prénom :
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.utilisateur.prenom)
-            </dd>
-            <dt class="col-sm-2">
-                Nom d'utilisateur :
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.utilisateur.login)
-            </dd>
-            <dt class="col-sm-2">
-                Mot de passe :
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.utilisateur.password)
-            </dd>
-            <dt class="col-sm-2">
-                Adresse :
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.utilisateur.adresse)
-            </dd>
-            <dt class="col-sm-2">
-                Téléphone :
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.utilisateur.telephone)
-            </dd>
-            <dt class="col-sm-2">
-                Date de création :
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.utilisateur.date)
-            </dd>
-            <dt class="col-sm-2">
-                Fonction d'utilisateur :
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.utilisateur.fonction)
-            </dd>
-        </dl>
+<div class="card card-primary card-outline">
+    <div class="card-body box-profile">
+        <div class="text-center">
+            <img class="profile-user-img img-fluid img-circle" src="@imagePath" style="width:100px;height:100px;object-fit:contain" onerror="this.src='/images/error.png' ">
+        </div>
+
+        <h3 class="profile-username text-center">@Html.DisplayFor(model => model.utilisateur.nom) @Html.DisplayFor(model => model.utilisateur.prenom)</h3>
+
+        <p class="text-muted text-center">@Html.DisplayFor(model => model.utilisateur.fonction)</p>
+
+        <ul class="list-group list-group-unbordered mb-3">
+            <li class="list-group-item">
+                <b>Id de utilisateur :</b> <a class="float-right"> @Html.DisplayFor(model => model.utilisateur.id)</a>
+            </li>
+            <li class="list-group-item">
+                <b>Nom :</b> <a class="float-right">@Html.DisplayFor(model => model.utilisateur.nom)</a>
+            </li>
+            <li class="list-group-item">
+                <b> prénom :</b> <a class="float-right">@Html.DisplayFor(model => model.utilisateur.prenom)</a>
+            </li>
+            <li class="list-group-item">
+                <b>fonction :</b> <a class="float-right">@Html.DisplayFor(model => model.utilisateur.fonction)</a>
+            </li>
+            <li class="list-group-item">
+                <b> nom d'utilisateur :</b> <a class="float-right">@Html.DisplayFor(model => model.utilisateur.login)</a>
+            </li>
+            <li class="list-group-item">
+                <b> mot de passe :</b> <a class="float-right">@Html.DisplayFor(model => model.utilisateur.password)</a>
+            </li>
+            <li class="list-group-item">
+                <b> Adresse :</b> <a class="float-right">@Html.DisplayFor(model => model.utilisateur.adresse)</a>
+            </li>
+            <li class="list-group-item">
+                <b> téléphone :</b> <a class="float-right">@Html.DisplayFor(model => model.utilisateur.telephone)</a>
+            </li>
+            <li class="list-group-item">
+                <b> date de création :</b> <a class="float-right">@Html.DisplayFor(model => model.utilisateur.date)</a>
+            </li>
+
+
+        </ul>
+
+        <a asp-controller="utilisateur" asp-action="Index" class="btn btn-primary btn-block"><b>List des utilisateur</b></a>
     </div>
+
 </div>
 

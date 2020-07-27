@@ -24,7 +24,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="images\Utilisateur\" />
+    <Folder Include="wwwroot\images\Utilisateur\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\Produits\1.jpeg" />
+    <None Include="wwwroot\images\Produits\28.jpeg" />
+    <None Include="wwwroot\images\Produits\29.jpeg" />
   </ItemGroup>
 
 </Project>

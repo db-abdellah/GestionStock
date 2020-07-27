@@ -12,7 +12,7 @@ namespace GestionStock.Models.DAO
         Utilisateur GetUtilisateurByLogin(String username, String password);
         List<Utilisateur> getUtilisateurs();
         Utilisateur getUtilisateurById(int id);
-        void saveUtilisateur(Utilisateur utilisateur);
+        int saveUtilisateur(Utilisateur utilisateur);
         void updateUtilisateur(Utilisateur utilisateur);
         int checkNewLogin(string login);
         void DeleteUserById(int idUtil);
