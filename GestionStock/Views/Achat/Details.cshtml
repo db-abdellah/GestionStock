@@ -1,0 +1,99 @@
+﻿@model GestionStock.Models.Models.FactureModel;
+@{
+    ViewData["Title"] = "Détails de Produits";
+    ViewData["UserId"] = Model.utilisateur.id;
+    ViewData["fonction"] = Model.utilisateur.fonction;
+    String fullName = Model.utilisateur.nom.ToString() + " " + Model.utilisateur.prenom.ToString();
+    ViewData["nom"] = fullName;
+
+}
+<section class="content">
+    <div class="container-fluid">
+        <div class="card card-default color-palette-box">
+            <div class="card-body ">
+
+                <div class="container-fluid " style=" display: inline-block;">
+                    <div class="row " >
+                        <div class="col-md-4 text-center">
+                            <img src="~/login/img/téléchargement.jfif" class=" img-fluid img-circle" style="border: 1px solid #fcd5ce; height:150px;width:150px" alt="logo">
+                        </div>
+                        <div class="col-md-4 float-right text-center">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam finibus quam, tristique placerat justo. Nullam tempor purus a dolor fringilla, et venenatis mi posuere. Etiam eget dui sed nulla hendrerit consectetur et a elit. Aenean eget odio at odio interdum cursus vel nec lorem. Sed varius magna lacus, in dapibus justo sodales et
+
+                        </div>
+                    </div>
+                    <br />
+                </div >
+                <div class="container-fluid" style=" display: inline-block;">
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <p><b>Numero du document :</b>   @Model.document.numero</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p><b>Fournisseur :</b>   @Model.document.nomFournisseur</p>
+                        </div>
+                        <br />
+                        <div class="col-md-4">
+                            <p><b>Date d'achat :</b>   @Model.document.date</p>
+                        </div>
+                        
+                    </div>
+                    <br />
+                    <br />
+                </div>
+                
+                <hr />
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-hover text-nowrap">
+                        <thead>
+                            <tr>
+
+                                <th>
+                                    Nom de produit :
+                                </th>
+                                <th>
+                                    Quantité :
+                                </th>
+                                <th>
+                                    Prix Achat :
+                                </th>
+                                <th>
+                                    Total :
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+
+
+                            @foreach (GestionStock.Models.Entities.Achat achat in Model.achatList)
+                            {
+                                <tr>
+                                    <td>
+                                        @achat.nomProduit
+                                    </td>
+                                    <td>
+                                        @achat.qte
+                                    </td>
+                                    <td>
+                                        @achat.prixAchat DH
+                                    </td>
+                                    <td>
+                                        @achat.total DH
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+                <div class="text-center">
+                    <h4>Total : @Model.document.total DH</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+

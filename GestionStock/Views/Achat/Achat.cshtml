@@ -72,7 +72,7 @@
         <div>
             <hr />
             <div class="table-responsive p-0">
-                <table  class="table table-hover text-nowrap"  style="text-align:center">
+                <table class="table table-hover text-nowrap" style="text-align:center">
 
                     <tr>
                         <th>
@@ -111,6 +111,7 @@
         <button class="btn btn-primary float-right" onclick="validerAchat()" id="submitBtn">Valider</button>
     </div>
 </div>
+
 
 
 @section Scripts
@@ -177,8 +178,8 @@
 
             }
             $('#totalFacture').html(totalFacture);
-            
-            
+
+
 
 
         }
@@ -191,17 +192,17 @@
                 document.getElementById("submitBtn").disabled = false;
                 return;
             }
-            
-            
+
+
             saveFacture();
-           
+
 
         }
 
         //enregistrement du facture
         function saveFacture() {
 
-            var totalFacture = parseFloat($('#totalFacture').html());
+            var totalFacture = document.getElementById("totalFacture").innerHTML;
             var numDocument = $('#numDocument').val();
             var fournisseurId = $('#fournisseurId').val();
             $.ajax({
@@ -232,7 +233,7 @@
                 var total = parseFloat(totalList.item(i).innerHTML);
                 var id = parseInt(idList.item(i).innerHTML);
                 var qte = parseInt(qteList.item(i).value);
-               
+
 
                 $.ajax({
                     type: "POST",
@@ -248,13 +249,14 @@
 
                 });
 
-                document.getElementById("succesMessage").hidden = false;
-                $("#container  tr").remove();
-                document.getElementById("submitBtn").disabled = true;
-                $('#numDocument').attr('value', '');
-                $('#totalFacture').html("0.00");
-                document.getElementById('numDocument').value = '';
+               
             }
+            document.getElementById("succesMessage").hidden = false;
+            $("#container  tr").remove();
+            document.getElementById("submitBtn").disabled = true;
+            $('#numDocument').attr('value', '');
+            $('#totalFacture').html("0.00");
+            document.getElementById('numDocument').value = '';
         }
 
         //input check
@@ -278,7 +280,7 @@
         function hideSuccessMessage() {
             document.getElementById("succesMessage").hidden = true;
         }
-            
+
     </script>
 }
 

@@ -38,5 +38,18 @@ namespace GestionStock.Models.DAO.Imp
                 return documents;
             }
         }
+
+        public Document getDocumentById(int id)
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                String query = $"SELECT document.id,document.idFournisseur,document.numero,fournisseur.Prenom as prenomFournisseur , fournisseur.nom as nomFournisseur ,document.total,document.date FROM document,fournisseur WHERE document.idFournisseur = fournisseur.id AND document.id={id}";
+                List<Document> documents = connection.Query<Document>(query).ToList();
+
+
+
+                return documents[0];
+            }
+        }
     }
 }

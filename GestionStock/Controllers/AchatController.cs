@@ -34,12 +34,12 @@ namespace GestionStock.Controllers
             model.utilisateur = GetChefFromCookie();
             model.fournisseurList = fournisseurBusiness.getFournisseurs();
             model.ProduitList = produitBusiness.getProduits();
-
+           
             return View(model);
         }
 
         [HttpPost]
-        public JsonResult facture(float totalFacture,string numDocument,int fournisseurId)
+        public JsonResult facture(string totalFacture,string numDocument,int fournisseurId)
         {
             int idFacture = achatBusiness.saveFacture(totalFacture, numDocument, fournisseurId);
             return Json(idFacture);
@@ -47,7 +47,7 @@ namespace GestionStock.Controllers
 
         }
         [HttpPost]
-        public JsonResult factureDetails(float total, int idFacture, int idProduit, int quantite)
+        public JsonResult factureDetails(String total, int idFacture, int idProduit, int quantite)
         {
             achatBusiness.saveDetails(total, idFacture, idProduit, quantite);
             return Json("true");
@@ -58,7 +58,11 @@ namespace GestionStock.Controllers
         // GET: AchatController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            FactureModel model = new FactureModel();
+            model.utilisateur = GetChefFromCookie();
+            model.document =documentBusiness.getDocumentById(id);
+            model.achatList = achatBusiness.getAchatByDocumentId(id);
+            return View(model);
         }
 
         // Partial View 

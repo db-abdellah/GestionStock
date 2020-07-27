@@ -21,6 +21,28 @@ namespace GestionStock.Models.DAO
             }
         }
 
+        public List<Stock> getAllStockNotifications()
+        {
+
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                String query = $"SELECT stock.id ,stock.QteReel,stock.QteEstimee ,stock.idProduit,produit.nom as nomProduit FROM stock ,produit WHERE produit.id=stock.idProduit AND stock.QteEstimee < 10 AND stock.QteEstimee > 0 ;";
+                List<Stock> stockList = connection.Query<Stock>(query).ToList();
+                return stockList;
+            }
+        }
+
+        public List<Stock> getAllStockAlerts()
+        {
+
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                String query = $"SELECT stock.id ,stock.QteReel,stock.QteEstimee ,stock.idProduit,produit.nom as nomProduit FROM stock ,produit WHERE produit.id=stock.idProduit AND stock.QteEstimee = 0 ;";
+                List<Stock> stockList = connection.Query<Stock>(query).ToList();
+                return stockList;
+            }
+        }
+
         public Stock getStockById(int idStock)
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
@@ -58,5 +80,7 @@ namespace GestionStock.Models.DAO
 
             }
         }
+
+       
     }
 }

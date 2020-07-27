@@ -10,5 +10,6 @@ namespace GestionStock.Models.Business
     {
         List<Document> getAllDocuments();
         void DeleteDocumentById(int idProjet);
+        Document getDocumentById(int id);
     }
 }

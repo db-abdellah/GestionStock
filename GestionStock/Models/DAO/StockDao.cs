@@ -12,5 +12,7 @@ namespace GestionStock.Models.DAO
         Stock getStockById(int idStock);
         Stock getStockByProduitId(int idProduit);
         void UpdateQteReel(int idStock, int quantite);
+        List<Stock> getAllStockNotifications();
+        List<Stock> getAllStockAlerts();
     }
 }

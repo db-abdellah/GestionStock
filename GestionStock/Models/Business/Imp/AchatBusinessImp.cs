@@ -1,5 +1,6 @@
 ﻿using GestionStock.Models.DAO;
 using GestionStock.Models.DAO.Imp;
+using GestionStock.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,17 @@ namespace GestionStock.Models.Business.Imp
     {
         private static AchatDao achatDao = new AchatDaoImp();
 
-        public void saveDetails(float total, int idFacture, int idProduit, int qte)
+        public List<Achat> getAchatByDocumentId(int id)
+        {
+            return achatDao.getAchatByDocumentId( id);
+        }
+
+        public void saveDetails(string total, int idFacture, int idProduit, int qte)
         {
             achatDao.saveDetails( total,  idFacture,  idProduit,qte);
         }
 
-        public int saveFacture(float totalFacture, string numDocument, int fournisseurId)
+        public int saveFacture(string totalFacture, string numDocument, int fournisseurId)
         {
             return achatDao.saveFacture(totalFacture, numDocument, fournisseurId);
         }

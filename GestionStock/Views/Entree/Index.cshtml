@@ -24,42 +24,45 @@
     </div>
     <div class="card-body pb-0">
         <div class="row d-flex align-items-stretch" id="table">
+            
             @for (int i = 0; i < Model.ProduitList.Count; i++)
             {
                 imagePath = "/images/Produits/" + Model.ProduitList[i].id + ".jpeg";
-            
-                <div class=" col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
-                    <div class="card bg-light ">
-                        <div class="card-header text-muted border-bottom-0 ">
-                            @Model.ProduitList[i].categorie
-                        </div>
-                        <div class="card-body pt-0">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2 class="lead nomProduit"><b>@Model.ProduitList[i].nom</b></h2>
-                                    <p class="text-muted text-sm"><b>Quantité en stock: </b> </p>
-                                    <p class="text-muted text-sm">@Model.stockList[i].qteEstimee  </p>
+          
+                
+                    <div class="searchHelper col-md-4" >
+                        <div class="card bg-light ">
+                            <div class="card-header text-muted border-bottom-0 ">
+                                @Model.ProduitList[i].categorie
+                            </div>
+                            <div class="card-body pt-0">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="lead nomProduit"><b>@Model.ProduitList[i].nom</b></h2>
+                                        <p class="text-muted text-sm"><b>Quantité en stock: </b> </p>
+                                        <p class="text-muted text-sm">@Model.stockList[i].qteEstimee  </p>
 
-                                </div>
-                                <div class="col-5 text-center float-right">
-                                    <img src="@imagePath" style="height:100px;width:150px;object-fit:contain" class=" profile-user-img img-circle img-fluid" onerror="this.src='/images/error.png' ">
+                                    </div>
+                                    <div class="col-5 text-center float-right">
+                                        <img src="@imagePath" style="height:100px;width:150px;object-fit:contain" class=" profile-user-img img-circle img-fluid" onerror="this.src='/images/error.png' ">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="text-right">
-                                <form>
-                                    <span hidden>@Model.ProduitList[i].id</span>
-                                    <input style="float:left ;width:50%" type="number" disabled step="1" min="0" value="0" max="@Model.stockList[i].qteEstimee" name="qteEntree" class="form-control" />&nbsp;
-                                    <button type="button" class="btn btn-md btn-primary " onclick="Initialisation(this)"  style="float:right">Ajouter</button>
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <form>
+                                        <span hidden>@Model.ProduitList[i].id</span>
+                                        <input style="float:left ;width:50%" type="number" disabled step="1" min="0" value="0" max="@Model.stockList[i].qteEstimee" name="qteEntree" class="form-control" />&nbsp;
+                                        <button type="button" class="btn btn-md btn-primary " onclick="Initialisation(this)" style="float:right">Ajouter</button>
 
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                
 
-
+           
 
 
 
@@ -92,26 +95,7 @@
     <script type="text/javascript">
 
 
-        $("#searchResult").eq(0).hide();
-        function SearchProduit() {
-            var input = document.getElementById("searchBar");
-            var filter = input.value.toUpperCase();
-            var table = document.getElementById("table");
-            var produitCard = table.getElementsByClassName("mainBody");
-            $(".nomProduit").each(function (index) {
-                var produit = $(this).text();
-
-             
-
-                if (produit.toUpperCase().indexOf(filter) > -1) {
-                    this.parents[4].show();
-                } else {
-                    this.parents[4].hide();
-                }
-
-
-            });
-        }
+       
         function Search() {
             // Declare variables
             var input, filter, table, tr, td, i, txtValue;
@@ -128,14 +112,11 @@
                     console.log(txtValue);
                     console.log(txtValue.toUpperCase().indexOf(filter));
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        // tr[i].style.display = "";
-                        table[0][i].style.display=""
-                       // $(".searchHelper").eq(i).siblings().show();
+                        tr[i].style.display = "";
                         
                     } else {
-                        //tr[i].style.display = "none";
-                        table[0][i].style.display = "none";
-                        //$(".searchHelper").eq(i).siblings().hide();
+                        tr[i].style.display = "none";
+                      
                         
                     }
                 }

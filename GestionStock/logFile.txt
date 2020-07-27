@@ -1,0 +1,19 @@
+Nom :Eddrayef || Prenom : Aziz || fonction : administrateur ||    date : 27/07/2020 19:34:54
+Nom :Eddrayef || Prenom : Aziz || fonction : administrateur ||    date : 27/07/2020 19:38:36
+Nom :Boujoujou || Prenom : chafiq || fonction : magasinier ||    date : 27/07/2020 19:38:51
+Nom :Eddrayef || Prenom : Aziz || fonction : administrateur ||    date : 27/07/2020 20:03:51
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:09:52
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:13:36
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:14:19
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:16:14
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:18:07
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:20:14
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:21:38
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:22:17
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:23:24
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:24:19
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:25:46
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:26:36
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:29:29
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:30:50
+Eddrayef ||Aziz || administrateur || 27/07/2020 20:32:03

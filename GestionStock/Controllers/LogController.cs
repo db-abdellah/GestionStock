@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GestionStock.Handlers;
 using GestionStock.Models.Business;
 using GestionStock.Models.Business.Imp;
 using GestionStock.Models.Entities;
@@ -9,27 +10,32 @@ using GestionStock.Models.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 
 namespace GestionStock.Controllers
 {
-    public class HomeController : Controller
+    public class LogController : Controller
     {
-        private static StockBusiness stockBusiness = new StockBusinessImp();
-        [VerifyUserAttribute]
+
+        static Utilisateur utilisateur = new Utilisateur();
+        private IHostEnvironment _env;
+
+        public LogController(IHostEnvironment env)
+        {
+            _env = env;
+
+        }
         public IActionResult Index()
         {
-       
-           
-            return View(GetChefFromCookie());
+            LogModel model = new LogModel();
+            model.util= GetChefFromCookie();
+            model.logList = Log.fileToList(_env);
+            
+            return View(model);
         }
 
-
-
-
-
-        //--------------------------------------------------------------------------------------
-
+        //----------------------------------------------------------------------
         [VerifyUserAttribute]
         private Utilisateur GetChefFromCookie()
         {
@@ -37,9 +43,7 @@ namespace GestionStock.Controllers
 
             return JsonConvert.DeserializeObject<Utilisateur>(jsonResult);
         }
-
-
-        //---------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------
 
         public class VerifyUserAttribute : ActionFilterAttribute
         {

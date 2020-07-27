@@ -11,6 +11,7 @@ namespace GestionStock.Models.Entities
         public int idFournisseur { get; set; }
         public String numero { get; set; }
         public String nomFournisseur { get; set; }
+        public String prenomFournisseur { get; set; }
         public float total { get; set; }
         public String  date { get; set; }
     }

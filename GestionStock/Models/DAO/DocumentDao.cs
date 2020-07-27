@@ -10,5 +10,6 @@ namespace GestionStock.Models.DAO
     {
         List<Document> getAllDocuments();
         void DeleteDocumentById(int idDocument);
+        Document getDocumentById(int id);
     }
 }

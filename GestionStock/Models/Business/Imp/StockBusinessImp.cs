@@ -15,6 +15,16 @@ namespace GestionStock.Models.Business.Imp
             return stockDao.getAllStock();
         }
 
+        public List<Stock> getAllStockAlerts()
+        {
+            return stockDao.getAllStockAlerts();
+        }
+
+        public List<Stock> getAllStockNotifications()
+        {
+            return stockDao.getAllStockNotifications();
+        }
+
         public Stock getStockById(int idStock)
         {
             return stockDao.getStockById( idStock);
