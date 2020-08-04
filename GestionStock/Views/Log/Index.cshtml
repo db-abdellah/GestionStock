@@ -1,0 +1,63 @@
+﻿
+@model GestionStock.Models.Models.LogModel
+@{
+    ViewData["Title"] = "Log Page";
+    ViewData["fonction"] = Model.util.fonction.ToString();
+    String fullName = Model.util.nom + " " + Model.util.prenom;
+    ViewData["nom"] = fullName;
+    ViewData["UserId"] = Model.util.id;
+
+
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="card card-default color-palette-box">
+
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+
+                            <th>
+                                Nom  
+                            </th>
+                            <th>
+                                Prénom 
+                            </th>
+                            <th>
+                                Fonction 
+                            </th>
+                            <th>
+                                Date de login 
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+
+
+                        @for(int i= Model.logList.Count-1; i>=0;i--)
+                        {
+                            <tr>
+                                <td>
+                                    @Model.logList[i].nom
+                                </td>
+                                <td>
+                                    @Model.logList[i].prenom
+                                </td>
+                                <td>
+                                    @Model.logList[i].fonction
+                                </td>
+                                <td>
+                                    @Model.logList[i].date
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
