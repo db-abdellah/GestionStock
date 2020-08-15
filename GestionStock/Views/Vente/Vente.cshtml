@@ -1,0 +1,287 @@
+﻿@model GestionStock.Models.Models.VenteModel;
+
+@{
+    ViewData["Title"] = "Nouvelle Vente";
+    ViewData["fonction"] = Model.utilisateur.fonction;
+    ViewData["UserId"] = Model.utilisateur.id;
+    String fullName = Model.utilisateur.nom.ToString() + " " + Model.utilisateur.prenom.ToString();
+    ViewData["nom"] = fullName;
+
+}
+
+<div class="card card-lightblue">
+    <div class="card-header">
+        <h3 class="card-title">Nouvelle vente</h3>
+
+    </div>
+    <div class="card-body">
+        <div id="ErrorContainer" hidden="hidden">
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" onclick="hideErrorMessage()" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+                Prière de remplir tous les champs
+            </div>
+        </div>
+        <div id="succesMessage" hidden="hidden">
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" onclick="hideSuccessMessage()" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                Votre demande a été bien traitée.
+            </div>
+        </div>
+        <div class="col-md-6 float-left">
+
+
+            <label>Client</label>
+
+            <select class="form-control" id="ClientId">
+                @foreach (GestionStock.Models.Entities.Client item in Model.ClientList)
+                {
+                    <option value="@item.id">@item.Nom @item.prenom</option>
+                }
+            </select>
+            <br />
+
+        </div>
+
+        <div class="col-md-6 float-left">
+            <label>Document</label>
+
+            <input class="form-control " type="text" placeholder="Numéro de document" id="numDocument" />
+            <br />
+
+        </div>
+        <label>Produit</label>
+        <br />
+        <div class="form-check-inline " style="width:100%">
+
+
+
+
+
+            <select class="form-control float-lg-left" id="produitId">
+                @foreach (GestionStock.Models.Entities.Produit item in Model.ProduitList)
+                {
+                    <option value="@item.id">@item.nom</option>
+                }
+            </select>
+            <span>&nbsp;</span>
+
+            <button class="btn btn-info align-self-lg-center" onclick="ajouterProduit()">Ajouter</button>
+        </div>
+        <div>
+            <hr />
+            <div class="table-responsive p-0">
+                <table class="table table-hover text-nowrap" style="text-align:center">
+
+                    <tr>
+                        <th>
+                            Nom du produit
+                        </th>
+                        <th class="align-self-center">
+                            Quantité
+                        </th>
+                        <th class="align-self-center">
+                            Prix unitaire
+                        </th>
+
+                        <th>
+                            Total
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                    <tbody id="container">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div style="text-align: center">
+
+            <h4>Total <span id="totalFacture">0.00</span>DH</h4><br />
+
+
+        </div>
+
+
+
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary float-right" onclick="validerAchat()" id="submitBtn">Valider</button>
+    </div>
+</div>
+
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        //ajout d'un produit
+        function ajouterProduit() {
+            var produitId = $("#produitId").val();
+
+            $.ajax({
+                type: "GET",
+                url: "/Achat/AchatProduit",
+                data: { idProduit: produitId },
+                success: function (data) {
+                    $("#container").append(data);
+
+                },
+                error: function () {
+                    alert("something wrong happened");
+                }
+            });
+        }
+
+        //suppression d'un produit
+        function deleteRow(caller) {
+            var parent = caller.parentNode;
+            parent.parentNode.remove();
+            setTotal();
+
+        }
+
+
+
+        //calcule de facture
+        function calcule(idProduit) {
+
+
+            var totalId = "total";
+            totalId = totalId.concat(idProduit);
+            var prixId = "prix";
+            prixId = prixId.concat(idProduit);
+            var quantiteId = "qte";
+            quantiteId = quantiteId.concat(idProduit);
+
+            var quantite = $('#' + quantiteId).val();
+            var prix = $('#' + prixId).html();
+            var total = quantite * prix
+            total = parseFloat(total).toPrecision(4);
+            $('#' + totalId).html(total);
+            setTotal();
+
+
+
+        }
+
+        //total Refresh
+        function setTotal() {
+            var totalList = document.getElementsByClassName("total");
+            var totalFacture = parseFloat(0);
+            for (var i = 0; i < totalList.length; i++) {
+                var total = parseFloat(totalList.item(i).innerHTML);
+                totalFacture = total + totalFacture;
+
+            }
+            $('#totalFacture').html(totalFacture);
+
+
+
+
+        }
+        //validation d'achat
+        function validerAchat() {
+            document.getElementById("submitBtn").disabled = true;
+            document.getElementById("ErrorContainer").hidden = true;
+
+            if (inputCheck()) {
+                document.getElementById("submitBtn").disabled = false;
+                return;
+            }
+
+
+            saveFacture();
+
+
+        }
+
+        //enregistrement du facture
+        function saveFacture() {
+
+            var totalFacture = document.getElementById("totalFacture").innerHTML;
+            var numDocument = $('#numDocument').val();
+            var ClientId = $('#ClientId').val();
+            $.ajax({
+                type: "POST",
+
+                url: "/Vente/facture",
+                data: { 'totalFacture': totalFacture, 'numDocument': numDocument, 'clientId': ClientId },
+                cache: false,
+
+
+                success: function (result) {
+
+                    saveDetails(result);
+                    console.log(result);
+
+                }
+
+            });
+        }
+
+
+        //enregistrement du details
+        function saveDetails(idFacture) {
+            var idList = document.getElementsByClassName("idProduit");
+            var totalList = document.getElementsByClassName("total");
+            var qteList = document.getElementsByClassName("qte");
+            for (var i = 0; i < totalList.length; i++) {
+                var total = parseFloat(totalList.item(i).innerHTML);
+                var id = parseInt(idList.item(i).innerHTML);
+                var qte = parseInt(qteList.item(i).value);
+
+
+                $.ajax({
+                    type: "POST",
+
+                    url: "/Vente/factureDetails",
+                    data: { 'idProduit': id, 'total': total, "idFacture": idFacture, "quantite": qte },
+                    cache: false,
+
+
+                    success: function (result) {
+                        console.log("details saved");
+                    }
+
+                });
+
+
+            }
+            document.getElementById("succesMessage").hidden = false;
+            $("#container  tr").remove();
+            document.getElementById("submitBtn").disabled = true;
+            $('#numDocument').attr('value', '');
+            $('#totalFacture').html("0.00");
+            document.getElementById('numDocument').value = '';
+        }
+
+        //input check
+
+        function inputCheck() {
+            document.getElementById("succesMessage").hidden = true;
+            var idList = document.getElementsByClassName("idProduit");
+            var numDocument = $('#numDocument').val();
+            var ClientId = $('#ClientId').val();
+            if (idList.length == 0 || numDocument.length == 0 || ClientId.length == 0) {
+
+                document.getElementById("ErrorContainer").hidden = false;
+                return true;
+            }
+        }
+
+
+        function hideErrorMessage() {
+            document.getElementById("ErrorContainer").hidden = true;
+        }
+        function hideSuccessMessage() {
+            document.getElementById("succesMessage").hidden = true;
+        }
+
+    </script>
+}
+
+

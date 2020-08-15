@@ -1,15 +1,16 @@
-﻿@model GestionStock.Models.Entities.Produit
+﻿@model GestionStock.Models.Entities.Client
 @{
-    ViewData["Title"] = "Modification du fournisseur";
+    ViewData["Title"] = "Modification du client";
     ViewData["fonction"] = ViewBag.utilisateur.fonction;
     ViewData["UserId"] = ViewBag.utilisateur.id;
     String fullName = ViewBag.utilisateur.nom.ToString() + " " + ViewBag.utilisateur.prenom.ToString();
     ViewData["nom"] = fullName;
 
 }
+
 <div class="card card-info">
     <div class="card-header">
-        <h3 class="card-title">Modification du produit</h3>
+        <h3 class="card-title">Modification du client</h3>
 
 
     </div>
@@ -22,59 +23,42 @@
             </div>
         </div>
         <div class="col-md-4">
-            <form asp-action="Edit" id="mainForm" enctype="multipart/form-data">
+            <form asp-action="Edit" id="mainForm">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div hidden class="form-group">
-                    <label asp-for="id" class="control-label"></label>
+
                     <input asp-for="id" class="form-control" />
                     <span asp-validation-for="id" class="text-danger"></span>
                 </div>
-
                 <div class="form-group">
-                    <label class="control-label">Nom de produit</label>
-                    <input asp-for="nom" class="form-control" />
-                    <span asp-validation-for="nom" class="text-danger"></span>
+                    <label class="control-label">Nom</label>
+                    <input asp-for="Nom" class="form-control" />
+                    <span asp-validation-for="Nom" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label $ class="control-label">Catégorie</label>
-                    <input asp-for="categorie" class="form-control" />
-                    <span asp-validation-for="categorie" class="text-danger"></span>
+                    <label class="control-label">Prénom</label>
+                    <input asp-for="prenom" class="form-control" />
+                    <span asp-validation-for="prenom" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Prix d'achat</label>
-                    <input asp-for="prixAchat" class="form-control" />
-                    <span asp-validation-for="prixAchat" class="text-danger"></span>
+                    <label class="control-label">Adresse</label>
+                    <input asp-for="adresse" class="form-control" />
+                    <span asp-validation-for="adresse" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Group:</label>
-                    <input asp-for="groupProduit" list="groups" class="form-control" />
-                    <span asp-validation-for="groupProduit" class="text-danger"></span>
-                    <datalist id="groups">
-                        @foreach (String grp in ViewBag.groups)
-                        {
-                            <option value="@grp" />
-                        }
-
-                    </datalist>
-                </div>
-                <div class="form-group">
-                    <label for="photo">Update image:</label>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" accept="image/x-png,image/jpeg,image/jpg" name="file" id="customFile">
-                        <label class="custom-file-label" for="customFile">choisir une image</label>
-                    </div>
-
+                    <label class="control-label">Téléphone</label>
+                    <input asp-for="telephone" class="form-control" />
+                    <span asp-validation-for="telephone" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <input type="button" onclick="SubmitForm()" value="Enregistrer" class="btn btn-primary" />
                 </div>
-
             </form>
-            
         </div>
     </div>
 
 </div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
@@ -101,11 +85,13 @@
 
         function inputCheck() {
             document.getElementById("ErrorContainer").hidden = true;
-            var nom = $("#nom").val();
-            var categorie = $("#categorie").val();
-            var prix = $("#prixAchat").val();
+            var nom = $("#Nom").val();
+            var prenom = $("#prenom").val();
 
-            if (nom.length == 0 || categorie.length == 0 || prix.length == 0) {
+            var adresse = $("#adresse").val();
+            var telephone = $("#telephone").val();
+
+            if (nom.length == 0 || prenom.length == 0 || adresse.length == 0 || telephone.length == 0) {
 
                 document.getElementById("ErrorContainer").hidden = false;
                 $('body').scrollTop(0);
@@ -124,4 +110,5 @@
 
     </script>
 }
+
 

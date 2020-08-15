@@ -28,10 +28,17 @@ namespace GestionStock.Models.Business.Imp
             return produitDao.getProduits();
         }
 
+        public ESModel getProduitsAndAtelierStock()
+        {
+            return produitDao.getProduitsAndAtelierStock();
+        }
+
         public ESModel getProduitsAndStock()
         {
             return produitDao.getProduitsAndStock();
         }
+
+        
 
         public int saveProduit(Produit produit)
         {

@@ -67,9 +67,9 @@
                 <div class="form-group">
                     <label class="control-label">Fonction d'utilisateur:</label>
                     <br />
-                    @Html.RadioButtonFor(model => model.fonction, "operateur", false)   @Html.Label("Operateur")
+                    @Html.RadioButtonFor(model => model.fonction, "operateur", true)   @Html.Label("Operateur")
                     <br />
-                    @Html.RadioButtonFor(model => model.fonction, "magasinier", true)   @Html.Label("Magasinier")
+                    @Html.RadioButtonFor(model => model.fonction, "magasinier", false)   @Html.Label("Magasinier")
                     <br />
                     @Html.RadioButtonFor(model => model.fonction, "administrateur", false)   @Html.Label("Administrateur")
                     <br />

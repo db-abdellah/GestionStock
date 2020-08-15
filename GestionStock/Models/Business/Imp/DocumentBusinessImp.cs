@@ -18,9 +18,14 @@ namespace GestionStock.Models.Business
             documentDao.DeleteDocumentById(idDocument);
         }
 
-        public List<Document> getAllDocuments()
+        public List<Document> getAllAchats()
         {
-            return documentDao.getAllDocuments();
+            return documentDao.getAllAchats();
+        }
+
+        public List<Document> getAllVentes()
+        {
+            return documentDao.getAllVentes();
         }
 
         public Document getDocumentById(int id)

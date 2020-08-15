@@ -51,6 +51,7 @@ namespace GestionStock.Controllers
         {
             Utilisateur util = GetChefFromCookie();
             ViewBag.utilisateur = util;
+            ViewBag.groups = produitBusiness.getProduitsAndAtelierStock().groups;
             return View();
         }
 
@@ -84,6 +85,7 @@ namespace GestionStock.Controllers
             Utilisateur util = GetChefFromCookie();
             ViewBag.utilisateur = util;
             Produit produit = produitBusiness.getProduitById(id);
+            ViewBag.groups = produitBusiness.getProduitsAndAtelierStock().groups;
             return View(produit);
         }
 

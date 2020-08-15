@@ -36,12 +36,36 @@ namespace GestionStock.Models.DAO.Imp
                 connection.Execute(query);
             }
         }
+        public void saveDetailsVente(String total, int idFacture, int idProduit, int qte)
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                String query = $"INSERT INTO achat(idFacture, qte,idProduit, total) VALUES('{idFacture}',{ qte},{idProduit},{ total}); ";
+                connection.Execute(query);
+                query =
+                     $"UPDATE stock  SET QteEstimee = QteEstimee - {qte}  WHERE idProduit = {idProduit} ";
+                connection.Execute(query);
+            }
+        }
 
         public int saveFacture(String totalFacture, string numDocument, int fournisseurId)
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
             {
-                String query = $"INSERT INTO document(numero, idFournisseur	, total,date) VALUES('{numDocument}',{fournisseurId},{totalFacture}, CURRENT_TIMESTAMP); SELECT LAST_INSERT_ID() as id; ";
+                String query = $"INSERT INTO document(numero, idFournisseur	, total,date,type) VALUES('{numDocument}',{fournisseurId},{totalFacture}, CURRENT_TIMESTAMP,'achat'); SELECT LAST_INSERT_ID() as id; ";
+                dynamic result = connection.Query(query).First();
+
+
+                int idProjet = (int)result.id;
+                return idProjet;
+            }
+        }
+
+        public int saveVente(String totalFacture, string numDocument, int fournisseurId)
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                String query = $"INSERT INTO document(numero, idFournisseur	, total,date,type) VALUES('{numDocument}',{fournisseurId},{totalFacture}, CURRENT_TIMESTAMP,'vente'); SELECT LAST_INSERT_ID() as id; ";
                 dynamic result = connection.Query(query).First();
 
 

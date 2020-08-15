@@ -13,46 +13,38 @@ using Newtonsoft.Json;
 
 namespace GestionStock.Controllers
 {
-    public class EntreeController : Controller
+    public class ClientController : Controller
     {
-        private static ProduitBusiness produitBusiness = new ProduitBusinessImp();
-        private static EntreeBusiness entreeBusiness = new EntreeBusinessImp();
-        // GET: EntreeController
+        private ClientBusiness clientBusiness = new ClientBusinessImp();
+
+        // GET: FournisseurController
+        [VerifyUserAttribute]
         public ActionResult Index()
         {
-            ESModel model = produitBusiness.getProduitsAndStock();
-            model.utilisateur = GetChefFromCookie();
+            ClientsModel clients = new ClientsModel();
+            clients.clients = clientBusiness.getClients();
+            clients.utilisateur = GetChefFromCookie();
 
-            return View(model);
-        }
-        public ActionResult sortie()
-        {
-
-            ESModel model = produitBusiness.getProduitsAndAtelierStock();
-            model.utilisateur = GetChefFromCookie();
-
-            return View(model);
+            return View(clients);
         }
 
-        // GET: EntreeController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
 
-        // GET: EntreeController/Create
+        // GET: FournisseurController/Create
         public ActionResult Create()
         {
+            Utilisateur util = GetChefFromCookie();
+            ViewBag.utilisateur = util;
             return View();
         }
 
-        // POST: EntreeController/Create
+        // POST: FournisseurController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Client client)
         {
             try
             {
+                clientBusiness.saveClient(client);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -61,19 +53,34 @@ namespace GestionStock.Controllers
             }
         }
 
-        // GET: EntreeController/Edit/5
+        [VerifyUserAttribute]
+        public ActionResult Details(int id)
+        {
+            ClientModel client = new ClientModel();
+            client.utilisateur = GetChefFromCookie();
+            client.client = clientBusiness.getClientById(id);
+            return View(client);
+        }
+
+        // GET: FournisseurController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Utilisateur util = GetChefFromCookie();
+            ViewBag.utilisateur = util;
+            Client client = clientBusiness.getClientById(id);
+            return View(client);
         }
 
-        // POST: EntreeController/Edit/5
+        // POST: FournisseurController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Client client)
         {
             try
             {
+                Utilisateur util = GetChefFromCookie();
+                ViewBag.utilisateur = util;
+                clientBusiness.updateClient(client);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -82,13 +89,19 @@ namespace GestionStock.Controllers
             }
         }
 
-        // GET: EntreeController/Delete/5
-        public ActionResult Delete(int id)
+        [HttpPost]
+        public JsonResult SupprimerClient(int idClient)
         {
-            return View();
-        }
 
-        // POST: EntreeController/Delete/5
+
+            clientBusiness.DeleteClientById(idClient);
+            return Json("true");
+
+
+
+
+        }
+        // POST: FournisseurController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
@@ -103,31 +116,6 @@ namespace GestionStock.Controllers
             }
         }
 
-        [HttpPost]
-        public JsonResult EntreeAtelier(int idProduit,int qte)
-        {
-
-
-            entreeBusiness.EntreeAtelier(idProduit,qte);
-            return Json("true");
-
-
-
-
-        }
-
-        [HttpPost]
-        public JsonResult SortieAtelier(int idProduit, int qte)
-        {
-
-
-            entreeBusiness.SortieAtelier(idProduit, qte);
-            return Json("true");
-
-
-
-
-        }
 
         //----------------------------------------------------------------------
         [VerifyUserAttribute]
@@ -148,5 +136,6 @@ namespace GestionStock.Controllers
                     filterContext.Result = new RedirectResult(string.Format("/Login"));
             }
         }
+
     }
 }

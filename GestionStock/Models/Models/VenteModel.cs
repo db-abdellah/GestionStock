@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace GestionStock.Models.Models
 {
-    public class AchatModel
+    public class VenteModel
     {
         public Utilisateur utilisateur { get; set; }
-        public List<Fournisseur> fournisseurList { get; set; }
+        public List<Client> ClientList { get; set; }
         public List<Produit> ProduitList { get; set; }
-       
+      
     }
 }

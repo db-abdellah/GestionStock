@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace GestionStock.Models.Models
 {
-    public class HomeModel
+    public class ClientModel
     {
         public Utilisateur utilisateur { get; set; }
-        public List<Stock> stockList { get; set; }
-        public List<Stock> AlertStockList { get; set; }
+        public Client client { get; set; }
     }
 }

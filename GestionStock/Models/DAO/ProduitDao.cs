@@ -15,5 +15,6 @@ namespace GestionStock.Models.DAO
         void updateProduit(Produit produit);
         void DeleteProduitById(int idProduit);
         ESModel getProduitsAndStock();
+        ESModel getProduitsAndAtelierStock();
     }
 }

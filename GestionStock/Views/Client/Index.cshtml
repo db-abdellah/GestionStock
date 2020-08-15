@@ -1,15 +1,16 @@
-﻿@model GestionStock.Models.Models.FournisseursModel;
+﻿
+
+@model GestionStock.Models.Models.ClientsModel;
 
 @{
-    ViewData["Title"] = "List des fournisseurs";
+    ViewData["Title"] = "List des clients";
     ViewData["UserId"] = Model.utilisateur.id;
     ViewData["fonction"] = Model.utilisateur.fonction;
     String fullName = Model.utilisateur.nom.ToString() + " " + Model.utilisateur.prenom.ToString();
     ViewData["nom"] = fullName;
 
 }
-
-@if (Model.fournisseurs.Count == 0)
+@if (Model.clients.Count == 0)
 {
     <div class="container-fluid">
         <div class="card card-default color-palette-box">
@@ -17,10 +18,10 @@
                 <div class="text-center">
                     <br />
                     <br />
-                    <h2>Aucun fournisseur n'est trouvé </h2>
-                    <a class="btn btn-default bg-maroon toastsDefaultMaroon " asp-controller="Fournisseur" asp-action="Create">
+                    <h2>Aucun client n'est trouvé </h2>
+                    <a class="btn btn-default bg-maroon toastsDefaultMaroon " asp-controller="Client" asp-action="Create">
                         <i class="fa fa-plus">
-                        </i>&nbsp;Nouveau fournisseur
+                        </i>&nbsp;Nouveau client
                     </a>
                     <br />
                     <br />
@@ -35,7 +36,7 @@ else
     <div class="card card-primary">
         <div class="card-header">
             <div class="col-md-6 float-left">
-                <h3 class="card-title">List des fournisseurs</h3>
+                <h3 class="card-title">List des clients</h3>
             </div>
             <div class="col-md-6 float-right">
                 <div class="input-group input-group-sm">
@@ -60,13 +61,13 @@ else
                         <th>
                             <a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Fournisseur" asp-action="Create">
                                 <i class="fa fa-plus">
-                                </i>&nbsp;Nouveau fournisseur
+                                </i>&nbsp;Nouveau client
                             </a>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.fournisseurs)
+                    @foreach (var item in Model.clients)
                     {
                         <tr>
 
@@ -78,11 +79,11 @@ else
                                 @Html.DisplayFor(modelItem => item.telephone)
                             </td>
                             <td class="float-right">
-                                <a class="btn btn-success toastsDefaultSuccess" asp-controller="Fournisseur" asp-action="Details" asp-route-id=@item.id>
+                                <a class="btn btn-success toastsDefaultSuccess" asp-controller="Client" asp-action="Details" asp-route-id=@item.id>
                                     <i class="fa fa-info-circle ">
                                     </i>&nbsp; Details
                                 </a>
-                                <a class="btn btn-info toastsDefaultInfo" asp-controller="Fournisseur" asp-action="Edit" asp-route-id=@item.id>
+                                <a class="btn btn-info toastsDefaultInfo" asp-controller="Client" asp-action="Edit" asp-route-id=@item.id>
                                     <i class="fas fa-pencil-alt">
                                     </i>
                                     Modifier
@@ -101,8 +102,8 @@ else
             </table>
         </div>
     </div>
-}
 
+}
 
     @section Scripts
 {
@@ -134,12 +135,12 @@ else
 
             function Delete(id) {
 
-                var result = confirm("Êtes-vous sûr de vouloir supprimer ce fournisseur?");
+                var result = confirm("Êtes-vous sûr de vouloir supprimer ce client?");
                 if (result == true) {
                     $.ajax({
                         type: "POST",
-                        url: "/Fournisseur/SupprimerFournisseur",
-                        data: { 'idFournisseur': id },
+                        url: "/Client/SupprimerClient",
+                        data: { 'idClient': id },
                         cache: false,
 
 

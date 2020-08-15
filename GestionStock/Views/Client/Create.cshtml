@@ -1,0 +1,113 @@
+﻿@model GestionStock.Models.Entities.Client
+
+@{
+    ViewData["Title"] = "List des clients";
+    ViewData["fonction"] = ViewBag.utilisateur.fonction;
+    ViewData["UserId"] = ViewBag.utilisateur.id;
+    String fullName = ViewBag.utilisateur.nom.ToString() + " " + ViewBag.utilisateur.prenom.ToString();
+    ViewData["nom"] = fullName;
+
+}
+
+<div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Nouveau client</h3>
+
+
+    </div>
+    <div class="card-body ">
+        <div id="ErrorContainer" hidden="hidden">
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" onclick="hideErrorMessage()" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+                Prière de remplir tous les champs
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <form asp-action="Create" class="form-horizontal" id="mainForm">
+
+                <div class="form-group">
+                    <label class="control-label">Nom</label>
+                    <input asp-for="Nom" class="form-control" />
+                    <span asp-validation-for="Nom" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Prénom</label>
+                    <input asp-for="prenom" class="form-control" />
+                    <span asp-validation-for="prenom" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Adresse</label>
+                    <input asp-for="adresse" class="form-control" />
+                    <span asp-validation-for="adresse" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Téléphone</label>
+                    <input asp-for="telephone" class="form-control" />
+                    <span asp-validation-for="telephone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="button" onclick="SubmitForm()" value="Valider" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+
+
+    <script type="text/javascript">
+
+        var MyRes = false;
+
+        function SubmitForm() {
+            hideErrorMessage();
+
+            if (inputCheck()) {
+                $("#mainForm").submit();
+
+
+            }
+
+
+
+
+        }
+
+        function inputCheck() {
+            document.getElementById("ErrorContainer").hidden = true;
+            var nom = $("#Nom").val();
+            var prenom = $("#prenom").val();
+
+            var adresse = $("#adresse").val();
+            var telephone = $("#telephone").val();
+
+            if (nom.length == 0 || prenom.length == 0 || adresse.length == 0 || telephone.length == 0) {
+
+                document.getElementById("ErrorContainer").hidden = false;
+                $('body').scrollTop(0);
+                return false;
+            }
+            return true;
+        }
+
+
+
+        function hideErrorMessage() {
+
+            document.getElementById("ErrorContainer").hidden = true;
+        }
+
+
+    </script>
+}
+

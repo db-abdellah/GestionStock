@@ -1,6 +1,6 @@
 ﻿@model List<GestionStock.Models.Entities.Document>
 @{
-    ViewData["Title"] = "List des achats";
+    ViewData["Title"] = "List des vents";
     ViewData["fonction"] = ViewBag.utilisateur.fonction;
     ViewData["UserId"] = ViewBag.utilisateur.id;
     String fullName = ViewBag.utilisateur.nom.ToString() + " " + ViewBag.utilisateur.prenom.ToString();
@@ -17,9 +17,9 @@
                     <br />
                     <br />
                     <h2>Aucun document n'est trouvé </h2>
-                    <a class="btn btn-default bg-maroon toastsDefaultMaroon " asp-controller="Achat" asp-action="Achat">
+                    <a class="btn btn-default bg-maroon toastsDefaultMaroon " asp-controller="Vente" asp-action="Vente">
                         <i class="fa fa-plus">
-                        </i>&nbsp;Nouvelle achat
+                        </i>&nbsp;Nouvelle Vente
                     </a>
                     <br />
                     <br />
@@ -58,13 +58,13 @@ else
                             Nom de fournisseur
                         </th>
                         <th>
-                            Total de .....
+                            Total de document
                         </th>
                         <th>
-                            Date de......
+                            Date de document
                         </th>
                         <th>
-                            <a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Achat" asp-action="Achat">
+                            <a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Vente" asp-action="Vente">
                                 <i class="fa fa-plus">
                                 </i>&nbsp;Nouvelle achat
                             </a>
@@ -91,7 +91,7 @@ else
                                 @Html.DisplayFor(modelItem => item.date)
                             </td>
                             <td class="float-right">
-                                <a class="btn btn-success toastsDefaultSuccess" asp-controller="Achat" asp-action="Details" asp-route-id=@item.id>
+                                <a class="btn btn-success toastsDefaultSuccess" asp-controller="Vente" asp-action="Details" asp-route-id=@item.id>
                                     <i class="fa fa-info-circle ">
                                     </i>&nbsp; Details
                                 </a>
@@ -144,7 +144,7 @@ else
 
         function Delete(id) {
 
-            var result = confirm("Êtes-vous sûr de vouloir supprimer ce projet?");
+            var result = confirm("Êtes-vous sûr de vouloir supprimer ce document?");
             if (result == true) {
                 $.ajax({
                     type: "POST",

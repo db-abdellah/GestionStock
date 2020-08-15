@@ -8,8 +8,9 @@ namespace GestionStock.Models.Business
 {
     interface DocumentBusiness
     {
-        List<Document> getAllDocuments();
+        List<Document> getAllAchats();
         void DeleteDocumentById(int idProjet);
         Document getDocumentById(int id);
+        List<Document> getAllVentes();
     }
 }

@@ -13,35 +13,39 @@ using Newtonsoft.Json;
 
 namespace GestionStock.Controllers
 {
-    public class AchatController : Controller
+    public class VenteController : Controller
     {
-        private static FournisseurBusiness fournisseurBusiness = new FournisseurBusinessImp();
-        private static ProduitBusiness produitBusiness= new ProduitBusinessImp();
-        private static StockBusiness stockBusiness= new StockBusinessImp();
-        private static AchatBusiness achatBusiness= new AchatBusinessImp();
+        private static ClientBusiness clientBusiness = new ClientBusinessImp();
+        private static ProduitBusiness produitBusiness = new ProduitBusinessImp();
+        private static StockBusiness stockBusiness = new StockBusinessImp();
+        private static AchatBusiness achatBusiness = new AchatBusinessImp();
         private static DocumentBusiness documentBusiness = new DocumentBusinessImp();
-        // GET: AchatController
+
+
+
+        // GET: VenteController
         public ActionResult Index()
         {
-            List<Document> documentList = documentBusiness.getAllAchats();
+            List<Document> documentList = documentBusiness.getAllVentes();
             Utilisateur util = GetChefFromCookie();
             ViewBag.utilisateur = util;
             return View(documentList);
-        }
-        public ActionResult Achat()
-        {
-            AchatModel model = new AchatModel();
-            model.utilisateur = GetChefFromCookie();
-            model.fournisseurList = fournisseurBusiness.getFournisseurs();
-            model.ProduitList = produitBusiness.getProduits();
            
+        }
+        public ActionResult Vente()
+        {
+            VenteModel model = new VenteModel();
+            model.utilisateur = GetChefFromCookie();
+            model.ClientList = clientBusiness.getClients();
+            model.ProduitList = produitBusiness.getProduits();
+
             return View(model);
         }
 
         [HttpPost]
-        public JsonResult facture(string totalFacture,string numDocument,int fournisseurId)
+        public JsonResult facture(string totalFacture, string numDocument, int clientId)
         {
-            int idFacture = achatBusiness.saveFacture(totalFacture, numDocument, fournisseurId);
+            int idFacture = achatBusiness.saveVente(totalFacture, numDocument, clientId);
             return Json(idFacture);
 
 
@@ -49,18 +53,19 @@ namespace GestionStock.Controllers
         [HttpPost]
         public JsonResult factureDetails(String total, int idFacture, int idProduit, int quantite)
         {
-            achatBusiness.saveDetails(total, idFacture, idProduit, quantite);
+            achatBusiness.saveDetailsVente(total, idFacture, idProduit, quantite);
             return Json("true");
 
 
         }
+
 
         // GET: AchatController/Details/5
         public ActionResult Details(int id)
         {
             FactureModel model = new FactureModel();
             model.utilisateur = GetChefFromCookie();
-            model.document =documentBusiness.getDocumentById(id);
+            model.document = documentBusiness.getDocumentById(id);
             model.achatList = achatBusiness.getAchatByDocumentId(id);
             return View(model);
         }
@@ -69,7 +74,7 @@ namespace GestionStock.Controllers
         public ActionResult AchatProduit(int idProduit)
         {
             AchatProduitModel model = new AchatProduitModel();
-            model.produit= produitBusiness.getProduitById(idProduit);
+            model.produit = produitBusiness.getProduitById(idProduit);
             model.stock = stockBusiness.getStockByProduitId(idProduit);
             return PartialView(model);
         }

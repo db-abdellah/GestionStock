@@ -8,8 +8,9 @@ namespace GestionStock.Models.DAO
 {
     interface DocumentDao
     {
-        List<Document> getAllDocuments();
+        List<Document> getAllAchats();
         void DeleteDocumentById(int idDocument);
         Document getDocumentById(int id);
+         List<Document> getAllVentes();
     }
 }

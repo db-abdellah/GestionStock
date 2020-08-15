@@ -22,9 +22,19 @@ namespace GestionStock.Models.Business.Imp
             achatDao.saveDetails( total,  idFacture,  idProduit,qte);
         }
 
+        public void saveDetailsVente(string total, int idFacture, int idProduit, int quantite)
+        {
+            achatDao.saveDetailsVente(total, idFacture, idProduit, quantite);
+        }
+
         public int saveFacture(string totalFacture, string numDocument, int fournisseurId)
         {
             return achatDao.saveFacture(totalFacture, numDocument, fournisseurId);
+        }
+
+        public int saveVente(string totalFacture, string numDocument, int fournisseurId)
+        {
+            return achatDao.saveVente(totalFacture, numDocument, fournisseurId);
         }
     }
 }

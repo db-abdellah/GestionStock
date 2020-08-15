@@ -96,16 +96,17 @@
                     </div>
                 </li>
                 <li>
-                     <a class="btn btn-block btn-outline-danger"  asp-controller="Login" asp-action="Logout">Se déconnecter </a>
+                    <a class="btn btn-block btn-outline-danger" asp-controller="Login" asp-action="Logout">Se déconnecter </a>
                 </li>
             </ul>
         </nav>
         <!-- /.navbar -->
         <!-- Main Sidebar Container -->
+        
         <aside class="main-sidebar elevation-4 sidebar-light-info">
             <!-- Brand Logo -->
-            <a  class="brand-link">
-                <img  src="~/login/img/téléchargement.jfif" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <a class="brand-link">
+                <img src="~/login/img/téléchargement.jfif" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Casa Bache</span>
             </a>
 
@@ -114,7 +115,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="@userImage" class="img-circle elevation-2"  onerror="this.src='/images/icon.png' ">
+                        <img src="@userImage" class="img-circle elevation-2" onerror="this.src='/images/icon.png' ">
                     </div>
                     <div class="info">
                         <a asp-controller="Home" asp-action="Index" class="d-block">@ViewData["nom"]</a>
@@ -125,7 +126,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+                    with font-awesome or any other icon font library -->
 
 
                         <li class="nav-item has-treeview">
@@ -140,7 +141,7 @@
                             <a asp-controller="Entree" asp-action="Sortie" class="nav-link">
                                 <i class="nav-icon fa fa-reply"></i>
                                 <p>
-                                    Retour Atielier
+                                    Retour Atelier
                                 </p>
                             </a>
                         </li>
@@ -163,8 +164,16 @@
                                 </a>
                             </li>
                             <li class="nav-item has-treeview">
+                                <a asp-controller="Client" asp-action="Index" class="nav-link">
+                                    <i class="nav-icon fa fa-users"></i>
+                                    <p>
+                                        Gestion Clients
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item has-treeview">
                                 <a asp-controller="Produit" asp-action="Index" class="nav-link">
-                                    <i class="nav-icon fa fa-cart-plus"></i>
+                                    <i class="nav-icon fa fa-clone "></i>
                                     <p>
                                         Gestion Produits
 
@@ -173,9 +182,17 @@
                             </li>
                             <li class="nav-item has-treeview">
                                 <a asp-controller="Achat" asp-action="Index" class="nav-link">
-                                    <i class="nav-icon fa fa-clone"></i>
+                                    <i class="nav-icon  fa fa-cart-plus"></i>
                                     <p>
-                                        Gestion des documents
+                                        Gestion des achats
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item has-treeview">
+                                <a asp-controller="Vente" asp-action="Index" class="nav-link">
+                                    <i class="nav-icon fa fa-shopping-basket"></i>
+                                    <p>
+                                        Gestion des ventes
                                     </p>
                                 </a>
                             </li>
@@ -217,7 +234,7 @@
                         <div class="col-sm-6">
                             <h1 class="m-0 text-dark"></h1>
                         </div><!-- /.col -->
-                     
+
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -231,8 +248,6 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        
-
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->

@@ -39,6 +39,8 @@ namespace GestionStock.Handlers
             }
         }
 
+     
+
         public static List<Utilisateur> fileToList(IHostEnvironment env)
         {
             List<Utilisateur> utilisateurs = new List<Utilisateur>();

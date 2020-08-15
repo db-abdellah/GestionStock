@@ -44,8 +44,19 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label">Quantité estimé:</label>
-                    <input asp-for="qteEstime" class="form-control" />
+                    <input asp-for="qteEstime" min="0" class="form-control" />
                     <span asp-validation-for="qteEstime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Group:</label>
+                    <input asp-for="groupProduit" list="groups" class="form-control" />
+                    <span asp-validation-for="groupProduit" class="text-danger"></span>
+                    <datalist id="groups">
+                        @foreach(String grp in ViewBag.groups) { 
+                        <option value="@grp" />
+                        }
+                       
+                    </datalist>
                 </div>
                 <div class="form-group">
                     <label for="photo">Image:</label>

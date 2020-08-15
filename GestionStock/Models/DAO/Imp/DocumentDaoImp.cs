@@ -26,11 +26,23 @@ namespace GestionStock.Models.DAO.Imp
             }
         }
 
-        public List<Document> getAllDocuments()
+        public List<Document> getAllAchats()
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
             {
-                String query = $"SELECT document.id,document.idFournisseur,document.numero,fournisseur.nom as nomFournisseur,document.total,document.date FROM document,fournisseur WHERE document.idFournisseur = fournisseur.id ";
+                String query = $"SELECT document.id,document.idFournisseur,document.numero,fournisseur.nom as nomFournisseur,document.total,document.date FROM document,fournisseur WHERE document.idFournisseur = fournisseur.id AND type='achat' ";
+                List<Document> documents = connection.Query<Document>(query).ToList();
+
+
+
+                return documents;
+            }
+        }
+        public List<Document> getAllVentes()
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                String query = $"SELECT document.id,document.idFournisseur,document.numero,fournisseur.nom as nomFournisseur,document.total,document.date FROM document,fournisseur WHERE document.idFournisseur = fournisseur.id AND type='vente' ";
                 List<Document> documents = connection.Query<Document>(query).ToList();
 
 

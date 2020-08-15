@@ -11,5 +11,7 @@ namespace GestionStock.Models.Models
         public Utilisateur utilisateur { get; set; }
         public List<Stock> stockList { get; set; }
         public List<Produit> ProduitList { get; set; }
+
+        public List<String> groups { get; set; }
     }
 }

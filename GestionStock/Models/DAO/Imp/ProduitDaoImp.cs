@@ -62,6 +62,9 @@ namespace GestionStock.Models.DAO.Imp
                 query = $"SELECT * FROM `stock` Order by idProduit; ";
                 model.stockList  = connection.Query<Stock>(query).ToList();
 
+                query = $"SELECT DISTINCT groupProduit FROM `produit`  Order by id ";
+                model.groups = connection.Query<String>(query).ToList();
+
                 return model;
                  
               
@@ -72,12 +75,55 @@ namespace GestionStock.Models.DAO.Imp
             }
         }
 
+        public ESModel getProduitsAndAtelierStock()
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+               
+               
+                ESModel model = new ESModel();
+                model.stockList = new List<Stock>();
+                List<ES> esList = new List<ES>();
+                String query = $"SELECT * FROM `produit` ORDER BY id ";
+                model.ProduitList = connection.Query<Produit>(query).ToList();
+                query = $"SELECT * FROM `es`  ";
+                esList = connection.Query<ES>(query).ToList();
+                foreach (Produit item in model.ProduitList) {
+                    Stock stock = new Stock();
+                    stock.qteEstimee = 0;
+                   foreach(ES es in esList)
+                    {
+                        if (es.idProduit == item.id)
+                        {
+                            if (es.type == 'S')
+                                stock.qteEstimee = stock.qteEstimee - es.qte;
+                             if (es.type == 'E')
+                                stock.qteEstimee = stock.qteEstimee + es.qte;
+                            
+                        }
+                   }
+                    model.stockList.Add(stock);
+                }
+                query = $"SELECT DISTINCT groupProduit FROM `produit`  Order by id ";
+                model.groups = connection.Query<String>(query).ToList();
+
+                return model;
+
+
+
+
+
+
+            }
+        }
+
+
         public int saveProduit(Produit produit)
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
             {
                 String query =
-                    $"INSERT INTO produit(nom,prixAchat,categorie) VALUES('{produit.nom}','{produit.prixAchat} ','{produit.categorie}'); SELECT LAST_INSERT_ID() as id;";
+                    $"INSERT INTO produit(nom,prixAchat,categorie,groupProduit) VALUES('{produit.nom}','{produit.prixAchat} ','{produit.categorie}','{produit.groupProduit}'); SELECT LAST_INSERT_ID() as id;";
                
                 dynamic result = connection.Query(query).First();
 
