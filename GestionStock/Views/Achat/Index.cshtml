@@ -90,18 +90,19 @@ else
                             <td>
                                 @Html.DisplayFor(modelItem => item.date)
                             </td>
-                            <td class="float-right">
-                                <a class="btn btn-success toastsDefaultSuccess" asp-controller="Achat" asp-action="Details" asp-route-id=@item.id>
-                                    <i class="fa fa-info-circle ">
-                                    </i>&nbsp; Details
-                                </a>
-                                <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">
-                                    <i class="fas fa-trash">
-                                    </i>
-                                    Supprimer
-                                </button>
+                            <td>
+                                <div class="float-right">
+                                    <a class="btn btn-success toastsDefaultSuccess" asp-controller="Achat" asp-action="Details" asp-route-id=@item.id>
+                                        <i class="fa fa-info-circle ">
+                                        </i>&nbsp; Details
+                                    </a>
+                                    <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        Supprimer
+                                    </button>
 
-
+                                </div>
                             </td>
                         </tr>
                     }

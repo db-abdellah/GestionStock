@@ -77,22 +77,23 @@ else
                             <td>
                                 @Html.DisplayFor(modelItem => item.telephone)
                             </td>
-                            <td class="float-right">
-                                <a class="btn btn-success toastsDefaultSuccess" asp-controller="Fournisseur" asp-action="Details" asp-route-id=@item.id>
-                                    <i class="fa fa-info-circle ">
-                                    </i>&nbsp; Details
-                                </a>
-                                <a class="btn btn-info toastsDefaultInfo" asp-controller="Fournisseur" asp-action="Edit" asp-route-id=@item.id>
-                                    <i class="fas fa-pencil-alt">
-                                    </i>
-                                    Modifier
-                                </a>
-                                <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">
-                                    <i class="fas fa-trash">
-                                    </i>
-                                    Supprimer
-                                </button>
-
+                            <td >
+                                <div class="float-right">
+                                    <a class="btn btn-success toastsDefaultSuccess" asp-controller="Fournisseur" asp-action="Details" asp-route-id=@item.id>
+                                        <i class="fa fa-info-circle ">
+                                        </i>&nbsp; Details
+                                    </a>
+                                    <a class="btn btn-info toastsDefaultInfo" asp-controller="Fournisseur" asp-action="Edit" asp-route-id=@item.id>
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Modifier
+                                    </a>
+                                    <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        Supprimer
+                                    </button>
+                                </div>
 
                             </td>
                         </tr>
