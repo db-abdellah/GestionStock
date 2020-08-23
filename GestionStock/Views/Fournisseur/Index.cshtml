@@ -1,7 +1,7 @@
 ﻿@model GestionStock.Models.Models.FournisseursModel;
 
 @{
-    ViewData["Title"] = "List des fournisseurs";
+    ViewData["Title"] = "Liste des fournisseurs";
     ViewData["UserId"] = Model.utilisateur.id;
     ViewData["fonction"] = Model.utilisateur.fonction;
     String fullName = Model.utilisateur.nom.ToString() + " " + Model.utilisateur.prenom.ToString();
@@ -39,7 +39,7 @@ else
             </div>
             <div class="col-md-6 float-right">
                 <div class="input-group input-group-sm">
-                    <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="search" onkeyup="Search()" />
+                    <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="Rechercher" onkeyup="Search()" />
                 </div>
             </div>
 

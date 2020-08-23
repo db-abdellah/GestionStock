@@ -22,7 +22,7 @@
 
             <ul class="list-group list-group-unbordered mb-3">
                 <li class="list-group-item">
-                    <b>Id de produit :</b> <a class="float-right"> @Html.DisplayFor(model => model.produit.id)</a>
+                    <b>Id produit :</b> <a class="float-right"> @Html.DisplayFor(model => model.produit.id)</a>
                 </li>
                 <li class="list-group-item">
                     <b>Nom :</b> <a class="float-right">@Html.DisplayFor(model => model.produit.nom)</a>
@@ -30,15 +30,28 @@
                 <li class="list-group-item">
                     <b> Catégorie :</b> <a class="float-right">@Html.DisplayFor(model => model.produit.categorie)</a>
                 </li>
-                <li class="list-group-item">
-                    <b>Group :</b> <a class="float-right">@Html.DisplayFor(model => model.produit.groupProduit)</a>
-                </li>
+                @if (Model.produit.groupProduit == "Null")
+                {
+                    <li class="list-group-item">
+                        <b>Type :</b> <a class="float-right">Produit en unité</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="list-group-item">
+                        <b>Type :</b> <a class="float-right">Produit mesurable</a>
+                    </li>
+                }
+
                 <li class="list-group-item">
                     <b>Prix d'achat :</b> <a class="float-right">@Html.DisplayFor(model => model.produit.prixAchat) DH</a>
                 </li>
+                <li class="list-group-item">
+                    <b>Prix vente :</b> <a class="float-right">@Html.DisplayFor(model => model.produit.prixVente) DH</a>
+                </li>
             </ul>
 
-            <a asp-controller="Produit" asp-action="Index"  class="btn btn-primary btn-block"><b>List des produit</b></a>
+            <a asp-controller="Produit" asp-action="Index"  class="btn btn-primary btn-block"><b>Liste des produit</b></a>
         </div>
        
     </div>

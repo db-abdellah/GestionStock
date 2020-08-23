@@ -82,7 +82,7 @@ namespace GestionStock.Models.DAO.Imp
             {
                 String query =
                     $"INSERT INTO utilisateur(nom,prenom,login,password,adresse,telephone,fonction,date) VALUES('{util.nom}','{util.prenom} ','{util.login}','{util.password}', '{util.adresse}', '{util.telephone}', '{util.fonction}', CURRENT_TIMESTAMP); SELECT LAST_INSERT_ID() as id; ";
-                connection.Execute(query);
+                
 
                 dynamic result = connection.Query(query).First();
 

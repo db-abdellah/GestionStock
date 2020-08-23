@@ -83,7 +83,7 @@ namespace GestionStock.Controllers
             return View(model);
         }
 
-        
+        [VerifyUserAttribute]
         // Partial View 
         public ActionResult AchatProduit(int idProduit)
         {
@@ -92,7 +92,15 @@ namespace GestionStock.Controllers
             model.stock = stockBusiness.getStockByProduitId(idProduit);
             return PartialView(model);
         }
-
+        [VerifyUserAttribute]
+        // Partial View 
+        public ActionResult VenteProduit(int idProduit)
+        {
+            AchatProduitModel model = new AchatProduitModel();
+            model.produit = produitBusiness.getProduitById(idProduit);
+            model.stock = stockBusiness.getStockByProduitId(idProduit);
+            return PartialView(model);
+        }
         [VerifyUserAttribute]
         // POST: AchatController/Create
         [HttpPost]

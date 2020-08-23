@@ -224,3 +224,18 @@ Eddrayef ||Aziz || administrateur || 23/08/2020 19:25:59
 Eddrayef ||Aziz || administrateur || 23/08/2020 19:27:29
 yacoubi ||Ahmed || operateur || 23/08/2020 19:28:28
 Boujoujou ||chafiq || magasinier || 23/08/2020 19:30:24
+Eddrayef ||Aziz || administrateur || 23/08/2020 23:42:16
+aaa ||aaa  ||  || 23/08/2020 23:59:03
+Eddrayef ||Aziz || administrateur || 23/08/2020 23:59:10
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:05:41
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:06:33
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:11:37
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:21:52
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:23:58
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:24:30
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:25:56
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:38:55
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:44:36
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:45:37
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:48:56
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:50:35

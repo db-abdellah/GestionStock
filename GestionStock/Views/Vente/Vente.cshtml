@@ -82,7 +82,7 @@
                             Quantité
                         </th>
                         <th class="align-self-center">
-                            Prix unitaire
+                            Prix vente
                         </th>
 
                         <th>
@@ -124,7 +124,7 @@
 
             $.ajax({
                 type: "GET",
-                url: "/Achat/AchatProduit",
+                url: "/Achat/VenteProduit",
                 data: { idProduit: produitId },
                 success: function (data) {
                     $("#container").append(data);

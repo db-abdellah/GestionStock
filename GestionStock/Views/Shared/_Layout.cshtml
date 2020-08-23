@@ -43,7 +43,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../login/index" class="nav-link">Home</a>
+                    <a href="../login/index" class="nav-link">Acceuil</a>
                 </li>
 
             </ul>
@@ -69,16 +69,16 @@
 
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">@alerts.Count Notifications</span>
+                        <span class="dropdown-item dropdown-header">@alerts.Count Alertes</span>
 
                         @foreach (GestionStock.Models.Entities.Stock stock in alerts)
-                        {
+                         {
                             <div class="dropdown-divider"></div>
                             <a asp-controller="Produit" asp-action="Details" asp-route-id=@stock.idProduit class="dropdown-item">
                                 <h6>@stock.nomProduit</h6>
                                 <i class="fas fa-envelope mr-2"></i> Quantité en stock : @stock.qteEstimee
                             </a>
-                        }
+                         }
 
                     </div>
                 </li>
@@ -164,7 +164,7 @@
                             <a asp-controller="Vente" asp-action="Index" class="nav-link">
                                 <i class="nav-icon fa fa-shopping-basket"></i>
                                 <p>
-                                    Gestion des ventes
+                                    Point de vente
                                 </p>
                             </a>
                         </li>

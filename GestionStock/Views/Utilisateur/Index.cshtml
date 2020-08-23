@@ -1,7 +1,7 @@
 ﻿@model GestionStock.Models.Models.UtilisateursModel;
 
 @{
-    ViewData["Title"] = "List des fournisseurs";
+    ViewData["Title"] = "Liste des utilisateurs";
     ViewData["fonction"] = Model.utilisateur.fonction;
     ViewData["UserId"] = Model.utilisateur.id;
 
@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-6 float-right">
             <div class="input-group input-group-sm">
-                <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="search" onkeyup="Search()" />
+                <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="Rechercher" onkeyup="Search()" />
             </div>
         </div>
 

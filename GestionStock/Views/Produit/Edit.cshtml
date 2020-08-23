@@ -46,7 +46,12 @@
                     <span asp-validation-for="prixAchat" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Group:</label>
+                    <label class="control-label">Prix vente</label>
+                    <input asp-for="prixVente" class="form-control" />
+                    <span asp-validation-for="prixVente" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Type:</label>
                     <input asp-for="groupProduit" list="groups" class="form-control" />
                     <span asp-validation-for="groupProduit" class="text-danger"></span>
                     <datalist id="groups">

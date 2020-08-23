@@ -123,7 +123,7 @@ namespace GestionStock.Models.DAO.Imp
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
             {
                 String query =
-                    $"INSERT INTO produit(nom,prixAchat,categorie,groupProduit) VALUES('{produit.nom}','{produit.prixAchat} ','{produit.categorie}','{produit.groupProduit}'); SELECT LAST_INSERT_ID() as id;";
+                    $"INSERT INTO produit(nom,prixAchat,prixVente,categorie,groupProduit) VALUES('{produit.nom}','{produit.prixAchat} ','{produit.prixVente}','{produit.categorie}','{produit.groupProduit}'); SELECT LAST_INSERT_ID() as id;";
                
                 dynamic result = connection.Query(query).First();
 
@@ -144,7 +144,7 @@ namespace GestionStock.Models.DAO.Imp
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
             {
                 String query =
-                    $"UPDATE produit  SET nom = '{produit.nom}', categorie = '{produit.categorie}',prixAchat= '{produit.prixAchat}' WHERE id = {produit.id} ";
+                    $"UPDATE produit  SET nom = '{produit.nom}', categorie = '{produit.categorie}',prixAchat= '{produit.prixAchat}',prixVente= '{produit.prixVente}' WHERE id = {produit.id} ";
                 connection.Execute(query);
 
 

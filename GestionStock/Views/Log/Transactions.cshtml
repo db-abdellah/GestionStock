@@ -1,7 +1,7 @@
 ﻿
 @model GestionStock.Models.Models.TransactionListModel
 @{
-    ViewData["Title"] = "Log Page";
+    ViewData["Title"] = "Transaction utilisateur";
     ViewData["fonction"] = Model.util.fonction.ToString();
     String fullName = Model.util.nom + " " + Model.util.prenom;
     ViewData["nom"] = fullName;
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-md-6 float-right">
                     <div class="input-group input-group-sm">
-                        <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="search" onkeyup="Search()" />
+                        <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="Rechercher" onkeyup="Search()" />
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                                 Fonction
                             </th>
                             <th>
-                                Date de Transaction
+                                Date Transaction
                             </th>
                             <th>
                                Transaction

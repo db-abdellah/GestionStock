@@ -128,7 +128,7 @@ namespace GestionStock.Controllers
 
 
             entreeBusiness.EntreeAtelier(idProduit,qte);
-            Log.TransactionsWriter(_env, GetChefFromCookie(), "Entrée produit :"+idProduit+" Qté: "+qte);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Entrée produit id:"+idProduit+"   Qté: "+qte);
             return Json("true");
 
 
@@ -143,7 +143,7 @@ namespace GestionStock.Controllers
 
 
             entreeBusiness.SortieAtelier(idProduit, qte);
-            Log.TransactionsWriter(_env, GetChefFromCookie(), "Sortie produit :" + idProduit + "Qté: " + qte);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Sortie produit id:" + idProduit + "  Qté: " + qte);
             return Json("true");
 
 

@@ -66,13 +66,13 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label">Fonction d'utilisateur:</label>
-                    <br />
-                    @Html.RadioButtonFor(model => model.fonction, "operateur", true)   @Html.Label("Operateur")
-                    <br />
-                    @Html.RadioButtonFor(model => model.fonction, "magasinier", false)   @Html.Label("Magasinier")
-                    <br />
-                    @Html.RadioButtonFor(model => model.fonction, "administrateur", false)   @Html.Label("Administrateur")
-                    <br />
+                    <br>
+                    <input id="fonction" name="fonction" type="radio" value="operateur" checked="checked">   <label for="Operateur">Operateur</label>
+                    <br>
+                    <input id="fonction" name="fonction" type="radio" value="magasinier">   <label for="Magasinier">Magasinier</label>
+                    <br>
+                    <input id="fonction" name="fonction" type="radio" value="administrateur">   <label for="Administrateur">Administrateur</label>
+                    <br>
                 </div>
                 <div class="form-group">
                     <label for="photo">Image:</label>

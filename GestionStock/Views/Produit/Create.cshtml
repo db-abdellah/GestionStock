@@ -38,6 +38,11 @@
                     <span asp-validation-for="prixAchat" class="text-danger"></span>
                 </div>
                 <div class="form-group">
+                    <label class="control-label">Prix Vente:</label>
+                    <input asp-for="prixVente" type="number" step="0.1" min="0.00" class="form-control" />
+                    <span asp-validation-for="prixVente" class="text-danger"></span>
+                </div>
+                <div class="form-group">
                     <label class="control-label">Catégorie:</label>
                     <input asp-for="categorie" class="form-control" />
                     <span asp-validation-for="categorie" class="text-danger"></span>
@@ -52,24 +57,25 @@
                     <input asp-for="groupProduit" value="Null" list="groups" class="form-control" />
                     <span asp-validation-for="groupProduit" class="text-danger"></span>
                     <datalist id="groups">
-                        @foreach(String grp in ViewBag.groups) { 
-                        <option value="@grp" />
+                        @foreach (String grp in ViewBag.groups)
+                        {
+                            <option value="@grp" />
                         }
-                       
+
                     </datalist>
                 </div>
                 <div class="form-group">
                     <label for="photo">Image:</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg"  name="file" id="customFile">
+                        <input type="file" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" name="file" id="customFile">
                         <label class="custom-file-label" for="customFile">choisir une image</label>
                     </div>
-                    
+
                 </div>
                 <div class="form-group">
                     <input type="button" onclick="SubmitForm()" value="Valider" class="btn btn-primary" />
                 </div>
-                
+
             </form>
             
         </div>

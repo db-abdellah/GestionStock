@@ -8,3 +8,13 @@ Eddrayef ||Aziz || administrateur || 20/08/2020 18:50:30 || Creation Produit : t
 Eddrayef ||Aziz || administrateur || 23/08/2020 16:48:12 || Entrée produit :1 Qté: 4
 Eddrayef ||Aziz || administrateur || 23/08/2020 16:50:06 || Nouvelle vente: HEZZZZO
 yacoubi ||Ahmed || operateur || 23/08/2020 18:56:04 || Nouvelle vente: hello
+Eddrayef ||Aziz || administrateur || 23/08/2020 23:46:23 || Entrée produit :1 Qté: 4
+Eddrayef ||Aziz || administrateur || 23/08/2020 23:46:31 || Sortie produit :1Qté: 3
+Eddrayef ||Aziz || administrateur || 23/08/2020 23:57:21 || Nouveau utlisateur : rgrgergerg
+Eddrayef ||Aziz || administrateur || 23/08/2020 23:57:40 || Nouveau utlisateur : aaaaaa
+Eddrayef ||Aziz || administrateur || 23/08/2020 23:58:01 || Nouveau utlisateur : aaaaaaaaaaaaaaaaaaa
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:01:46 || Creation du fournisseur
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:02:27 || Creation du client
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:03:12 || Modification du client
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:22:22 || Nouveau utlisateur : testtest
+Eddrayef ||Aziz || administrateur || 24/08/2020 00:24:49 || Nouveau utlisateur : hezohezo
