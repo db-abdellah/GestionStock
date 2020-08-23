@@ -15,7 +15,6 @@ namespace GestionStock.Controllers
 {
     public class HomeController : Controller
     {
-        private static StockBusiness stockBusiness = new StockBusinessImp();
         [VerifyUserAttribute]
         public IActionResult Index()
         {
@@ -24,12 +23,7 @@ namespace GestionStock.Controllers
             return View(GetChefFromCookie());
         }
 
-        public IActionResult test()
-        {
-
-
-            return View(GetChefFromCookie());
-        }
+       
 
 
 
@@ -40,8 +34,11 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         private Utilisateur GetChefFromCookie()
         {
-            var jsonResult = HttpContext.Session.GetString("Utilisateur");
-
+            var jsonResult = HttpContext.Session.GetString("administrateur");
+            if (jsonResult == null)
+                jsonResult = HttpContext.Session.GetString("magasinier");
+            if (jsonResult == null)
+                jsonResult = HttpContext.Session.GetString("operateur");
             return JsonConvert.DeserializeObject<Utilisateur>(jsonResult);
         }
 
@@ -52,8 +49,11 @@ namespace GestionStock.Controllers
         {
             public override void OnActionExecuting(ActionExecutingContext filterContext)
             {
-                var user = filterContext.HttpContext.Session.GetString("Utilisateur");
-                if (user == null)
+                var operateur = filterContext.HttpContext.Session.GetString("operateur");
+                var magasinier = filterContext.HttpContext.Session.GetString("magasinier");
+                var admin = filterContext.HttpContext.Session.GetString("administrateur");
+
+                if (operateur == null && magasinier == null && admin == null)
                     filterContext.Result = new RedirectResult(string.Format("/Login"));
             }
         }

@@ -27,6 +27,7 @@ namespace GestionStock.Controllers
 
         }
         // GET: EntreeController
+        [VerifyUserAttribute]
         public ActionResult Index()
         {
             ESModel model = produitBusiness.getProduitsAndStock();
@@ -34,6 +35,7 @@ namespace GestionStock.Controllers
 
             return View(model);
         }
+        [VerifyUserAttribute]
         public ActionResult sortie()
         {
 
@@ -43,18 +45,21 @@ namespace GestionStock.Controllers
             return View(model);
         }
 
+        [VerifyUserAttribute]
         // GET: EntreeController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
+        [VerifyUserAttribute]
         // GET: EntreeController/Create
         public ActionResult Create()
         {
             return View();
         }
 
+        [VerifyUserAttribute]
         // POST: EntreeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -70,6 +75,7 @@ namespace GestionStock.Controllers
             }
         }
 
+        [VerifyUserAttribute]
         // GET: EntreeController/Edit/5
         public ActionResult Edit(int id)
         {
@@ -77,6 +83,7 @@ namespace GestionStock.Controllers
         }
 
         // POST: EntreeController/Edit/5
+        [VerifyUserAttribute]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -92,6 +99,7 @@ namespace GestionStock.Controllers
         }
 
         // GET: EntreeController/Delete/5
+        [VerifyUserAttribute]
         public ActionResult Delete(int id)
         {
             return View();
@@ -100,6 +108,7 @@ namespace GestionStock.Controllers
         // POST: EntreeController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [VerifyUserAttribute]
         public ActionResult Delete(int id, IFormCollection collection)
         {
             try
@@ -113,6 +122,7 @@ namespace GestionStock.Controllers
         }
 
         [HttpPost]
+        [VerifyUserAttribute]
         public JsonResult EntreeAtelier(int idProduit,int qte)
         {
 
@@ -127,6 +137,7 @@ namespace GestionStock.Controllers
         }
 
         [HttpPost]
+        [VerifyUserAttribute]
         public JsonResult SortieAtelier(int idProduit, int qte)
         {
 
@@ -144,8 +155,11 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         private Utilisateur GetChefFromCookie()
         {
-            var jsonResult = HttpContext.Session.GetString("Utilisateur");
-
+            var jsonResult = HttpContext.Session.GetString("administrateur");
+            if (jsonResult == null)
+                jsonResult = HttpContext.Session.GetString("magasinier");
+            if (jsonResult == null)
+                jsonResult = HttpContext.Session.GetString("operateur");
             return JsonConvert.DeserializeObject<Utilisateur>(jsonResult);
         }
         //----------------------------------------------------------------------
@@ -154,8 +168,11 @@ namespace GestionStock.Controllers
         {
             public override void OnActionExecuting(ActionExecutingContext filterContext)
             {
-                var user = filterContext.HttpContext.Session.GetString("Utilisateur");
-                if (user == null)
+                var operateur = filterContext.HttpContext.Session.GetString("operateur");
+                var magasinier = filterContext.HttpContext.Session.GetString("magasinier");
+                var admin = filterContext.HttpContext.Session.GetString("administrateur");
+
+                if (operateur == null && magasinier == null && admin==null)
                     filterContext.Result = new RedirectResult(string.Format("/Login"));
             }
         }

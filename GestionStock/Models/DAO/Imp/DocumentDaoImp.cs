@@ -26,6 +26,7 @@ namespace GestionStock.Models.DAO.Imp
             }
         }
 
+
         public List<Document> getAllAchats()
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
@@ -42,8 +43,9 @@ namespace GestionStock.Models.DAO.Imp
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
             {
-                String query = $"SELECT document.id,document.idFournisseur,document.numero,fournisseur.nom as nomFournisseur,document.total,document.date FROM document,fournisseur WHERE document.idFournisseur = fournisseur.id AND type='vente' ";
-                List<Document> documents = connection.Query<Document>(query).ToList();
+                String query = $"SELECT document.id,document.idFournisseur,document.numero,client.nom as nomFournisseur,document.total,document.date FROM document,client WHERE document.idFournisseur = client.id AND type='vente' ";
+
+               List<Document> documents = connection.Query<Document>(query).ToList();
 
 
 
@@ -56,6 +58,18 @@ namespace GestionStock.Models.DAO.Imp
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
             {
                 String query = $"SELECT document.id,document.idFournisseur,document.numero,fournisseur.Prenom as prenomFournisseur , fournisseur.nom as nomFournisseur ,document.total,document.date FROM document,fournisseur WHERE document.idFournisseur = fournisseur.id AND document.id={id}";
+                List<Document> documents = connection.Query<Document>(query).ToList();
+
+
+
+                return documents[0];
+            }
+        }
+        public Document getVenteById(int id)
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                String query = $"SELECT document.id,document.idFournisseur,document.numero,client.Prenom as prenomFournisseur ,  client.nom as nomFournisseur ,document.total,document.date FROM document,client WHERE document.idFournisseur = client.id AND document.id={id}";
                 List<Document> documents = connection.Query<Document>(query).ToList();
 
 

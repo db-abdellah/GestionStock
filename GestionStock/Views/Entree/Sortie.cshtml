@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="col-12">
                                     <h2 class="lead nomProduit"><b>@Model.ProduitList[i].nom</b></h2>
-                                    <p class="text-muted text-sm"><b>Quantité en atelier: </b>  <span class="text-muted text-sm">@Model.stockList[i].qteEstimee  </span></p>
+                                    <p  class="text-muted text-sm"><b>Quantité en atelier: </b>  <span class="text-muted text-sm">@Model.stockList[i].qteEstimee  </span></p>
                                 </div>
 
                             </div>
@@ -99,7 +99,7 @@
                                     <img src="@imagePath" style="height:128px;width:128px; border: 1px solid #D3D3D3;object-fit:contain;" class=" img-fluid img-thumbnail img-responsive" onerror="this.src='/images/error.png' ">
                                 </div>
                                 <br />
-                                <div class="col-12">
+                                <div class="col-12" hidden>
                                     <p class="text-muted text-sm"><b>Quantité en atelier: </b> </p>
                                     <p class="text-muted text-sm" id="@group">0</p>
 
@@ -111,9 +111,9 @@
                         <div class="card-footer">
                             <div class="text-right">
                                 <form>
-
-                                    <input style="float:left ;" type="number" disabled step="1" min="0" value="0"  name="qteEntree" class="form-control" />&nbsp;
-
+                                    
+                                    <input style="float:left ;" type="number" disabled step="1" min="0" value="0" name="qteEntree" class="form-control" />&nbsp;
+                                    
                                     <select name="produit" disabled onchange="updateStock(this,@group)" class="form-control">
 
 

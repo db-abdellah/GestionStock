@@ -5,3 +5,6 @@ Eddrayef ||Aziz || administrateur || 17/08/2020 10:35:25 || Suppression Produit
 Eddrayef ||Aziz || administrateur || 18/08/2020 15:47:53 || Creation Produit : testing
 Eddrayef ||Aziz || administrateur || 18/08/2020 15:51:26 || Creation Produit : 7rira
 Eddrayef ||Aziz || administrateur || 20/08/2020 18:50:30 || Creation Produit : test
+Eddrayef ||Aziz || administrateur || 23/08/2020 16:48:12 || Entrée produit :1 Qté: 4
+Eddrayef ||Aziz || administrateur || 23/08/2020 16:50:06 || Nouvelle vente: HEZZZZO
+yacoubi ||Ahmed || operateur || 23/08/2020 18:56:04 || Nouvelle vente: hello

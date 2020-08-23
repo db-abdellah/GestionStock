@@ -37,7 +37,7 @@ namespace GestionStock.Controllers
             return View(clients);
         }
 
-
+        [VerifyUserAttribute]
         // GET: FournisseurController/Create
         public ActionResult Create()
         {
@@ -46,6 +46,7 @@ namespace GestionStock.Controllers
             return View();
         }
 
+        [VerifyUserAttribute]
         // POST: FournisseurController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -73,6 +74,7 @@ namespace GestionStock.Controllers
             return View(client);
         }
 
+        [VerifyUserAttribute]
         // GET: FournisseurController/Edit/5
         public ActionResult Edit(int id)
         {
@@ -83,6 +85,7 @@ namespace GestionStock.Controllers
             return View(client);
         }
 
+        [VerifyUserAttribute]
         // POST: FournisseurController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -103,6 +106,7 @@ namespace GestionStock.Controllers
         }
 
         [HttpPost]
+        [VerifyUserAttribute]
         public JsonResult SupprimerClient(int idClient)
         {
 
@@ -118,6 +122,7 @@ namespace GestionStock.Controllers
         // POST: FournisseurController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [VerifyUserAttribute]
         public ActionResult Delete(int id, IFormCollection collection)
         {
             try
@@ -135,8 +140,8 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         private Utilisateur GetChefFromCookie()
         {
-            var jsonResult = HttpContext.Session.GetString("Utilisateur");
-
+            var jsonResult = HttpContext.Session.GetString("administrateur");
+          
             return JsonConvert.DeserializeObject<Utilisateur>(jsonResult);
         }
         //----------------------------------------------------------------------
@@ -145,8 +150,11 @@ namespace GestionStock.Controllers
         {
             public override void OnActionExecuting(ActionExecutingContext filterContext)
             {
-                var user = filterContext.HttpContext.Session.GetString("Utilisateur");
-                if (user == null)
+                var operateur = filterContext.HttpContext.Session.GetString("operateur");
+                var magasinier = filterContext.HttpContext.Session.GetString("magasinier");
+                var admin = filterContext.HttpContext.Session.GetString("administrateur");
+
+                if (admin == null)
                     filterContext.Result = new RedirectResult(string.Format("/Login"));
             }
         }

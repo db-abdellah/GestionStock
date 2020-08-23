@@ -30,6 +30,7 @@ namespace GestionStock.Controllers
 
         }
         // GET: ProduitController
+        [VerifyUserAttribute]
         public ActionResult Index()
         {
             ProduitsModel model = new ProduitsModel();
@@ -48,6 +49,7 @@ namespace GestionStock.Controllers
         }
 
         // GET: ProduitController/Create
+        [VerifyUserAttribute]
         public ActionResult Create()
         {
             Utilisateur util = GetChefFromCookie();
@@ -59,6 +61,7 @@ namespace GestionStock.Controllers
         // POST: ProduitController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [VerifyUserAttribute]
         public ActionResult Create(Produit produit, IFormFile file)
         {
             
@@ -84,6 +87,7 @@ namespace GestionStock.Controllers
         }
 
         // GET: ProduitController/Edit/5
+        [VerifyUserAttribute]
         public ActionResult Edit(int id)
         {
             Utilisateur util = GetChefFromCookie();
@@ -96,6 +100,7 @@ namespace GestionStock.Controllers
         // POST: ProduitController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [VerifyUserAttribute]
         public ActionResult Edit(Produit produit, IFormFile file)
         {
             try
@@ -123,6 +128,7 @@ namespace GestionStock.Controllers
         }
 
         // GET: ProduitController/Delete/5
+        [VerifyUserAttribute]
         public ActionResult Delete(int id)
         {
             return View();
@@ -131,6 +137,7 @@ namespace GestionStock.Controllers
         // POST: ProduitController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [VerifyUserAttribute]
         public ActionResult Delete(int id, IFormCollection collection)
         {
             try
@@ -144,6 +151,7 @@ namespace GestionStock.Controllers
         }
 
         [HttpPost]
+        [VerifyUserAttribute]
         public JsonResult SupprimerProduit(int idProduit)
         {
 
@@ -165,8 +173,10 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         private Utilisateur GetChefFromCookie()
         {
-            var jsonResult = HttpContext.Session.GetString("Utilisateur");
-
+            var jsonResult = HttpContext.Session.GetString("administrateur");
+            if (jsonResult == null)
+                jsonResult = HttpContext.Session.GetString("magasinier");
+          
             return JsonConvert.DeserializeObject<Utilisateur>(jsonResult);
         }
         //----------------------------------------------------------------------
@@ -175,11 +185,13 @@ namespace GestionStock.Controllers
         {
             public override void OnActionExecuting(ActionExecutingContext filterContext)
             {
-                var user = filterContext.HttpContext.Session.GetString("Utilisateur");
-                if (user == null)
+                var operateur = filterContext.HttpContext.Session.GetString("operateur");
+                var magasinier = filterContext.HttpContext.Session.GetString("magasinier");
+                var admin = filterContext.HttpContext.Session.GetString("administrateur");
+
+                if ( magasinier == null && admin == null)
                     filterContext.Result = new RedirectResult(string.Format("/Login"));
             }
         }
-
     }
 }

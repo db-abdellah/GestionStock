@@ -26,6 +26,7 @@ namespace GestionStock.Controllers
             _env = env;
 
         }
+        [VerifyUserAttribute]
         public IActionResult Index()
         {
             LogModel model = new LogModel();
@@ -35,6 +36,7 @@ namespace GestionStock.Controllers
             return View(model);
         }
 
+        [VerifyUserAttribute]
         public IActionResult Transactions()
         {
             TransactionListModel model = new TransactionListModel();
@@ -48,8 +50,8 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         private Utilisateur GetChefFromCookie()
         {
-            var jsonResult = HttpContext.Session.GetString("Utilisateur");
-
+            var jsonResult = HttpContext.Session.GetString("administrateur");
+          
             return JsonConvert.DeserializeObject<Utilisateur>(jsonResult);
         }
         //----------------------------------------------------------------------
@@ -58,8 +60,11 @@ namespace GestionStock.Controllers
         {
             public override void OnActionExecuting(ActionExecutingContext filterContext)
             {
-                var user = filterContext.HttpContext.Session.GetString("Utilisateur");
-                if (user == null)
+                var operateur = filterContext.HttpContext.Session.GetString("operateur");
+                var magasinier = filterContext.HttpContext.Session.GetString("magasinier");
+                var admin = filterContext.HttpContext.Session.GetString("administrateur");
+
+                if ( admin == null)
                     filterContext.Result = new RedirectResult(string.Format("/Login"));
             }
         }

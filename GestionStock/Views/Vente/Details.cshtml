@@ -1,6 +1,6 @@
 ﻿@model GestionStock.Models.Models.FactureModel;
 @{
-    ViewData["Title"] = "Détails de Produits";
+    ViewData["Title"] = "Détails de vente";
     ViewData["UserId"] = Model.utilisateur.id;
     ViewData["fonction"] = Model.utilisateur.fonction;
     String fullName = Model.utilisateur.nom.ToString() + " " + Model.utilisateur.prenom.ToString();
@@ -13,7 +13,7 @@
             <div class="card-body ">
 
                 <div class="container-fluid " style=" display: inline-block;">
-                    <div class="row " >
+                    <div class="row ">
                         <div class="col-md-4 text-center">
                             <img src="~/login/img/téléchargement.jfif" class=" img-fluid img-circle" style="border: 1px solid #fcd5ce; height:150px;width:150px" alt="logo">
                         </div>
@@ -23,25 +23,25 @@
                         </div>
                     </div>
                     <br />
-                </div >
+                </div>
                 <div class="container-fluid" style=" display: inline-block;">
                     <div class="row ">
                         <div class="col-md-4">
                             <p><b>Numero du document :</b>   @Model.document.numero</p>
                         </div>
                         <div class="col-md-4">
-                            <p><b>Fournisseur :</b>   @Model.document.nomFournisseur</p>
+                            <p><b>Client :</b>   @Model.document.nomFournisseur</p>
                         </div>
                         <br />
                         <div class="col-md-4">
                             <p><b>Date d'achat :</b>   @Model.document.date</p>
                         </div>
-                        
+
                     </div>
                     <br />
                     <br />
                 </div>
-                
+
                 <hr />
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap">

@@ -32,5 +32,10 @@ namespace GestionStock.Models.Business
         {
            return documentDao.getDocumentById( id);
         }
+
+        public Document getVenteById(int id)
+        {
+            return documentDao.getVenteById(id);
+        }
     }
 }

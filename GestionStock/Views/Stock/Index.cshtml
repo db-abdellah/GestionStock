@@ -20,9 +20,11 @@
             </div>
 
         </div>
+        @if (ViewBag.utilisateur.fonction != "operateur") { 
              <div style="padding:5px" class="float-right">
                 <button class="btn btn-info toastsDefaultInfo float-right" onclick="ModifierStock()" id="mainBtn">Modifier</button>
             </div>
+            }
             <div class="card-body table-responsive p-0">
                 <table class="table table-striped table-bordered" style="text-align:center" id="table">
                     <thead>

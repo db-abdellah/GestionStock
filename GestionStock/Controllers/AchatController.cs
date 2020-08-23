@@ -25,12 +25,14 @@ namespace GestionStock.Controllers
 
         private IHostEnvironment _env;
 
+        
         public AchatController(IHostEnvironment env)
         {
             _env = env;
 
         }
 
+        [VerifyUserAttribute]
         // GET: AchatController
         public ActionResult Index()
         {
@@ -39,6 +41,7 @@ namespace GestionStock.Controllers
             ViewBag.utilisateur = util;
             return View(documentList);
         }
+        [VerifyUserAttribute]
         public ActionResult Achat()
         {
             AchatModel model = new AchatModel();
@@ -49,6 +52,7 @@ namespace GestionStock.Controllers
             return View(model);
         }
 
+        [VerifyUserAttribute]
         [HttpPost]
         public JsonResult facture(string totalFacture,string numDocument,int fournisseurId)
         {
@@ -58,6 +62,7 @@ namespace GestionStock.Controllers
 
 
         }
+        [VerifyUserAttribute]
         [HttpPost]
         public JsonResult factureDetails(String total, int idFacture, int idProduit, int quantite)
         {
@@ -67,6 +72,7 @@ namespace GestionStock.Controllers
 
         }
 
+        [VerifyUserAttribute]
         // GET: AchatController/Details/5
         public ActionResult Details(int id)
         {
@@ -77,6 +83,7 @@ namespace GestionStock.Controllers
             return View(model);
         }
 
+        
         // Partial View 
         public ActionResult AchatProduit(int idProduit)
         {
@@ -86,6 +93,7 @@ namespace GestionStock.Controllers
             return PartialView(model);
         }
 
+        [VerifyUserAttribute]
         // POST: AchatController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -101,12 +109,14 @@ namespace GestionStock.Controllers
             }
         }
 
+        [VerifyUserAttribute]
         // GET: AchatController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
+        [VerifyUserAttribute]
         // POST: AchatController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -123,7 +133,7 @@ namespace GestionStock.Controllers
         }
 
 
-
+        [VerifyUserAttribute]
         [HttpPost]
         public JsonResult SupprimerDocument(int idDocument)
         {
@@ -138,6 +148,7 @@ namespace GestionStock.Controllers
 
         }
 
+        [VerifyUserAttribute]
         // POST: AchatController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -157,8 +168,8 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         private Utilisateur GetChefFromCookie()
         {
-            var jsonResult = HttpContext.Session.GetString("Utilisateur");
-
+            var jsonResult = HttpContext.Session.GetString("administrateur");
+           
             return JsonConvert.DeserializeObject<Utilisateur>(jsonResult);
         }
         //----------------------------------------------------------------------
@@ -167,8 +178,11 @@ namespace GestionStock.Controllers
         {
             public override void OnActionExecuting(ActionExecutingContext filterContext)
             {
-                var user = filterContext.HttpContext.Session.GetString("Utilisateur");
-                if (user == null)
+                var operateur = filterContext.HttpContext.Session.GetString("operateur");
+                var magasinier = filterContext.HttpContext.Session.GetString("magasinier");
+                var admin = filterContext.HttpContext.Session.GetString("administrateur");
+
+                if ( admin == null)
                     filterContext.Result = new RedirectResult(string.Format("/Login"));
             }
         }

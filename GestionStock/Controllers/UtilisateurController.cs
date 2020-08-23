@@ -28,6 +28,7 @@ namespace GestionStock.Controllers
 
         }
         // GET: UtilisateurController
+        [VerifyUserAttribute]
         public ActionResult Index()
         {
             UtilisateursModel model = new UtilisateursModel();
@@ -37,6 +38,7 @@ namespace GestionStock.Controllers
         }
 
         [HttpPost]
+        [VerifyUserAttribute]
         public JsonResult loginCheck(string login)
         {
             int check= utilisateurBusiness.checkNewLogin(login);
@@ -48,6 +50,7 @@ namespace GestionStock.Controllers
         }
 
         // GET: UtilisateurController/Create
+        [VerifyUserAttribute]
         public ActionResult Create()
         {
 
@@ -59,6 +62,7 @@ namespace GestionStock.Controllers
         // POST: UtilisateurController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [VerifyUserAttribute]
         public ActionResult Create(Utilisateur utilisateur , IFormFile file)
         {
               Utilisateur util = GetChefFromCookie();
@@ -82,6 +86,7 @@ namespace GestionStock.Controllers
         }
 
         // GET: UtilisateurController/Edit/5
+        [VerifyUserAttribute]
         public ActionResult Edit(int id)
         {
             Utilisateur util = GetChefFromCookie();
@@ -93,6 +98,7 @@ namespace GestionStock.Controllers
         // POST: UtilisateurController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [VerifyUserAttribute]
         public ActionResult Edit(Utilisateur utilisateur, IFormFile file)
         {
 
@@ -116,9 +122,10 @@ namespace GestionStock.Controllers
             
         }
 
-        
+
 
         // GET: UtilisateurController/Delete/5
+        [VerifyUserAttribute]
         public ActionResult Delete(int id)
         {
             Utilisateur util = GetChefFromCookie();
@@ -132,6 +139,7 @@ namespace GestionStock.Controllers
         // POST: UtilisateurController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [VerifyUserAttribute]
         public ActionResult Delete(int id, IFormCollection collection)
         {
             try
@@ -154,6 +162,7 @@ namespace GestionStock.Controllers
         }
 
         [HttpPost]
+        [VerifyUserAttribute]
         public JsonResult SupprimerUtil(int idUtil)
         {
 
@@ -174,8 +183,8 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         private Utilisateur GetChefFromCookie()
         {
-            var jsonResult = HttpContext.Session.GetString("Utilisateur");
-
+            var jsonResult = HttpContext.Session.GetString("administrateur");
+            
             return JsonConvert.DeserializeObject<Utilisateur>(jsonResult);
         }
         //----------------------------------------------------------------------
@@ -184,8 +193,11 @@ namespace GestionStock.Controllers
         {
             public override void OnActionExecuting(ActionExecutingContext filterContext)
             {
-                var user = filterContext.HttpContext.Session.GetString("Utilisateur");
-                if (user == null)
+                var operateur = filterContext.HttpContext.Session.GetString("operateur");
+                var magasinier = filterContext.HttpContext.Session.GetString("magasinier");
+                var admin = filterContext.HttpContext.Session.GetString("administrateur");
+
+                if ( admin == null)
                     filterContext.Result = new RedirectResult(string.Format("/Login"));
             }
         }

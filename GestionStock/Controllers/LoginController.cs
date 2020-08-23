@@ -42,6 +42,7 @@ namespace GestionStock.Controllers
         }
 
         [HttpPost]
+        [VerifyUserAttribute]
 
         public JsonResult LoginCheck(String username, String password)
         {
@@ -56,7 +57,7 @@ namespace GestionStock.Controllers
             if (util != null)
             {
                 Log.logWriter(_env, util);
-                HttpContext.Session.SetString("Utilisateur", JsonConvert.SerializeObject(util));
+                HttpContext.Session.SetString(util.fonction, JsonConvert.SerializeObject(util));
                 return Json("true");
             }
            
@@ -65,14 +66,14 @@ namespace GestionStock.Controllers
 
         }
 
-
+     
         public ActionResult Logout()
         {
             foreach (var cookie in Request.Cookies.Keys)
             {
                 Response.Cookies.Delete(cookie);
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Login");
         }
 
 
@@ -82,11 +83,12 @@ namespace GestionStock.Controllers
         {
             public override void OnActionExecuting(ActionExecutingContext filterContext)
             {
-               
-                var Utilisateur = filterContext.HttpContext.Session.GetString("Utilisateur");
-           
-                if (Utilisateur != null)
-                    filterContext.Result = new RedirectResult(string.Format("/Home"));
+                var operateur = filterContext.HttpContext.Session.GetString("operateur");
+                var magasinier = filterContext.HttpContext.Session.GetString("magasinier");
+                var admin = filterContext.HttpContext.Session.GetString("administrateur");
+
+                if (operateur != null || magasinier != null || admin != null)
+                    filterContext.Result = new RedirectResult(string.Format("/home"));
             }
         }
 

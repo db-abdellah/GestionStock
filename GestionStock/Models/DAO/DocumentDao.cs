@@ -12,5 +12,6 @@ namespace GestionStock.Models.DAO
         void DeleteDocumentById(int idDocument);
         Document getDocumentById(int id);
          List<Document> getAllVentes();
+        Document getVenteById(int id);
     }
 }
