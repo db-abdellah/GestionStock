@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GestionStock.Handlers;
 using GestionStock.Models.Business;
 using GestionStock.Models.Business.Imp;
 using GestionStock.Models.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 
 namespace GestionStock.Controllers
@@ -15,6 +17,15 @@ namespace GestionStock.Controllers
     public class StockController : Controller
     {
         StockBusiness stockBusiness = new StockBusinessImp();
+
+        private IHostEnvironment _env;
+
+
+        public StockController(IHostEnvironment env)
+        {
+            _env = env;
+
+        }
         // GET: StockController
         public ActionResult Index()
         {
@@ -29,6 +40,7 @@ namespace GestionStock.Controllers
         public JsonResult UpdateQteReel( int idStock,  int quantite)
         {
             stockBusiness.UpdateQteReel( idStock, quantite);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Mise à jour stock réel : " + idStock);
             return Json("true");
 
 

@@ -35,6 +35,15 @@ namespace GestionStock.Controllers
             return View(model);
         }
 
+        public IActionResult Transactions()
+        {
+            TransactionListModel model = new TransactionListModel();
+            model.util = GetChefFromCookie();
+            model.list = Log.fileToListTransactions(_env);
+
+            return View(model);
+        }
+
         //----------------------------------------------------------------------
         [VerifyUserAttribute]
         private Utilisateur GetChefFromCookie()

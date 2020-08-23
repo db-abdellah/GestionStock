@@ -26,8 +26,13 @@
     <link rel="stylesheet" href="~/FrontEnd/plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse layout-fixed">
     <div class="wrapper">
 
         <!-- Navbar -->
@@ -60,10 +65,12 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="fa fa-info"></i>
-                        <span class="badge badge-danger navbar-badge" id="alerts">@alerts.Count</span>
+                        <span class="badge badge-danger navbar-badge" id="alerts" style="font-size: 8px;">@alerts.Count</span>
+
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-item dropdown-header">@alerts.Count Notifications</span>
+
                         @foreach (GestionStock.Models.Entities.Stock stock in alerts)
                         {
                             <div class="dropdown-divider"></div>
@@ -80,7 +87,7 @@
                 <li class="nav-item dropdown" style="padding-right:10px">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge" id="notifications">@notifications.Count</span>
+                        <span class="badge badge-warning navbar-badge" id="notifications"  style="font-size: 8px;" >@notifications.Count</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-item dropdown-header">@notifications.Count Notifications</span>
@@ -102,7 +109,7 @@
         </nav>
         <!-- /.navbar -->
         <!-- Main Sidebar Container -->
-        
+
         <aside class="main-sidebar elevation-4 sidebar-light-info">
             <!-- Brand Logo -->
             <a class="brand-link">
@@ -126,7 +133,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                    with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
 
 
                         <li class="nav-item has-treeview">
@@ -217,6 +224,15 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item has-treeview">
+                                <a asp-controller="Log" asp-action="Transactions" class="nav-link">
+                                    <i class="nav-icon 	fa fa-outdent"></i>
+                                    <p>
+                                        Log des transactions
+
+                                    </p>
+                                </a>
+                            </li>
                         }
                     </ul>
                 </nav>
@@ -274,6 +290,10 @@
     <script src="~/FrontEnd/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
     <!-- jQuery Knob Chart -->
     <script src="~/FrontEnd/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- jQuery DATATABLES-->
+    <script src="~/FrontEnd/plugins/datatables/jquery.dataTables.js"></script>
+    <!-- jQueryDATATABLES -->
+    <script src="~/FrontEnd/plugins/datatables/jquery.dataTables.min.js"></script>
     <!-- daterangepicker -->
     <script src="~/FrontEnd/plugins/moment/moment.min.js"></script>
     <script src="~/FrontEnd/plugins/daterangepicker/daterangepicker.js"></script>
@@ -289,6 +309,7 @@
     <script src="~/FrontEnd/dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/FrontEnd/dist/js/demo.js"></script>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

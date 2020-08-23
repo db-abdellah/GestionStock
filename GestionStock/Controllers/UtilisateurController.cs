@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using GestionStock.Handlers;
 using GestionStock.Models.Business;
 using GestionStock.Models.Business.Imp;
 using GestionStock.Models.Entities;
@@ -63,6 +64,8 @@ namespace GestionStock.Controllers
               Utilisateur util = GetChefFromCookie();
                 ViewBag.utilisateur = util;
                 int idUtilisateur= utilisateurBusiness.saveUtilisateur(utilisateur);
+
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Nouveau utlisateur : " + utilisateur.nom + utilisateur.prenom);
             if (file != null)
             {
 
@@ -107,7 +110,9 @@ namespace GestionStock.Controllers
             Utilisateur util = GetChefFromCookie();
                 ViewBag.utilisateur = util;
                 utilisateurBusiness.updateUtilisateur(utilisateur);
-                return RedirectToAction(nameof(Index));
+
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Mise à jour d'utilisateur : " + utilisateur.id);
+            return RedirectToAction(nameof(Index));
             
         }
 
@@ -154,6 +159,8 @@ namespace GestionStock.Controllers
 
 
             utilisateurBusiness.DeleteUserById(idUtil);
+
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Suppression d'utilisateur : " + idUtil);
             return Json("true");
 
 

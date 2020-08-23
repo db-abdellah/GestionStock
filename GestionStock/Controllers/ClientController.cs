@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GestionStock.Handlers;
 using GestionStock.Models.Business;
 using GestionStock.Models.Business.Imp;
 using GestionStock.Models.Entities;
@@ -9,6 +10,7 @@ using GestionStock.Models.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 
 namespace GestionStock.Controllers
@@ -16,6 +18,13 @@ namespace GestionStock.Controllers
     public class ClientController : Controller
     {
         private ClientBusiness clientBusiness = new ClientBusinessImp();
+        private IHostEnvironment _env;
+
+        public ClientController(IHostEnvironment env)
+        {
+            _env = env;
+
+        }
 
         // GET: FournisseurController
         [VerifyUserAttribute]
@@ -45,6 +54,8 @@ namespace GestionStock.Controllers
             try
             {
                 clientBusiness.saveClient(client);
+
+                Log.TransactionsWriter(_env, GetChefFromCookie(), "Creation du client");
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -68,6 +79,7 @@ namespace GestionStock.Controllers
             Utilisateur util = GetChefFromCookie();
             ViewBag.utilisateur = util;
             Client client = clientBusiness.getClientById(id);
+            
             return View(client);
         }
 
@@ -81,6 +93,7 @@ namespace GestionStock.Controllers
                 Utilisateur util = GetChefFromCookie();
                 ViewBag.utilisateur = util;
                 clientBusiness.updateClient(client);
+                Log.TransactionsWriter(_env, GetChefFromCookie(), "Modification du client");
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -95,6 +108,7 @@ namespace GestionStock.Controllers
 
 
             clientBusiness.DeleteClientById(idClient);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Suppression du client");
             return Json("true");
 
 

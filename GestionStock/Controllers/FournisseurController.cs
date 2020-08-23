@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GestionStock.Handlers;
 using GestionStock.Models.Business;
 using GestionStock.Models.Business.Imp;
 using GestionStock.Models.Entities;
@@ -9,6 +10,7 @@ using GestionStock.Models.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 
 namespace GestionStock.Controllers
@@ -16,6 +18,13 @@ namespace GestionStock.Controllers
     public class FournisseurController : Controller
     {
         private FournisseurBusiness fournisseurBusiness = new FournisseurBusinessImp();
+        private IHostEnvironment _env;
+
+        public FournisseurController(IHostEnvironment env)
+        {
+            _env = env;
+
+        }
 
         // GET: FournisseurController
         [VerifyUserAttribute]
@@ -45,6 +54,7 @@ namespace GestionStock.Controllers
             try
             {
                 fournisseurBusiness.saveFournisseur(fournisseur);
+                Log.TransactionsWriter(_env, GetChefFromCookie(), "Creation du fournisseur");
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -81,6 +91,7 @@ namespace GestionStock.Controllers
                 Utilisateur util = GetChefFromCookie();
                 ViewBag.utilisateur = util;
                 fournisseurBusiness.updateFournisseur(fournisseur);
+                Log.TransactionsWriter(_env, GetChefFromCookie(), "Modification Fournisseur :  " + fournisseur.id);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -95,6 +106,7 @@ namespace GestionStock.Controllers
 
 
             fournisseurBusiness.DeleteFournisseurById(idFournisseur);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Suppression fournisseur :  " + idFournisseur);
             return Json("true");
 
 

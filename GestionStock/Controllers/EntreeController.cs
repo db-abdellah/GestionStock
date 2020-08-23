@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GestionStock.Handlers;
 using GestionStock.Models.Business;
 using GestionStock.Models.Business.Imp;
 using GestionStock.Models.Entities;
@@ -9,6 +10,7 @@ using GestionStock.Models.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 
 namespace GestionStock.Controllers
@@ -17,6 +19,13 @@ namespace GestionStock.Controllers
     {
         private static ProduitBusiness produitBusiness = new ProduitBusinessImp();
         private static EntreeBusiness entreeBusiness = new EntreeBusinessImp();
+        private IHostEnvironment _env;
+
+        public EntreeController(IHostEnvironment env)
+        {
+            _env = env;
+
+        }
         // GET: EntreeController
         public ActionResult Index()
         {
@@ -109,6 +118,7 @@ namespace GestionStock.Controllers
 
 
             entreeBusiness.EntreeAtelier(idProduit,qte);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Entrée produit :"+idProduit+" Qté: "+qte);
             return Json("true");
 
 
@@ -122,6 +132,7 @@ namespace GestionStock.Controllers
 
 
             entreeBusiness.SortieAtelier(idProduit, qte);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Sortie produit :" + idProduit + "Qté: " + qte);
             return Json("true");
 
 

@@ -23,16 +23,18 @@
     </div>
 
     <div class="card-body table-responsive p-0">
-        <table class="table table-hover text-nowrap"  style="text-align:center" id="table">
+        <div style="padding:5px" class="float-right">
+            <a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Utilisateur" asp-action="Create">
+                <i class="fa fa-plus">
+                </i>&nbsp;Nouvel utilisateur
+            </a>
+        </div>
+        <table class="table table-striped table-bordered" style="text-align:center" id="table">
             <thead>
                 <tr>
-                    <th hidden>
-                        Id
-                    </th>
                     <th>
                         Nom Complet
                     </th>
-
 
                     <th>
                         Téléphone
@@ -41,18 +43,14 @@
                     <th>
                         Fonction
                     </th>
-                    <th> <a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Utilisateur" asp-action="Create">
-                             <i class="fa fa-plus">
-                             </i>&nbsp;Nouvel utilisateur</a></th>
+
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model.utilisateurList)
                 {
                     <tr>
-                        <td hidden>
-                            @Html.DisplayFor(modelItem => item.id)
-                        </td>
+                       
                         <td>
                             @Html.DisplayFor(modelItem => item.nom)  @Html.DisplayFor(modelItem => item.prenom)
 
@@ -67,20 +65,20 @@
                             @Html.DisplayFor(modelItem => item.fonction)
                         </td>
                         <td>
-                            <div class="float-lg-right">
+                            <div>
                                 <a class="btn btn-success toastsDefaultSuccess" asp-controller="Utilisateur" asp-action="Details" asp-route-id=@item.id>
                                     <i class="fa fa-info-circle ">
-                                    </i>&nbsp; Details
+                                    </i>
                                 </a>
                                 <a class="btn btn-info toastsDefaultInfo" asp-controller="Utilisateur" asp-action="Edit" asp-route-id=@item.id>
                                     <i class="fas fa-pencil-alt">
                                     </i>
-                                    Modifier
+
                                 </a>
                                 <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">
                                     <i class="fas fa-trash">
                                     </i>
-                                    Supprimer
+
                                 </button>
 
 
@@ -111,7 +109,7 @@
 
             // Loop through all table rows, and hide those who don't match the search query
             for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[1];
+                td = tr[i].getElementsByTagName("td")[0];
                 if (td) {
                     txtValue = td.textContent || td.innerText;
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -125,7 +123,7 @@
 
         function Delete(id) {
 
-            var result = confirm("Êtes-vous sûr de vouloir supprimer ce projet?");
+            var result = confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur?");
             if (result == true) {
                 $.ajax({
                     type: "POST",
@@ -149,8 +147,24 @@
                     },
                 });
             } else
-                retuen;
+                return;
         }
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#table').DataTable();
+        });
+        $('#table').dataTable({
+            "searching": false,
+            "paging": false,
+            "bInfo": false,
+            "aoColumnDefs": [
+                { 'bSortable': false, 'aTargets': [3] }
+            ]
+
+        });
+
 
     </script>
 }

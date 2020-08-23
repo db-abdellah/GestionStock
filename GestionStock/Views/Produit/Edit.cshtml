@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <form asp-action="Edit" id="mainForm" enctype="multipart/form-data">
+            <form asp-action="Edit" id="mainForm" enctype="multipart/form-data" autocomplete="off">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div hidden class="form-group">
                     <label asp-for="id" class="control-label"></label>
@@ -104,8 +104,9 @@
             var nom = $("#nom").val();
             var categorie = $("#categorie").val();
             var prix = $("#prixAchat").val();
+            var group = $("#groupProduit").val();
 
-            if (nom.length == 0 || categorie.length == 0 || prix.length == 0) {
+            if (nom.length == 0 || categorie.length == 0 || prix.length == 0  || group.length == 0) {
 
                 document.getElementById("ErrorContainer").hidden = false;
                 $('body').scrollTop(0);

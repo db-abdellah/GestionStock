@@ -24,6 +24,13 @@ namespace GestionStock.Controllers
             return View(GetChefFromCookie());
         }
 
+        public IActionResult test()
+        {
+
+
+            return View(GetChefFromCookie());
+        }
+
 
 
 

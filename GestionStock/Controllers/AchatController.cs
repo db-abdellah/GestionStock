@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GestionStock.Handlers;
 using GestionStock.Models.Business;
 using GestionStock.Models.Business.Imp;
 using GestionStock.Models.Entities;
@@ -9,6 +10,7 @@ using GestionStock.Models.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 
 namespace GestionStock.Controllers
@@ -20,6 +22,15 @@ namespace GestionStock.Controllers
         private static StockBusiness stockBusiness= new StockBusinessImp();
         private static AchatBusiness achatBusiness= new AchatBusinessImp();
         private static DocumentBusiness documentBusiness = new DocumentBusinessImp();
+
+        private IHostEnvironment _env;
+
+        public AchatController(IHostEnvironment env)
+        {
+            _env = env;
+
+        }
+
         // GET: AchatController
         public ActionResult Index()
         {
@@ -42,6 +53,7 @@ namespace GestionStock.Controllers
         public JsonResult facture(string totalFacture,string numDocument,int fournisseurId)
         {
             int idFacture = achatBusiness.saveFacture(totalFacture, numDocument, fournisseurId);
+            Log.TransactionsWriter(_env,GetChefFromCookie(),"Achat document :  "+ numDocument);
             return Json(idFacture);
 
 
@@ -118,6 +130,7 @@ namespace GestionStock.Controllers
 
 
             documentBusiness.DeleteDocumentById(idDocument);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Suppression de document");
             return Json("true");
 
 

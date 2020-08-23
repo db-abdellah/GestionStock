@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using GestionStock.Handlers;
 using GestionStock.Models.Business;
 using GestionStock.Models.Business.Imp;
 using GestionStock.Models.Entities;
@@ -61,10 +62,13 @@ namespace GestionStock.Controllers
         public ActionResult Create(Produit produit, IFormFile file)
         {
             
-                Utilisateur util = GetChefFromCookie();
-                ViewBag.utilisateur = util;
-                int idProduit = produitBusiness.saveProduit(produit);
-                if(file != null)
+            Utilisateur util = GetChefFromCookie();
+                
+
+            ViewBag.utilisateur = util;
+            int idProduit = produitBusiness.saveProduit(produit);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Creation Produit : " + produit.nom);
+            if (file != null)
             {
 
                 var dir = _env.ContentRootPath + @"/wwwroot/images/Produits";
@@ -145,6 +149,7 @@ namespace GestionStock.Controllers
 
 
             produitBusiness.DeleteProduitById(idProduit);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Suppression Produit " );
             return Json("true");
 
 

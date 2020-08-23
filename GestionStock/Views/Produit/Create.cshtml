@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <form asp-action="Create" id="mainForm" enctype="multipart/form-data">
+            <form asp-action="Create" id="mainForm" enctype="multipart/form-data" autocomplete="off">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 
@@ -44,12 +44,12 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label">Quantité estimé:</label>
-                    <input asp-for="qteEstime" min="0" class="form-control" />
+                    <input asp-for="qteEstime" min="0" value="0" class="form-control" />
                     <span asp-validation-for="qteEstime" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Group:</label>
-                    <input asp-for="groupProduit" list="groups" class="form-control" />
+                    <input asp-for="groupProduit" value="Null" list="groups" class="form-control" />
                     <span asp-validation-for="groupProduit" class="text-danger"></span>
                     <datalist id="groups">
                         @foreach(String grp in ViewBag.groups) { 
@@ -107,8 +107,10 @@
             var nom = $("#nom").val();
             var categorie = $("#categorie").val();
             var prix = $("#prixAchat").val();
+            var group = $("#groupProduit").val();
+            var qte = $("#qteEstime").val();
 
-            if (nom.length == 0 || categorie.length == 0 || prix.length == 0) {
+            if (nom.length == 0 || categorie.length == 0 || prix.length == 0 || qte.length == 0 || group.length==0) {
                 document.getElementById("ErrorContainer").hidden = false;
                 $('body').scrollTop(0);
                 return false;
