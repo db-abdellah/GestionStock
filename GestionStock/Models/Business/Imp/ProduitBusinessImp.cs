@@ -38,7 +38,10 @@ namespace GestionStock.Models.Business.Imp
             return produitDao.getProduitsAndStock();
         }
 
-        
+        public List<Produit> getProduitsByGroup(string group)
+        {
+            return produitDao.getProduitsByGroup( group);
+        }
 
         public int saveProduit(Produit produit)
         {

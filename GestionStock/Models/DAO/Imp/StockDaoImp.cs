@@ -81,6 +81,15 @@ namespace GestionStock.Models.DAO
             }
         }
 
-       
+        public int getQteEstime(int id)
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+                String query = $"SELECT QteEstimee FROM stock  WHERE idProduit={id} ;";
+                dynamic result = connection.Query(query).First();
+                int qte = (int)result.QteEstimee;
+                return qte;
+            }
+        }
     }
 }

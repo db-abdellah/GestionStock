@@ -29,7 +29,11 @@
                     <input asp-for="id" class="form-control" />
                     <span asp-validation-for="id" class="text-danger"></span>
                 </div>
-
+                <div class="form-group">
+                    <label class="control-label">Id produit</label>
+                    <input asp-for="idDeProduit" class="form-control" />
+                    <span asp-validation-for="idDeProduit" class="text-danger"></span>
+                </div>
                 <div class="form-group">
                     <label class="control-label">Nom de produit</label>
                     <input asp-for="nom" class="form-control" />
@@ -39,6 +43,11 @@
                     <label $ class="control-label">Catégorie</label>
                     <input asp-for="categorie" class="form-control" />
                     <span asp-validation-for="categorie" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Quantité estimé:</label>
+                    <input asp-for="qteEstime" class="form-control" />
+                    <span asp-validation-for="qteEstime" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Prix d'achat</label>
@@ -109,9 +118,11 @@
             var nom = $("#nom").val();
             var categorie = $("#categorie").val();
             var prix = $("#prixAchat").val();
+            var prix2 = $("#prixVente").val();
             var group = $("#groupProduit").val();
+            var id = $("#idDeProduit").val();
 
-            if (nom.length == 0 || categorie.length == 0 || prix.length == 0  || group.length == 0) {
+            if (nom.length == 0 || categorie.length == 0 || prix.length == 0 || group.length == 0 || id.length == 0 || prix2.length==0) {
 
                 document.getElementById("ErrorContainer").hidden = false;
                 $('body').scrollTop(0);

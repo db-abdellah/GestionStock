@@ -14,5 +14,6 @@ namespace GestionStock.Models.DAO
         void UpdateQteReel(int idStock, int quantite);
         List<Stock> getAllStockNotifications();
         List<Stock> getAllStockAlerts();
+        int getQteEstime(int id);
     }
 }

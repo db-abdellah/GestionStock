@@ -11,6 +11,7 @@ namespace GestionStock.Models.Entities
     {
         public int id { get; set; }
         public String categorie { get; set; }
+        public String idDeProduit { get; set; }
         public String nom { get; set; }
         public String  prixAchat { get; set; }
         public String  prixVente { get; set; }

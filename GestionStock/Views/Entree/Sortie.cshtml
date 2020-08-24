@@ -83,6 +83,17 @@
 
                 if (group == "Null")
                     continue;
+                @for (int i = 0; i < Model.ProduitList.Count; i++)
+                {
+                    if (Model.ProduitList[i].groupProduit != group)
+                        continue;
+                    else
+                    {
+                        imagePath = "/images/Produits/" + Model.ProduitList[i].id + ".jpeg";
+                        break;
+                    }
+
+                }
 
 
 
@@ -90,12 +101,12 @@
                 <div class="searchHelper2 col-md-4">
                     <div class="card bg-light ">
                         <div class="card-header  border-bottom-0 ">
-                            <h2 class="lead nomProduit"><b>Group: @group</b></h2>
+                            <h2 class="lead nomProduit"><b> @group</b></h2>
                         </div>
                         <div class="card-body pt-0">
                             <div class="row-cols-1 ">
                                 <br />
-                                <div class=" text-center " >
+                                <div class=" text-center ">
                                     <img src="@imagePath" style="height:128px;width:128px; border: 1px solid #D3D3D3;object-fit:contain;" class=" img-fluid img-thumbnail img-responsive" onerror="this.src='/images/error.png' ">
                                 </div>
                                 <br />
@@ -111,9 +122,9 @@
                         <div class="card-footer">
                             <div class="text-right">
                                 <form>
-                                    
+
                                     <input style="float:left ;" type="number" disabled step="1" min="0" value="0" name="qteEntree" class="form-control" />&nbsp;
-                                    
+
                                     <select name="produit" disabled onchange="updateStock(this,@group)" class="form-control">
 
 

@@ -16,5 +16,6 @@ namespace GestionStock.Models.Business
         void DeleteProduitById(int idProduit);
         ESModel getProduitsAndStock();
         ESModel getProduitsAndAtelierStock();
+        List<Produit> getProduitsByGroup(string group);
     }
 }

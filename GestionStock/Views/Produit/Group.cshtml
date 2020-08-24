@@ -35,7 +35,7 @@
                             </a>
                         </div>
                         <div class="dataTables_wrapper dt-bootstrap4">
-                            <table class="table table-striped table-bordered" style="text-align:center;font-size:11px" id="table" >
+                            <table class="table table-striped table-bordered" style="text-align:center;font-size:11px" id="table">
                                 <thead>
                                     <tr>
                                         <th>
@@ -62,60 +62,56 @@
                                 <tbody>
                                     @foreach (var item in Model.produits)
                                     {
-                                    <tr>
-                                        <td>
-                                            @if (item.groupProduit == "Null")
-                                            {
-                                                @Html.DisplayFor(modelItem => item.idDeProduit)
-                                            }
-                                            else { 
-                                            <a asp-controller="Produit" asp-action="Group" asp-route-group=@item.groupProduit> @Html.DisplayFor(modelItem => item.idDeProduit)</a>
-                                            }
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.nom)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.categorie)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.prixAchat) DH
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.prixVente) DH
-                                        </td>
-                                        <td>
-                                            @if (item.groupProduit == "Null")
-                                            {
+                                        <tr>
+                                            <td>
+                                              
+                                                    @Html.DisplayFor(modelItem => item.idDeProduit)
+                                               
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.nom)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.categorie)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.prixAchat) DH
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.prixVente) DH
+                                            </td>
+                                            <td>
+                                                @if (item.groupProduit == "Null")
+                                                {
 
-                                                <text>Produit en unité </text>
-                                            }
-                                            else
-                                            {
-                                                <text> Produit mesurable </text>
+                                                    <text>Produit en unité </text>
+                                                }
+                                                else
+                                                {
+                                                    <text> Produit mesurable </text>
 
 
-                                            }
-                                        </td>
-                                        <td>
-                                            <div>
-                                                <a class="btn btn-success toastsDefaultSuccess" asp-controller="Produit" asp-action="Details" asp-route-id=@item.id>
-                                                    <i class="fa fa-info-circle ">
-                                                    </i>
-                                                </a>
-                                                <a class="btn btn-info toastsDefaultInfo" asp-controller="Produit" asp-action="Edit" asp-route-id=@item.id>
-                                                    <i class="fas fa-pencil-alt">
-                                                    </i>
+                                                }
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <a class="btn btn-success toastsDefaultSuccess" asp-controller="Produit" asp-action="Details" asp-route-id=@item.id>
+                                                        <i class="fa fa-info-circle ">
+                                                        </i>
+                                                    </a>
+                                                    <a class="btn btn-info toastsDefaultInfo" asp-controller="Produit" asp-action="Edit" asp-route-id=@item.id>
+                                                        <i class="fas fa-pencil-alt">
+                                                        </i>
 
-                                                </a>
-                                                <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">
-                                                    <i class="fas fa-trash">
-                                                    </i>
+                                                    </a>
+                                                    <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">
+                                                        <i class="fas fa-trash">
+                                                        </i>
 
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
                                     }
                                 </tbody>
                             </table>

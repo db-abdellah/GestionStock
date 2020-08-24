@@ -1,20 +1,45 @@
-Eddrayef ||Aziz || administrateur || 17/08/2020 10:34:12 || Entrée produit :1Qté: 2
-Eddrayef ||Aziz || administrateur || 17/08/2020 10:34:14 || Entrée produit :2Qté: 1
-Eddrayef ||Aziz || administrateur || 17/08/2020 10:35:08 || Modification Fournisseur :  2
-Eddrayef ||Aziz || administrateur || 17/08/2020 10:35:25 || Suppression Produit 
-Eddrayef ||Aziz || administrateur || 18/08/2020 15:47:53 || Creation Produit : testing
-Eddrayef ||Aziz || administrateur || 18/08/2020 15:51:26 || Creation Produit : 7rira
-Eddrayef ||Aziz || administrateur || 20/08/2020 18:50:30 || Creation Produit : test
-Eddrayef ||Aziz || administrateur || 23/08/2020 16:48:12 || Entrée produit :1 Qté: 4
-Eddrayef ||Aziz || administrateur || 23/08/2020 16:50:06 || Nouvelle vente: HEZZZZO
-yacoubi ||Ahmed || operateur || 23/08/2020 18:56:04 || Nouvelle vente: hello
-Eddrayef ||Aziz || administrateur || 23/08/2020 23:46:23 || Entrée produit :1 Qté: 4
-Eddrayef ||Aziz || administrateur || 23/08/2020 23:46:31 || Sortie produit :1Qté: 3
-Eddrayef ||Aziz || administrateur || 23/08/2020 23:57:21 || Nouveau utlisateur : rgrgergerg
-Eddrayef ||Aziz || administrateur || 23/08/2020 23:57:40 || Nouveau utlisateur : aaaaaa
-Eddrayef ||Aziz || administrateur || 23/08/2020 23:58:01 || Nouveau utlisateur : aaaaaaaaaaaaaaaaaaa
-Eddrayef ||Aziz || administrateur || 24/08/2020 00:01:46 || Creation du fournisseur
-Eddrayef ||Aziz || administrateur || 24/08/2020 00:02:27 || Creation du client
-Eddrayef ||Aziz || administrateur || 24/08/2020 00:03:12 || Modification du client
-Eddrayef ||Aziz || administrateur || 24/08/2020 00:22:22 || Nouveau utlisateur : testtest
-Eddrayef ||Aziz || administrateur || 24/08/2020 00:24:49 || Nouveau utlisateur : hezohezo
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:25:01 || Creation Produit : chaîne
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:26:37 || Creation Produit : PILLER AVANT PRF
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:27:31 || Creation Produit : PILIER ARRIÈRE PRF
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:28:14 || Creation Produit : BOÎTE SUPÉRIEURE PRF
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:29:00 || Creation Produit : ÉLÉVATEUR DE VERRE SIMPLE PRF
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:29:25 || Creation Produit : PROFIL U EN VERRE UNIQUE
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:30:10 || Creation Produit : TUBE OCTAGON
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:30:47 || Creation Produit : PILIER MOYEN PRF
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:33:23 || Creation Produit : PROFIL U EN VERRE UNIQUE 3M
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:44:57 || Creation Produit : PROFIL U EN VERRE UNIQUE
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:45:56 || Creation Produit : PROFIL U EN VERRE UNIQUE
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:46:22 || Creation Produit : PROFIL U EN VERRE UNIQUE 5M
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:47:57 || Creation Produit : PROFIL U EN VERRE UNIQUE 7M
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:48:45 || Creation Produit : PROFIL U EN VERRE UNIQUE
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:49:11 || Creation Produit : PROFIL U EN VERRE UNIQUE
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:50:16 || Creation Produit : PROFIL U EN VERRE UNIQUE
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:50:55 || Creation Produit : TUBE OCTAGON
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:52:34 || Creation Produit : CHAÎNE DE VERRE SIMPLE PRF
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:52:59 || Creation Produit : RAIL À MAIN EN VERRE UNIQUE
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:53:27 || Creation Produit : 653,SPS
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:53:50 || Creation Produit : KRT-0240
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:54:18 || Creation Produit : BC-1000
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:55:21 || Creation Produit : KIT D ACCESSOIRES
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:55:47 || Creation Produit : ENSEMBLE DE MÉCANISME MOTEUR
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:56:22 || Creation Produit : KIT D ACCESSOIRES EN PLASTIQUE
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:56:43 || Creation Produit : RUBAN ISOLANT 125 * 15000
+Eddrayef ||Hamza || administrateur || 24/08/2020 01:57:04 || Creation Produit : TÉLÉCOMMANDE SOMFY SITUO CHANNEL
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:21:10 || Entrée produit id:84   Qté: 0
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:25:07 || Creation Produit : Mecanisme KIT
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:25:49 || Creation Produit : Cache Moteur 
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:26:11 || Creation Produit : Tube Octagonale 
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:26:40 || Creation Produit : Grand Roulettes 
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:27:03 || Creation Produit : Petit Roulettes 
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:48:33 || Creation Produit : Transformateur à circuit 
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:48:59 || Creation Produit : MOTEUR SOMFY SUNILUS 60 IO 85/17 VV F5M: UNI 
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:49:19 || Creation Produit : MOTEUR SOMFY SUNILUS 60 IO 120/ 12 VV F5M :UNI
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:49:39 || Creation Produit : SPOT LED  24W
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:50:20 || Creation Produit : Bouchon de coté petit Traverse
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:50:39 || Creation Produit : Bouchon de coté Grand Traverse
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:50:59 || Creation Produit : Bouchon pour milieu petit Traverse
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:51:18 || Creation Produit : Bouchon pour milieu Grand Traverse
+Eddrayef ||Hamza || administrateur || 24/08/2020 02:51:33 || Creation Produit : Cache Gautiére 
+Eddrayef ||Hamza || administrateur || 24/08/2020 03:05:29 || Suppression Produit 
+Eddrayef ||Hamza || administrateur || 24/08/2020 03:44:11 || Entrée produit id:84   Qté: 0
+Eddrayef ||Hamza || administrateur || 24/08/2020 03:57:38 || Entrée produit id:39   Qté: 0

@@ -25,6 +25,11 @@ namespace GestionStock.Models.Business.Imp
             return stockDao.getAllStockNotifications();
         }
 
+        public int getQteEstime(int id)
+        {
+            return stockDao.getQteEstime(id);
+        }
+
         public Stock getStockById(int idStock)
         {
             return stockDao.getStockById( idStock);

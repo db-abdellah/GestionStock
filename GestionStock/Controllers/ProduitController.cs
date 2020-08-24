@@ -20,6 +20,7 @@ namespace GestionStock.Controllers
     public class ProduitController : Controller
     {
         private ProduitBusiness produitBusiness = new ProduitBusinessImp();
+        private StockBusiness stockBusiness = new StockBusinessImp();
       
         private IHostEnvironment _env;
 
@@ -40,11 +41,21 @@ namespace GestionStock.Controllers
         }
 
         [VerifyUserAttribute]
+        public ActionResult Group(String group)
+        {
+            ProduitsModel model = new ProduitsModel();
+            model.produits = produitBusiness.getProduitsByGroup(group);
+            model.utilisateur = GetChefFromCookie();
+            return View(model);
+        }
+
+        [VerifyUserAttribute]
         public ActionResult Details(int id)
         {
             ProduitModel model = new ProduitModel();
             model.utilisateur = GetChefFromCookie();
             model.produit = produitBusiness.getProduitById(id);
+            model.produit.qteEstime = stockBusiness.getQteEstime(id);
             return View(model);
         }
 
@@ -93,6 +104,7 @@ namespace GestionStock.Controllers
             Utilisateur util = GetChefFromCookie();
             ViewBag.utilisateur = util;
             Produit produit = produitBusiness.getProduitById(id);
+            produit.qteEstime = stockBusiness.getQteEstime(id);
             ViewBag.groups = produitBusiness.getProduitsAndAtelierStock().groups;
             return View(produit);
         }
