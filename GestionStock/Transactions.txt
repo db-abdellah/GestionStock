@@ -43,3 +43,394 @@ Eddrayef ||Hamza || administrateur || 24/08/2020 02:51:33 || Creation Produit : 
 Eddrayef ||Hamza || administrateur || 24/08/2020 03:05:29 || Suppression Produit 
 Eddrayef ||Hamza || administrateur || 24/08/2020 03:44:11 || Entrée produit id:84   Qté: 0
 Eddrayef ||Hamza || administrateur || 24/08/2020 03:57:38 || Entrée produit id:39   Qté: 0
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:22 || Mise à jour stock réel : 139
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 145
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 138
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 143
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 140
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 146
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 142
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 161
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 162
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 163
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 168
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 172
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 174
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 177
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 186
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 192
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 194
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 151
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:23 || Mise à jour stock réel : 198
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 206
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 169
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 209
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 210
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 219
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 222
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 225
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 237
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 228
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 236
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 242
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 245
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 254
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 246
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 250
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:24 || Mise à jour stock réel : 262
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:25 || Mise à jour stock réel : 263
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:25 || Mise à jour stock réel : 259
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:25 || Mise à jour stock réel : 266
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:25 || Mise à jour stock réel : 269
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:25 || Mise à jour stock réel : 279
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:25 || Mise à jour stock réel : 283
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:25 || Mise à jour stock réel : 285
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:25 || Mise à jour stock réel : 291
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:25 || Mise à jour stock réel : 241
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:26 || Mise à jour stock réel : 137
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:26 || Mise à jour stock réel : 141
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:26 || Mise à jour stock réel : 146
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:26 || Mise à jour stock réel : 155
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:26 || Mise à jour stock réel : 163
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:26 || Mise à jour stock réel : 143
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:26 || Mise à jour stock réel : 177
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:26 || Mise à jour stock réel : 179
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:26 || Mise à jour stock réel : 168
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 195
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 199
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 202
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 212
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 209
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 223
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 227
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 229
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 237
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 231
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 236
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 244
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 247
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 249
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:27 || Mise à jour stock réel : 241
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 259
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 260
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 264
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 267
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 268
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 269
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 271
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 279
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 286
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 291
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 276
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 272
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:28 || Mise à jour stock réel : 294
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:34 || Mise à jour stock réel : 137
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:34 || Mise à jour stock réel : 151
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:34 || Mise à jour stock réel : 140
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:34 || Mise à jour stock réel : 149
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:34 || Mise à jour stock réel : 164
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:34 || Mise à jour stock réel : 163
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:34 || Mise à jour stock réel : 174
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:34 || Mise à jour stock réel : 162
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 173
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 165
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 166
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 183
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 148
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 182
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 193
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 202
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 205
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 213
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 215
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 216
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 187
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 186
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 185
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 226
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 232
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 230
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 231
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 228
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 236
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:35 || Mise à jour stock réel : 241
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:36 || Mise à jour stock réel : 247
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:36 || Mise à jour stock réel : 255
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:36 || Mise à jour stock réel : 265
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:36 || Mise à jour stock réel : 244
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:36 || Mise à jour stock réel : 270
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:36 || Mise à jour stock réel : 271
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:36 || Mise à jour stock réel : 274
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:36 || Mise à jour stock réel : 273
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:36 || Mise à jour stock réel : 286
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:36 || Mise à jour stock réel : 290
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:36 || Mise à jour stock réel : 291
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 137
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 140
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 163
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 168
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 161
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 170
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 160
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 158
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 169
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 173
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 171
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 192
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 189
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 195
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 196
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 193
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 194
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 185
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 187
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 210
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 218
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:41 || Mise à jour stock réel : 223
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 214
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 228
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 229
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 233
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 237
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 215
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 268
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 270
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 273
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 285
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 281
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 287
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 244
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 291
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 289
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 294
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 249
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:42 || Mise à jour stock réel : 254
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:43 || Mise à jour stock réel : 262
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:43 || Mise à jour stock réel : 256
+Eddrayef ||Hamza || administrateur || 25/08/2020 00:12:43 || Mise à jour stock réel : 258
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:20 || Mise à jour stock réel : 139
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:20 || Mise à jour stock réel : 143
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:20 || Mise à jour stock réel : 140
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:20 || Mise à jour stock réel : 144
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:20 || Mise à jour stock réel : 147
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:20 || Mise à jour stock réel : 156
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:21 || Mise à jour stock réel : 169
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:21 || Mise à jour stock réel : 175
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:21 || Mise à jour stock réel : 176
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:21 || Mise à jour stock réel : 164
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:21 || Mise à jour stock réel : 179
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:21 || Mise à jour stock réel : 187
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:21 || Mise à jour stock réel : 190
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:21 || Mise à jour stock réel : 198
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:22 || Mise à jour stock réel : 201
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:22 || Mise à jour stock réel : 210
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:22 || Mise à jour stock réel : 160
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:22 || Mise à jour stock réel : 191
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:22 || Mise à jour stock réel : 223
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:22 || Mise à jour stock réel : 226
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:22 || Mise à jour stock réel : 228
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:22 || Mise à jour stock réel : 236
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:22 || Mise à jour stock réel : 235
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:23 || Mise à jour stock réel : 231
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:23 || Mise à jour stock réel : 238
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:23 || Mise à jour stock réel : 252
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:23 || Mise à jour stock réel : 233
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:23 || Mise à jour stock réel : 261
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:23 || Mise à jour stock réel : 262
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:23 || Mise à jour stock réel : 266
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:23 || Mise à jour stock réel : 268
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 271
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 272
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 256
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 284
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 276
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 275
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 287
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 292
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 293
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 289
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 244
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 294
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 241
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 278
+Eddrayef ||Hamza || administrateur || 25/08/2020 02:08:24 || Mise à jour stock réel : 279
+Eddrayef ||Hamza || administrateur || 25/08/2020 12:19:37 || Nouveau utlisateur : somethingZakaria
+something ||Zakaria  || magasinier || 25/08/2020 12:21:18 || Mise à jour stock réel : 294
+something ||Zakaria  || magasinier || 25/08/2020 12:21:18 || Mise à jour stock réel : 292
+something ||Zakaria  || magasinier || 25/08/2020 12:21:18 || Mise à jour stock réel : 293
+something ||Zakaria  || magasinier || 25/08/2020 12:21:19 || Mise à jour stock réel : 285
+something ||Zakaria  || magasinier || 25/08/2020 12:21:19 || Mise à jour stock réel : 280
+something ||Zakaria  || magasinier || 25/08/2020 12:21:19 || Mise à jour stock réel : 267
+something ||Zakaria  || magasinier || 25/08/2020 12:21:19 || Mise à jour stock réel : 259
+something ||Zakaria  || magasinier || 25/08/2020 12:21:19 || Mise à jour stock réel : 252
+something ||Zakaria  || magasinier || 25/08/2020 12:21:19 || Mise à jour stock réel : 274
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 275
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 243
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 250
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 246
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 248
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 232
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 231
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 227
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 224
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 236
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 215
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 212
+something ||Zakaria  || magasinier || 25/08/2020 12:21:20 || Mise à jour stock réel : 217
+something ||Zakaria  || magasinier || 25/08/2020 12:21:21 || Mise à jour stock réel : 210
+something ||Zakaria  || magasinier || 25/08/2020 12:21:21 || Mise à jour stock réel : 201
+something ||Zakaria  || magasinier || 25/08/2020 12:21:21 || Mise à jour stock réel : 205
+something ||Zakaria  || magasinier || 25/08/2020 12:21:21 || Mise à jour stock réel : 200
+something ||Zakaria  || magasinier || 25/08/2020 12:21:21 || Mise à jour stock réel : 196
+something ||Zakaria  || magasinier || 25/08/2020 12:21:21 || Mise à jour stock réel : 198
+something ||Zakaria  || magasinier || 25/08/2020 12:21:21 || Mise à jour stock réel : 185
+something ||Zakaria  || magasinier || 25/08/2020 12:21:21 || Mise à jour stock réel : 189
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 178
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 171
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 169
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 168
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 164
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 157
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 156
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 183
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 182
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 147
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 148
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 150
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 146
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 144
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 142
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 152
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 140
+something ||Zakaria  || magasinier || 25/08/2020 12:21:22 || Mise à jour stock réel : 151
+something ||Zakaria  || magasinier || 25/08/2020 12:21:24 || Mise à jour stock réel : 137
+something ||Zakaria  || magasinier || 25/08/2020 12:21:24 || Mise à jour stock réel : 152
+something ||Zakaria  || magasinier || 25/08/2020 12:21:24 || Mise à jour stock réel : 168
+something ||Zakaria  || magasinier || 25/08/2020 12:21:24 || Mise à jour stock réel : 145
+something ||Zakaria  || magasinier || 25/08/2020 12:21:24 || Mise à jour stock réel : 160
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 142
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 162
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 147
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 177
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 178
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 179
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 175
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 188
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 181
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 190
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 186
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 195
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 185
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 203
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 209
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 208
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 211
+something ||Zakaria  || magasinier || 25/08/2020 12:21:25 || Mise à jour stock réel : 220
+something ||Zakaria  || magasinier || 25/08/2020 12:21:26 || Mise à jour stock réel : 218
+something ||Zakaria  || magasinier || 25/08/2020 12:21:26 || Mise à jour stock réel : 227
+something ||Zakaria  || magasinier || 25/08/2020 12:21:26 || Mise à jour stock réel : 226
+something ||Zakaria  || magasinier || 25/08/2020 12:21:26 || Mise à jour stock réel : 232
+something ||Zakaria  || magasinier || 25/08/2020 12:21:26 || Mise à jour stock réel : 151
+something ||Zakaria  || magasinier || 25/08/2020 12:21:26 || Mise à jour stock réel : 247
+something ||Zakaria  || magasinier || 25/08/2020 12:21:26 || Mise à jour stock réel : 240
+something ||Zakaria  || magasinier || 25/08/2020 12:21:26 || Mise à jour stock réel : 254
+something ||Zakaria  || magasinier || 25/08/2020 12:21:26 || Mise à jour stock réel : 259
+something ||Zakaria  || magasinier || 25/08/2020 12:21:26 || Mise à jour stock réel : 260
+something ||Zakaria  || magasinier || 25/08/2020 12:21:26 || Mise à jour stock réel : 262
+something ||Zakaria  || magasinier || 25/08/2020 12:21:26 || Mise à jour stock réel : 261
+something ||Zakaria  || magasinier || 25/08/2020 12:21:27 || Mise à jour stock réel : 266
+something ||Zakaria  || magasinier || 25/08/2020 12:21:27 || Mise à jour stock réel : 271
+something ||Zakaria  || magasinier || 25/08/2020 12:21:27 || Mise à jour stock réel : 277
+something ||Zakaria  || magasinier || 25/08/2020 12:21:27 || Mise à jour stock réel : 278
+something ||Zakaria  || magasinier || 25/08/2020 12:21:27 || Mise à jour stock réel : 281
+something ||Zakaria  || magasinier || 25/08/2020 12:21:27 || Mise à jour stock réel : 282
+something ||Zakaria  || magasinier || 25/08/2020 12:21:27 || Mise à jour stock réel : 276
+something ||Zakaria  || magasinier || 25/08/2020 12:21:27 || Mise à jour stock réel : 292
+something ||Zakaria  || magasinier || 25/08/2020 12:21:27 || Mise à jour stock réel : 293
+something ||Zakaria  || magasinier || 25/08/2020 12:21:27 || Mise à jour stock réel : 250
+Eddrayef ||Hamza || administrateur || 25/08/2020 12:58:01 || Creation du fournisseur
+Eddrayef ||Hamza || administrateur || 25/08/2020 12:58:15 || Achat document :  test
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:00:43 || Achat document :  kool
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:01:27 || Achat document :  aaaa
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:02:19 || Creation du client
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:02:31 || Nouvelle vente: test
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:09:16 || Achat document :  working?
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:10:02 || Achat document :  test
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:23:23 || Achat document :  TOTO
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:25:21 || Achat document :  jiji
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:28:54 || Nouvelle vente: popo
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:30:11 || Nouvelle vente: testtttt
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:33:04 || Nouvelle vente: aaaaa
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:35:42 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:35:44 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:35:46 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:37:46 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:37:48 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:37:50 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:37:52 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:37:54 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:37:55 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:37:57 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:38:10 || Achat document :  test
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:38:31 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:38:43 || Nouvelle vente: testing
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:46:16 || Achat document :  hello
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:47:11 || Nouvelle vente: test
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:52:21 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:52:23 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:52:48 || Nouvelle vente: test
+Eddrayef ||Hamza || administrateur || 25/08/2020 13:54:28 || Nouvelle vente: p
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:12 || Mise à jour stock réel : 143
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:12 || Mise à jour stock réel : 146
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:13 || Mise à jour stock réel : 138
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:13 || Mise à jour stock réel : 139
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:13 || Mise à jour stock réel : 149
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:13 || Mise à jour stock réel : 137
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:13 || Mise à jour stock réel : 156
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:13 || Mise à jour stock réel : 155
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:13 || Mise à jour stock réel : 164
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:13 || Mise à jour stock réel : 169
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:13 || Mise à jour stock réel : 176
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:13 || Mise à jour stock réel : 177
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:13 || Mise à jour stock réel : 170
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:14 || Mise à jour stock réel : 142
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:14 || Mise à jour stock réel : 183
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:14 || Mise à jour stock réel : 187
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:14 || Mise à jour stock réel : 181
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:14 || Mise à jour stock réel : 190
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:14 || Mise à jour stock réel : 198
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:14 || Mise à jour stock réel : 203
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:15 || Mise à jour stock réel : 213
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:15 || Mise à jour stock réel : 208
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:15 || Mise à jour stock réel : 225
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:15 || Mise à jour stock réel : 228
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:15 || Mise à jour stock réel : 235
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:16 || Mise à jour stock réel : 238
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:16 || Mise à jour stock réel : 268
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:16 || Mise à jour stock réel : 271
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:16 || Mise à jour stock réel : 273
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:16 || Mise à jour stock réel : 282
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:17 || Mise à jour stock réel : 284
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:17 || Mise à jour stock réel : 289
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:17 || Mise à jour stock réel : 288
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:17 || Mise à jour stock réel : 245
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:17 || Mise à jour stock réel : 257
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:17 || Mise à jour stock réel : 259
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:35:18 || Mise à jour stock réel : 269
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:40:15 || Achat document :  test
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:42:18 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:42:21 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:42:22 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:42:37 || Achat document :  hezzo
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:43:12 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:43:14 || Suppression de document
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:43:22 || Nouvelle vente: testttt
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:46:58 || Achat document :  pooo
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:47:46 || Achat document :  kkk
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:48:59 || Achat document :  aaaaa
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:50:03 || Achat document :  aaaa
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:52:08 || Achat document :  aaa
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:54:31 || Nouvelle vente: aaaa
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:54:53 || Achat document :  azur
+Eddrayef ||Hamza || administrateur || 25/08/2020 14:58:25 || Nouveau utlisateur : testtest
+test ||test  || operateur || 25/08/2020 15:00:02 || Nouvelle vente: AAA

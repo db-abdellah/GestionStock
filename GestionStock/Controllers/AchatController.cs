@@ -18,14 +18,14 @@ namespace GestionStock.Controllers
     public class AchatController : Controller
     {
         private static FournisseurBusiness fournisseurBusiness = new FournisseurBusinessImp();
-        private static ProduitBusiness produitBusiness= new ProduitBusinessImp();
-        private static StockBusiness stockBusiness= new StockBusinessImp();
-        private static AchatBusiness achatBusiness= new AchatBusinessImp();
+        private static ProduitBusiness produitBusiness = new ProduitBusinessImp();
+        private static StockBusiness stockBusiness = new StockBusinessImp();
+        private static AchatBusiness achatBusiness = new AchatBusinessImp();
         private static DocumentBusiness documentBusiness = new DocumentBusinessImp();
 
         private IHostEnvironment _env;
 
-        
+
         public AchatController(IHostEnvironment env)
         {
             _env = env;
@@ -48,16 +48,16 @@ namespace GestionStock.Controllers
             model.utilisateur = GetChefFromCookie();
             model.fournisseurList = fournisseurBusiness.getFournisseurs();
             model.ProduitList = produitBusiness.getProduits();
-           
+
             return View(model);
         }
 
         [VerifyUserAttribute]
         [HttpPost]
-        public JsonResult facture(string totalFacture,string numDocument,int fournisseurId)
+        public JsonResult facture(string totalFacture, string numDocument, int fournisseurId)
         {
             int idFacture = achatBusiness.saveFacture(totalFacture, numDocument, fournisseurId);
-            Log.TransactionsWriter(_env,GetChefFromCookie(),"Achat document :  "+ numDocument);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Achat document :  " + numDocument);
             return Json(idFacture);
 
 
@@ -78,7 +78,7 @@ namespace GestionStock.Controllers
         {
             FactureModel model = new FactureModel();
             model.utilisateur = GetChefFromCookie();
-            model.document =documentBusiness.getDocumentById(id);
+            model.document = documentBusiness.getDocumentById(id);
             model.achatList = achatBusiness.getAchatByDocumentId(id);
             return View(model);
         }
@@ -88,11 +88,11 @@ namespace GestionStock.Controllers
         public ActionResult AchatProduit(int idProduit)
         {
             AchatProduitModel model = new AchatProduitModel();
-            model.produit= produitBusiness.getProduitById(idProduit);
+            model.produit = produitBusiness.getProduitById(idProduit);
             model.stock = stockBusiness.getStockByProduitId(idProduit);
             return PartialView(model);
         }
-        [VerifyUserAttribute]
+      
         // Partial View 
         public ActionResult VenteProduit(int idProduit)
         {
@@ -177,7 +177,10 @@ namespace GestionStock.Controllers
         private Utilisateur GetChefFromCookie()
         {
             var jsonResult = HttpContext.Session.GetString("administrateur");
-           
+            if (jsonResult == null)
+                jsonResult = HttpContext.Session.GetString("magasinier");
+            if (jsonResult == null)
+                jsonResult = HttpContext.Session.GetString("operateur");
             return JsonConvert.DeserializeObject<Utilisateur>(jsonResult);
         }
         //----------------------------------------------------------------------
@@ -190,7 +193,7 @@ namespace GestionStock.Controllers
                 var magasinier = filterContext.HttpContext.Session.GetString("magasinier");
                 var admin = filterContext.HttpContext.Session.GetString("administrateur");
 
-                if ( admin == null)
+                if (magasinier == null && admin == null)
                     filterContext.Result = new RedirectResult(string.Format("/Login"));
             }
         }

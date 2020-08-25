@@ -16,7 +16,7 @@ namespace GestionStock.Models.DAO.Imp
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
             {
                 String query = $"SELECT achat.id,achat.idProduit,achat.idFacture,produit.nom as nomProduit, produit.prixAchat as prixAchat ,achat.qte,achat.total FROM achat,produit WHERE achat.idProduit = produit.id AND achat.idFacture = {id}";
-                
+
                 List<Achat> achats = connection.Query<Achat>(query).ToList();
 
 
@@ -25,7 +25,7 @@ namespace GestionStock.Models.DAO.Imp
             }
         }
 
-        public void saveDetails(String total, int idFacture, int idProduit,int qte)
+        public void saveDetails(String total, int idFacture, int idProduit, int qte)
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
             {

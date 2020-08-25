@@ -17,5 +17,7 @@ namespace GestionStock.Models.DAO
         ESModel getProduitsAndStock();
         ESModel getProduitsAndAtelierStock();
         List<Produit> getProduitsByGroup(string group);
+        Produit getProduitByIdProduit(string idProduit);
+        List<Produit> getAllProduits();
     }
 }

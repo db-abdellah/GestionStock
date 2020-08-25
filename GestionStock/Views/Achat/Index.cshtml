@@ -44,7 +44,7 @@ else
 
         </div>
         <div class="card-body table-responsive p-0">
-            <div  style="padding:5px" class="float-right">
+            <div style="padding:5px" class="float-right">
                 <a class="btn btn-default bg-maroon toastsDefaultMaroon float-right" asp-controller="Achat" asp-action="Achat">
                     <i class="fa fa-plus">
                     </i>&nbsp;Ajouter
@@ -91,7 +91,7 @@ else
                                 @Html.DisplayFor(modelItem => item.date)
                             </td>
                             <td>
-                                <div >
+                                <div>
                                     <a class="btn btn-success toastsDefaultSuccess" asp-controller="Achat" asp-action="Details" asp-route-id=@item.id>
                                         <i class="fa fa-info-circle ">
                                         </i>
@@ -99,7 +99,7 @@ else
                                     <button class="btn btn-danger swalDefaultError" onclick="Delete(@item.id)">
                                         <i class="fas fa-trash">
                                         </i>
-                                       
+
                                     </button>
 
                                 </div>
@@ -118,9 +118,6 @@ else
 @section Scripts
 {
     <script type="text/javascript">
-
-
-
         function Search() {
             // Declare variables
             var input, filter, table, tr, td, i, txtValue;
@@ -128,7 +125,6 @@ else
             filter = input.value.toUpperCase();
             table = document.getElementById("table");
             tr = table.getElementsByTagName("tr");
-
             // Loop through all table rows, and hide those who don't match the search query
             for (i = 0; i < tr.length; i++) {
                 td = tr[i].getElementsByTagName("td")[0];
@@ -142,9 +138,7 @@ else
                 }
             }
         }
-
         function Delete(id) {
-
             var result = confirm("Êtes-vous sûr de vouloir supprimer cet achat?");
             if (result == true) {
                 $.ajax({
@@ -152,17 +146,11 @@ else
                     url: "/Achat/SupprimerDocument",
                     data: { 'idDocument': id },
                     cache: false,
-
-
                     success: function (result) {
                         location.reload();
-
-
                     },
                     error: function (xhr) {
                         location.reload();
-
-
                     },
                     failure: function (response) {
                         alert("something unexpected happend");
@@ -171,7 +159,6 @@ else
             } else
                 return;
         }
-
     </script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -184,11 +171,6 @@ else
             "aoColumnDefs": [
                 { 'bSortable': false, 'aTargets': [4] }
             ]
-
         });
-
-
     </script>
 }
-
-

@@ -39,7 +39,7 @@ namespace GestionStock.Controllers
             Utilisateur util = GetChefFromCookie();
             ViewBag.utilisateur = util;
             return View(documentList);
-           
+
         }
         [VerifyUserAttribute]
         public ActionResult Vente()
@@ -176,7 +176,7 @@ namespace GestionStock.Controllers
             var jsonResult = HttpContext.Session.GetString("administrateur");
             if (jsonResult == null)
                 jsonResult = HttpContext.Session.GetString("magasinier");
-            if(jsonResult == null)
+            if (jsonResult == null)
                 jsonResult = HttpContext.Session.GetString("operateur");
             return JsonConvert.DeserializeObject<Utilisateur>(jsonResult);
         }

@@ -166,5 +166,22 @@ namespace GestionStock.Models.DAO.Imp
 
             }
         }
+
+        public Produit getProduitByIdProduit(string idProduit)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Produit> getAllProduits()
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+
+                List<Produit> produits = connection.Query<Produit>($"SELECT * FROM produit ORDER BY nom ").ToList();
+
+                return produits;
+
+            }
+        }
     }
 }

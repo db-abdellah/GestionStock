@@ -141,7 +141,10 @@ namespace GestionStock.Controllers
         private Utilisateur GetChefFromCookie()
         {
             var jsonResult = HttpContext.Session.GetString("administrateur");
-          
+            if (jsonResult == null)
+                jsonResult = HttpContext.Session.GetString("magasinier");
+            if (jsonResult == null)
+                jsonResult = HttpContext.Session.GetString("operateur");
             return JsonConvert.DeserializeObject<Utilisateur>(jsonResult);
         }
         //----------------------------------------------------------------------
@@ -154,7 +157,7 @@ namespace GestionStock.Controllers
                 var magasinier = filterContext.HttpContext.Session.GetString("magasinier");
                 var admin = filterContext.HttpContext.Session.GetString("administrateur");
 
-                if (admin == null)
+                if ( magasinier == null && admin == null)
                     filterContext.Result = new RedirectResult(string.Format("/Login"));
             }
         }

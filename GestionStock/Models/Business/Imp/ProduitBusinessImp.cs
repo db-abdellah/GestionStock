@@ -18,9 +18,19 @@ namespace GestionStock.Models.Business.Imp
             produitDao.DeleteProduitById(idProduit);
         }
 
+        public List<Produit> getAllProduits()
+        {
+            return produitDao.getAllProduits();
+        }
+
         public Produit getProduitById(int idProjet)
         {
             return produitDao.getProduitById(idProjet);
+        }
+
+        public Produit getProduitByIdProduit(string idProduit)
+        {
+            return produitDao.getProduitByIdProduit( idProduit);
         }
 
         public List<Produit> getProduits()
