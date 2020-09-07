@@ -24,160 +24,174 @@
 
     </div>
     <div class="card-body pb-0" id="table">
-        <h3>Produits en unité</h3>
-        <br />
-        <div class="row d-flex align-items-stretch">
+        @foreach (String cat in Model.categories)
+        {
+            <div class="card card-outline card-primary collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">@cat</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <!-- /.card-tools -->
+                </div>
+                <div class="card-body">
+                    <div class="row d-flex align-items-stretch">
 
 
 
-            @for (int i = 0; i < Model.ProduitList.Count; i++)
-            {
+                        @for (int i = 0; i < Model.ProduitList.Count; i++)
+                        {
 
-                if (Model.ProduitList[i].groupProduit != "Null")
-                    continue;
+                            if (Model.ProduitList[i].groupProduit != "Null" || Model.ProduitList[i].categorie != cat)
+                                continue;
 
-                imagePath = "/images/Produits/" + Model.ProduitList[i].id + ".jpeg";
-                <div class="searchHelper col-md-4">
-                    <div class="card bg-light ">
-                        <div class="card-header text-muted border-bottom-0 ">
-                            @Model.ProduitList[i].categorie
-                        </div>
-                        <div class="card-body pt-0">
-                            <div class="row-cols-1">
-                                <br />
-                                <div class="text-center ">
-                                    <img src="@imagePath" style="height:128px;width:128px; border: 1px solid #D3D3D3;object-fit:contain;" class=" img-fluid img-thumbnail img-responsive" onerror="this.src='/images/error.png' ">
+                            imagePath = "/images/Produits/" + Model.ProduitList[i].id + ".jpeg";
+                            <div class="searchHelper col-md-4">
+                                <div class="card bg-light ">
+                                    <div class="card-header text-muted border-bottom-0 ">
+                                        @Model.ProduitList[i].categorie
+                                    </div>
+                                    <div class="card-body pt-0">
+                                        <div class="row-cols-1">
+                                            <br />
+                                            <div class="text-center ">
+                                                <img src="@imagePath" style="height:128px;width:128px; border: 1px solid #D3D3D3;object-fit:contain;" class=" img-fluid img-thumbnail img-responsive" onerror="this.src='/images/error.png' ">
+                                            </div>
+                                            <div class="col-12">
+                                                <h2 class="lead nomProduit"><b>@Model.ProduitList[i].nom</b></h2>
+                                                <p class="text-muted text-sm"><b>Quantité en atelier: </b>  <span class="text-muted text-sm">@Model.stockList[i].qteEstimee  </span></p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="text-right">
+                                            <form>
+                                                <span hidden>@Model.ProduitList[i].id</span>
+                                                <input style="float:left ;width:50%" type="number" disabled step="1" min="0" value="0" max="@Model.stockList[i].qteEstimee" name="qteEntree" class="form-control" />&nbsp;
+                                                <button type="button" class="btn btn-md btn-primary " onclick="Initialisation(this)" style="float:right">Ajouter</button>
+
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <h2 class="lead nomProduit"><b>@Model.ProduitList[i].nom</b></h2>
-                                    <p  class="text-muted text-sm"><b>Quantité en atelier: </b>  <span class="text-muted text-sm">@Model.stockList[i].qteEstimee  </span></p>
+                            </div>
+
+
+                        }
+
+
+                    </div>
+                    <h6>Produits mesurables</h6>
+                    <br />
+                    <div class="row d-flex align-items-stretch">
+
+
+                        @foreach (String group in Model.groups)
+                        {
+
+                            if (group == "Null")
+                                continue;
+                            @for (int i = 0; i < Model.ProduitList.Count; i++)
+                            {
+
+                                if (Model.ProduitList[i].groupProduit != group || Model.ProduitList[i].categorie != cat)
+                                    continue;
+                                else
+                                {
+                                    imagePath = "/images/Produits/" + Model.ProduitList[i].id + ".jpeg";
+                                    break;
+                                }
+
+                            }
+
+
+
+
+                            <div class="searchHelper2 col-md-4">
+                                <div class="card bg-light ">
+                                    <div class="card-header  border-bottom-0 ">
+                                        <h2 class="lead nomProduit"><b> @group</b></h2>
+                                    </div>
+                                    <div class="card-body pt-0">
+                                        <div class="row-cols-1 ">
+                                            <br />
+                                            <div class=" text-center ">
+                                                <img src="@imagePath" style="height:128px;width:128px; border: 1px solid #D3D3D3;object-fit:contain;" class=" img-fluid img-thumbnail img-responsive" onerror="this.src='/images/error.png' ">
+                                            </div>
+                                            <br />
+                                            <div class="col-12" hidden>
+                                                <p class="text-muted text-sm"><b>Quantité en atelier: </b> </p>
+                                                <p class="text-muted text-sm" id="@group">0</p>
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="text-right">
+                                            <form>
+
+                                                <input style="float:left ;" type="number" disabled step="1" min="0" value="0" name="qteEntree" class="form-control" />&nbsp;
+
+                                                <select name="produit" disabled onchange="updateStock(this,@group)" class="form-control">
+
+
+                                                    @for (int i = 0; i < Model.ProduitList.Count; i++)
+                                                    {
+                                                        if (Model.ProduitList[i].groupProduit != group)
+                                                            continue;
+                                                        <option value="@Model.ProduitList[i].id">@Model.ProduitList[i].nom</option>
+
+                                                    }
+                                                </select>
+
+                                                @for (int i = 0; i < Model.ProduitList.Count; i++)
+                                                {
+                                                    if (Model.ProduitList[i].groupProduit != group)
+                                                        continue;
+                                                    <span id="@Model.ProduitList[i].id" hidden>@Model.stockList[i].qteEstimee</span>
+
+                                                }
+                                                <br />
+
+                                                <button type="button" class="btn btn-md btn-primary " onclick="Initialisation2(this)" style="float:right">Ajouter</button>
+
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
-
                             </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="text-right">
-                                <form>
-                                    <span hidden>@Model.ProduitList[i].id</span>
-                                    <input style="float:left ;width:50%" type="number" disabled step="1" min="0" value="0" max="@Model.stockList[i].qteEstimee" name="qteEntree" class="form-control" />&nbsp;
-                                    <button type="button" class="btn btn-md btn-primary " onclick="Initialisation(this)" style="float:right">Ajouter</button>
 
-                                </form>
-                            </div>
-                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          }
+
+
                     </div>
                 </div>
-
-
-            }
-
-
-        </div>
-        <h3>Produits mesurables</h3>
-        <br />
-        <div class="row d-flex align-items-stretch">
-
-
-            @foreach (String group in Model.groups)
-            {
-
-                if (group == "Null")
-                    continue;
-                @for (int i = 0; i < Model.ProduitList.Count; i++)
-                {
-                    if (Model.ProduitList[i].groupProduit != group)
-                        continue;
-                    else
-                    {
-                        imagePath = "/images/Produits/" + Model.ProduitList[i].id + ".jpeg";
-                        break;
-                    }
-
-                }
-
-
-
-
-                <div class="searchHelper2 col-md-4">
-                    <div class="card bg-light ">
-                        <div class="card-header  border-bottom-0 ">
-                            <h2 class="lead nomProduit"><b> @group</b></h2>
-                        </div>
-                        <div class="card-body pt-0">
-                            <div class="row-cols-1 ">
-                                <br />
-                                <div class=" text-center ">
-                                    <img src="@imagePath" style="height:128px;width:128px; border: 1px solid #D3D3D3;object-fit:contain;" class=" img-fluid img-thumbnail img-responsive" onerror="this.src='/images/error.png' ">
-                                </div>
-                                <br />
-                                <div class="col-12" hidden>
-                                    <p class="text-muted text-sm"><b>Quantité en atelier: </b> </p>
-                                    <p class="text-muted text-sm" id="@group">0</p>
-
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="text-right">
-                                <form>
-
-                                    <input style="float:left ;" type="number" disabled step="1" min="0" value="0" name="qteEntree" class="form-control" />&nbsp;
-
-                                    <select name="produit" disabled onchange="updateStock(this,@group)" class="form-control">
-
-
-                                        @for (int i = 0; i < Model.ProduitList.Count; i++)
-                                        {
-                                            if (Model.ProduitList[i].groupProduit != group)
-                                                continue;
-                                            <option value="@Model.ProduitList[i].id">@Model.ProduitList[i].nom</option>
-
-                                        }
-                                    </select>
-
-                                    @for (int i = 0; i < Model.ProduitList.Count; i++)
-                                    {
-                                        if (Model.ProduitList[i].groupProduit != group)
-                                            continue;
-                                        <span id="@Model.ProduitList[i].id" hidden>@Model.stockList[i].qteEstimee</span>
-
-                                    }
-                                    <br />
-
-                                    <button type="button" class="btn btn-md btn-primary " onclick="Initialisation2(this)" style="float:right">Ajouter</button>
-
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            }
-
-        </div>
+            </div>
+        }
     </div>
 </div>
 
@@ -252,7 +266,7 @@
             entreeProduit(qte, id);
         }
 
-       
+
 
         function Initialisation(caller) {
 
@@ -309,7 +323,7 @@
             console.log(qte);
             console.log(group);
             group.innerHTML = qte;
-           //caller.parentElement.getElementsByTagName("input")[0].max = qte;
+            //caller.parentElement.getElementsByTagName("input")[0].max = qte;
             caller.parentElement.getElementsByTagName("input")[0].value = 0;
             var parent = group.parentElement.parentElement;
             var div = parent.getElementsByTagName("div")[0];

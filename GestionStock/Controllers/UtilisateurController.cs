@@ -65,7 +65,9 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         public ActionResult Create(Utilisateur utilisateur , IFormFile file)
         {
-              Utilisateur util = GetChefFromCookie();
+
+            utilisateur = clearInput(utilisateur);
+            Utilisateur util = GetChefFromCookie();
                 ViewBag.utilisateur = util;
                 int idUtilisateur= utilisateurBusiness.saveUtilisateur(utilisateur);
 
@@ -101,6 +103,7 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         public ActionResult Edit(Utilisateur utilisateur, IFormFile file)
         {
+            utilisateur = clearInput(utilisateur);
 
             if (file != null)
             {
@@ -178,7 +181,14 @@ namespace GestionStock.Controllers
         }
 
 
-
+        private Utilisateur clearInput(Utilisateur util)
+        {
+            util.adresse = util.adresse.Replace("\'", " ");
+            util.nom = util.nom.Replace("\'", " ");
+            util.prenom = util.prenom.Replace("\'", " ");
+            util.telephone = util.telephone.Replace("\'", " ");
+            return util;
+        }
         //----------------------------------------------------------------------
         [VerifyUserAttribute]
         private Utilisateur GetChefFromCookie()

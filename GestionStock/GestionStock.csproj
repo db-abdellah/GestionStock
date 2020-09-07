@@ -26,14 +26,4 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\images\Utilisateur\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\images\Produits\1.jpeg" />
-    <None Include="wwwroot\images\Produits\28.jpeg" />
-    <None Include="wwwroot\images\Produits\29.jpeg" />
-  </ItemGroup>
-
 </Project>

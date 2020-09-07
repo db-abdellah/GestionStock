@@ -151,7 +151,7 @@
             if (nom.length == 0 || prenom.length == 0 || login.length == 0 || password.length == 0 || adresse.length == 0 || telephone.length == 0) {
 
                 document.getElementById("ErrorContainer").hidden = false;
-                $('body').scrollTop(0);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
                 return false;
             }
             return true;

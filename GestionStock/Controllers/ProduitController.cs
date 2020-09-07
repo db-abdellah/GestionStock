@@ -66,8 +66,20 @@ namespace GestionStock.Controllers
             Utilisateur util = GetChefFromCookie();
             ViewBag.utilisateur = util;
             ViewBag.groups = produitBusiness.getProduitsAndAtelierStock().groups;
+            ViewBag.categorie = produitBusiness.getProduitsAndAtelierStock().categories;
             return View();
         }
+
+        [VerifyUserAttribute]
+        public ActionResult CreateGroup()
+        {
+            Utilisateur util = GetChefFromCookie();
+            ViewBag.utilisateur = util;
+            ViewBag.categorie = produitBusiness.getProduitsAndAtelierStock().categories;
+
+            return View();
+        }
+
 
         // POST: ProduitController/Create
         [HttpPost]
@@ -75,7 +87,8 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         public ActionResult Create(Produit produit, IFormFile file)
         {
-            
+            produit = clearInput(produit);
+            produit.groupProduit = "Null";
             Utilisateur util = GetChefFromCookie();
                 
 
@@ -97,6 +110,47 @@ namespace GestionStock.Controllers
             
         }
 
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [VerifyUserAttribute]
+        public ActionResult CreateGroup(Produit produit, IFormFile file,int min, int max)
+        {
+            produit = clearInput(produit);
+            int prixAchat = Int32.Parse( produit.prixAchat )/ min;
+            int prixVente = Int32.Parse( produit.prixVente )/ min;
+            Utilisateur util = GetChefFromCookie();
+
+            String nom = produit.nom;
+            ViewBag.utilisateur = util;
+            for(int i = min; i < max + 1; i++)
+            {
+                produit.prixAchat = (prixAchat * i).ToString();
+                produit.prixVente = (prixVente * i).ToString();
+                produit.nom =nom+ "  " + i + "M";
+           
+            int idProduit = produitBusiness.saveProduit(produit);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Creation Produit : " + produit.nom);
+            if (file != null)
+            {
+
+                var dir = _env.ContentRootPath + @"/wwwroot/images/Produits";
+
+                using (var filestream = new FileStream(Path.Combine(dir, idProduit + ".jpeg"), FileMode.Create, FileAccess.Write))
+                {
+                    file.CopyTo(filestream);
+
+                }
+            }
+            }
+            return RedirectToAction(nameof(Index));
+
+        }
+
+
+
+
         // GET: ProduitController/Edit/5
         [VerifyUserAttribute]
         public ActionResult Edit(int id)
@@ -106,6 +160,7 @@ namespace GestionStock.Controllers
             Produit produit = produitBusiness.getProduitById(id);
             produit.qteEstime = stockBusiness.getQteEstime(id);
             ViewBag.groups = produitBusiness.getProduitsAndAtelierStock().groups;
+            ViewBag.categorie = produitBusiness.getProduitsAndAtelierStock().categories;
             return View(produit);
         }
 
@@ -177,7 +232,31 @@ namespace GestionStock.Controllers
 
         }
 
-        
+        [HttpPost]
+        [VerifyUserAttribute]
+        public JsonResult SupprimerGroup(String group)
+        {
+
+
+            produitBusiness.DeleteProduitByGroup(group);
+            Log.TransactionsWriter(_env, GetChefFromCookie(), "Suppression Group  :  "+group);
+            return Json("true");
+
+
+
+
+        }
+
+        private Produit clearInput(Produit prod)
+        {
+            prod.idDeProduit = prod.idDeProduit.Replace("\'", " ");
+            prod.nom = prod.nom.Replace("\'", " ");
+            prod.groupProduit = prod.groupProduit.Replace("\'", " ");
+            prod.categorie = prod.categorie.Replace("\'", " ");
+            return prod;
+        }
+
+
 
 
 

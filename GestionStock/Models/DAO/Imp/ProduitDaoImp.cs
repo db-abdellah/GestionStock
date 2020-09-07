@@ -64,7 +64,8 @@ namespace GestionStock.Models.DAO.Imp
 
                 query = $"SELECT DISTINCT groupProduit FROM `produit`  Order by id ";
                 model.groups = connection.Query<String>(query).ToList();
-
+                query = $"SELECT DISTINCT categorie FROM `produit`  Order by id ";
+                model.categories = connection.Query<String>(query).ToList();
                 return model;
                  
               
@@ -83,6 +84,7 @@ namespace GestionStock.Models.DAO.Imp
                
                 ESModel model = new ESModel();
                 model.stockList = new List<Stock>();
+                model.categories = new List<String>();
                 List<ES> esList = new List<ES>();
                 String query = $"SELECT * FROM `produit` ORDER BY id ";
                 model.ProduitList = connection.Query<Produit>(query).ToList();
@@ -106,6 +108,9 @@ namespace GestionStock.Models.DAO.Imp
                 }
                 query = $"SELECT DISTINCT groupProduit FROM `produit`  Order by id ";
                 model.groups = connection.Query<String>(query).ToList();
+                query = $"SELECT DISTINCT categorie FROM `produit`  Order by id ";
+                model.categories = connection.Query<String>(query).ToList();
+
 
                 return model;
 
@@ -180,6 +185,25 @@ namespace GestionStock.Models.DAO.Imp
                 List<Produit> produits = connection.Query<Produit>($"SELECT * FROM produit ORDER BY nom ").ToList();
 
                 return produits;
+
+            }
+        }
+
+        public void DeleteProduitByGroup(string group)
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+
+                List<Produit> produits = connection.Query<Produit>($"SELECT * FROM produit WHERE groupProduit ='{group}'").ToList();
+
+                foreach(Produit item in produits) { 
+                String query = $"DELETE FROM produit WHERE id = {item.id}; ";
+                connection.Execute(query);
+                query = $"DELETE FROM stock WHERE idProduit = {item.id}; ";
+                connection.Execute(query);
+
+                }
+
 
             }
         }

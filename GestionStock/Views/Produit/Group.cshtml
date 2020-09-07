@@ -28,11 +28,18 @@
                     <div class="card-body table-responsive p-0">
 
                         <div style="padding:5px" class="float-right">
-                            <a class="btn btn-default bg-maroon toastsDefaultMaroon float-lg-right" asp-controller="Produit" asp-action="Create">
+                            <a class="btn btn-info bg-cyan toastsDefaultMaroon float-lg-left" style="margin-right:5px;" asp-controller="Produit" asp-action="Create">
                                 <i class="fa fa-plus">
                                 </i>
                                 &nbsp;Nouveau produit
                             </a>
+
+                            <a class="btn btn-info bg-indigo toastsDefaultMaroon float-lg-right" asp-controller="Produit" asp-action="CreateGroup">
+                                <i class="fa fa-plus">
+                                </i>
+                                &nbsp;Nouveau group
+                            </a>
+
                         </div>
                         <div class="dataTables_wrapper dt-bootstrap4">
                             <table class="table table-striped table-bordered" style="text-align:center;font-size:11px" id="table">
@@ -64,9 +71,9 @@
                                     {
                                         <tr>
                                             <td>
-                                              
-                                                    @Html.DisplayFor(modelItem => item.idDeProduit)
-                                               
+
+                                                @Html.DisplayFor(modelItem => item.idDeProduit)
+
                                             </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.nom)

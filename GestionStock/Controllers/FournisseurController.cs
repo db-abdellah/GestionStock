@@ -52,6 +52,7 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         public ActionResult Create(Fournisseur fournisseur)
         {
+            fournisseur = clearInput(fournisseur);
             try
             {
                 fournisseurBusiness.saveFournisseur(fournisseur);
@@ -89,6 +90,7 @@ namespace GestionStock.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit( Fournisseur fournisseur)
         {
+            fournisseur = clearInput(fournisseur);
             try
             {
                 Utilisateur util = GetChefFromCookie();
@@ -132,6 +134,17 @@ namespace GestionStock.Controllers
                 return View();
             }
         }
+
+
+
+        private Fournisseur clearInput(Fournisseur fournisseur)
+        {
+            fournisseur.adresse = fournisseur.adresse.Replace("\'", " ");
+            fournisseur.Nom = fournisseur.Nom.Replace("\'", " ");
+            fournisseur.prenom = fournisseur.prenom.Replace("\'", " ");
+            return fournisseur;
+        }
+
 
 
         //----------------------------------------------------------------------

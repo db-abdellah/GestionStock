@@ -13,6 +13,11 @@ namespace GestionStock.Models.Business.Imp
     {
         private ProduitDao produitDao = new ProduitDaoImp();
 
+        public void DeleteProduitByGroup(string group)
+        {
+            produitDao.DeleteProduitByGroup(group);
+        }
+
         public void DeleteProduitById(int idProduit)
         {
             produitDao.DeleteProduitById(idProduit);

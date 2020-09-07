@@ -52,6 +52,7 @@ namespace GestionStock.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Client client)
         {
+            client = clearInput(client);
             try
             {
                 clientBusiness.saveClient(client);
@@ -91,6 +92,7 @@ namespace GestionStock.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Client client)
         {
+            client = clearInput(client);
             try
             {
                 Utilisateur util = GetChefFromCookie();
@@ -133,6 +135,13 @@ namespace GestionStock.Controllers
             {
                 return View();
             }
+        }
+        private Client clearInput(Client client)
+        {
+            client.adresse = client.adresse.Replace("\'", " ");
+            client.Nom = client.Nom.Replace("\'", " ");
+            client.prenom = client.prenom.Replace("\'", " ");
+            return client;
         }
 
 

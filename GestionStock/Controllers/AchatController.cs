@@ -56,6 +56,7 @@ namespace GestionStock.Controllers
         [HttpPost]
         public JsonResult facture(string totalFacture, string numDocument, int fournisseurId)
         {
+            numDocument = numDocument.Replace("\'", " ");
             int idFacture = achatBusiness.saveFacture(totalFacture, numDocument, fournisseurId);
             Log.TransactionsWriter(_env, GetChefFromCookie(), "Achat document :  " + numDocument);
             return Json(idFacture);

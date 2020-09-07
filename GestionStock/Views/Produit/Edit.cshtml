@@ -40,9 +40,16 @@
                     <span asp-validation-for="nom" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label $ class="control-label">Catégorie</label>
-                    <input asp-for="categorie" class="form-control" />
+                    <label class="control-label">Catégorie:</label>
+                    <input asp-for="categorie" class="form-control" list="categories" />
                     <span asp-validation-for="categorie" class="text-danger"></span>
+                    <datalist id="categories">
+                        @foreach (String categorie in ViewBag.categorie)
+                        {
+                            <option value="@categorie" />
+                        }
+
+                    </datalist>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Quantité estimé:</label>
