@@ -45,7 +45,7 @@ const CardWidget = (($) => {
   }
 
   const Default = {
-    animationSpeed: 'normal',
+    animationSpeed: 200,
     collapseTrigger: Selector.DATA_COLLAPSE,
     removeTrigger: Selector.DATA_REMOVE,
     maximizeTrigger: Selector.DATA_MAXIMIZE,

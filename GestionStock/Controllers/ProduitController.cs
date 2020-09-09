@@ -117,7 +117,10 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         public ActionResult CreateGroup(Produit produit, IFormFile file,int min, int max)
         {
+            produit.groupProduit = produit.nom;
+            produit.qteEstime = 0;
             produit = clearInput(produit);
+            
             int prixAchat = Int32.Parse( produit.prixAchat )/ min;
             int prixVente = Int32.Parse( produit.prixVente )/ min;
             Utilisateur util = GetChefFromCookie();

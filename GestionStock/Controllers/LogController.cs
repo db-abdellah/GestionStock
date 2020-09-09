@@ -36,6 +36,16 @@ namespace GestionStock.Controllers
             return View(model);
         }
 
+        [VerifyUserAttribute2]
+        public IActionResult Motif()
+        {
+            LogModel model = new LogModel();
+            model.util = GetChefFromCookie();
+            model.motifs = Log.fileToListMotif(_env);
+
+            return View(model);
+        }
+
         [VerifyUserAttribute]
         public IActionResult Transactions()
         {
@@ -65,6 +75,19 @@ namespace GestionStock.Controllers
                 var admin = filterContext.HttpContext.Session.GetString("administrateur");
 
                 if ( admin == null)
+                    filterContext.Result = new RedirectResult(string.Format("/Login"));
+            }
+        }
+
+        public class VerifyUserAttribute2 : ActionFilterAttribute
+        {
+            public override void OnActionExecuting(ActionExecutingContext filterContext)
+            {
+                var operateur = filterContext.HttpContext.Session.GetString("operateur");
+                var magasinier = filterContext.HttpContext.Session.GetString("magasinier");
+                var admin = filterContext.HttpContext.Session.GetString("administrateur");
+
+                if (admin == null && magasinier==null)
                     filterContext.Result = new RedirectResult(string.Format("/Login"));
             }
         }

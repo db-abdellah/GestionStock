@@ -1,0 +1,24 @@
+Eddrayef ||Hamza || administrateur || 07/09/2020 17:53:22 || Entrée produit id:146   Qté: 1
+Eddrayef ||Hamza || administrateur || 07/09/2020 17:57:08 || Sortie produit id:143  Qté: 2
+Eddrayef ||Hamza || administrateur || 07/09/2020 18:27:16 || Sortie produit id:44  Qté: 5
+Eddrayef ||Hamza || administrateur || 07/09/2020 18:29:38 || Sortie produit id:44  Qté: 2
+Eddrayef ||Hamza || administrateur || 07/09/2020 18:32:43 || Sortie produit id:44  Qté: 1
+Eddrayef ||Hamza || administrateur || 07/09/2020 18:42:39 || Sortie produit id:44  Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:41 || Entrée produit id:39   Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:41 || Entrée produit id:139   Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:41 || Entrée produit id:41   Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:41 || Entrée produit id:139   Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:41 || Entrée produit id:183   Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:41 || Entrée produit id:41   Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:42 || Entrée produit id:183   Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:42 || Entrée produit id:41   Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:45 || Entrée produit id:39   Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:45 || Entrée produit id:39   Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:45 || Entrée produit id:41   Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:45 || Entrée produit id:41   Qté: 0
+Eddrayef ||Hamza || administrateur || 07/09/2020 20:38:46 || Entrée produit id:139   Qté: 0
+Eddrayef ||Hamza || administrateur || 08/09/2020 01:04:08 || Entrée produit id:44   Qté: 2
+Eddrayef ||Hamza || administrateur || 08/09/2020 02:59:04 || Creation Produit : test  1M
+Eddrayef ||Hamza || administrateur || 08/09/2020 02:59:04 || Creation Produit : test  2M
+Eddrayef ||Hamza || administrateur || 08/09/2020 02:59:04 || Creation Produit : test  3M
+Eddrayef ||Hamza || administrateur || 08/09/2020 03:02:14 || Suppression Group  :  test

@@ -71,8 +71,10 @@
                                         <div class="text-right">
                                             <form>
                                                 <span hidden>@Model.ProduitList[i].id</span>
-                                                <input style="float:left ;width:50%" type="number" disabled step="1" min="0" value="0" max="@Model.stockList[i].qteEstimee" name="qteEntree" class="form-control" />&nbsp;
-                                                <button type="button" class="btn btn-md btn-primary " onclick="Initialisation(this)" style="float:right">Ajouter</button>
+                                                <input style="float:left " type="number" disabled step="1" min="0" value="0" max="@Model.stockList[i].qteEstimee" name="qteEntree" class="form-control" />&nbsp;
+                                                <input style="float:left ;" type="text" disabled placeholder="Motif" name="motif" class="form-control" />&nbsp;
+
+                                                <button type="button" class="btn btn-md btn-primary " onclick="Initialisation(this)" style="float:right;margin-top:3px">Ajouter</button>
 
                                             </form>
                                         </div>
@@ -85,7 +87,7 @@
 
 
                     </div>
-                    <h6>Produits mesurables</h6>
+                
                     <br />
                     <div class="row d-flex align-items-stretch">
 
@@ -100,6 +102,7 @@
 
                                 if (Model.ProduitList[i].groupProduit != group || Model.ProduitList[i].categorie != cat)
                                     continue;
+
                                 else
                                 {
                                     imagePath = "/images/Produits/" + Model.ProduitList[i].id + ".jpeg";
@@ -120,7 +123,7 @@
                                         <div class="row-cols-1 ">
                                             <br />
                                             <div class=" text-center ">
-                                                <img src="@imagePath" style="height:128px;width:128px; border: 1px solid #D3D3D3;object-fit:contain;" class=" img-fluid img-thumbnail img-responsive" onerror="this.src='/images/error.png' ">
+                                                <img src="@imagePath" id="@group" style="height:128px;width:128px; border: 1px solid #D3D3D3;object-fit:contain;" class=" img-fluid img-thumbnail img-responsive" onerror="this.src='/images/error.png' ">
                                             </div>
                                             <br />
                                             <div class="col-12" hidden>
@@ -138,7 +141,7 @@
 
                                                 <input style="float:left ;" type="number" disabled step="1" min="0" value="0" name="qteEntree" class="form-control" />&nbsp;
 
-                                                <select name="produit" disabled onchange="updateStock(this,@group)" class="form-control">
+                                                <select name="produit" disabled onchange="updateStock(this,'@group')" class="form-control">
 
 
                                                     @for (int i = 0; i < Model.ProduitList.Count; i++)
@@ -159,7 +162,9 @@
                                                 }
                                                 <br />
 
-                                                <button type="button" class="btn btn-md btn-primary " onclick="Initialisation2(this)" style="float:right">Ajouter</button>
+                                                <input style="float:left ;" type="text" disabled placeholder="Motif" name="motif" class="form-control" />&nbsp;
+
+                                                <button type="button" class="btn btn-md btn-primary " onclick="Initialisation2(this)" style="float:right;margin-top:3px">Ajouter</button>
 
                                             </form>
                                         </div>
@@ -204,6 +209,7 @@
 
 
         function Search() {
+           
             // Declare variables
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("searchBar");
@@ -211,14 +217,21 @@
             table = document.getElementById("table");
             tr = table.getElementsByClassName("searchHelper");
             tr2 = table.getElementsByClassName("searchHelper2");
+            if (input.value.length == 0) {
+                closeTabs();
+                
+
+            } else {
+                openTabs();
+               
+            }
 
             // Loop through all table rows, and hide those who don't match the search query
             for (i = 0; i < tr.length; i++) {
                 td = tr[i].getElementsByClassName("nomProduit")[0];
                 if (td) {
                     txtValue = td.textContent || td.innerText;
-                    console.log(txtValue);
-                    console.log(txtValue.toUpperCase().indexOf(filter));
+                    
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
 
@@ -233,8 +246,7 @@
                 td = tr2[i].getElementsByClassName("nomProduit")[0];
                 if (td) {
                     txtValue = td.textContent || td.innerText;
-                    console.log(txtValue);
-                    console.log(txtValue.toUpperCase().indexOf(filter));
+                   
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
                         tr2[i].style.display = "";
 
@@ -249,21 +261,23 @@
 
         function valider(caller) {
             var qte = caller.parentElement.getElementsByTagName("input")[0].value;
+            var motif = caller.parentElement.getElementsByTagName("input")[1].value;
+
             var id = caller.parentElement.getElementsByTagName("span")[0].innerHTML;
-            console.log(qte);
-            console.log(id);
-            entreeProduit(qte, id);
+          
+            entreeProduit(qte, id,motif);
         }
 
         function valider2(caller) {
             var qte = caller.parentElement.getElementsByTagName("input")[0].value;
+            var motif = caller.parentElement.getElementsByTagName("input")[1].value;
             console.log(qte);
             var select = caller.parentElement.getElementsByTagName("select")[0];
             var id = select.options[select.selectedIndex].value;
             console.log(id);
 
 
-            entreeProduit(qte, id);
+            entreeProduit(qte, id,motif);
         }
 
 
@@ -271,6 +285,7 @@
         function Initialisation(caller) {
 
             caller.parentElement.getElementsByTagName("input")[0].disabled = false;
+            caller.parentElement.getElementsByTagName("input")[1].disabled = false;
             caller.innerHTML = "Valider";
             caller.setAttribute("onClick", "valider(this)");
         }
@@ -278,6 +293,7 @@
         function Initialisation2(caller) {
 
             caller.parentElement.getElementsByTagName("input")[0].disabled = false;
+            caller.parentElement.getElementsByTagName("input")[1].disabled = false;
             caller.parentElement.getElementsByTagName("select")[0].disabled = false;
             var event = new Event('change');
             caller.parentElement.getElementsByTagName("select")[0].dispatchEvent(event);
@@ -286,7 +302,7 @@
         }
 
 
-        function entreeProduit(qte, idProduit) {
+        function entreeProduit(qte, idProduit,motif) {
 
 
 
@@ -294,7 +310,7 @@
             $.ajax({
                 type: "POST",
                 url: "/Entree/SortieAtelier",
-                data: { 'qte': qte, 'idProduit': idProduit },
+                data: { 'qte': qte, 'idProduit': idProduit, 'motif': motif },
                 cache: false,
 
 
@@ -318,23 +334,39 @@
 
         function updateStock(caller, group) {
             var id = caller.options[caller.selectedIndex].value;
-            console.log(id);
-            var qte = document.getElementById(id).innerHTML;
-            console.log(qte);
-            console.log(group);
-            group.innerHTML = qte;
-            //caller.parentElement.getElementsByTagName("input")[0].max = qte;
             caller.parentElement.getElementsByTagName("input")[0].value = 0;
-            var parent = group.parentElement.parentElement;
-            var div = parent.getElementsByTagName("div")[0];
-            var image = div.getElementsByTagName("img")[0];
+            var image = document.getElementById(group);
             image.src = "/images/Produits/" + id + ".jpeg";
 
 
         }
 
+        function initialise() {
+            var listCat = document.getElementsByClassName("btn btn-tool");
+            listCat[0].click();
+        }
 
+        function openTabs() {
+            var listCat = document.getElementsByClassName("fas fa-plus");
+            while (listCat.length != 0) { 
+            for (i = 0; i < listCat.length; i++) {
+                listCat[i].parentElement.click();
 
+                }
+                listCat = document.getElementsByClassName("fas fa-plus");
+            }
+        }
+
+        function closeTabs() {
+            var listCat = document.getElementsByClassName("fas fa-minus");
+            while (listCat.length != 0) {
+                for (i = 0; i < listCat.length; i++) {
+                    listCat[i].parentElement.click();
+
+                }
+                listCat = document.getElementsByClassName("fas fa-minus");
+            }
+        }
 
         function initialSelect() {
             var select = document.getElementsByTagName('select');
@@ -345,6 +377,7 @@
 
             }
         }
-        initialSelect();
+        //initialSelect();
+        initialise();
     </script>
 }

@@ -10,5 +10,6 @@ namespace GestionStock.Models.Models
     {
         public Utilisateur util { set; get; } 
         public List<Utilisateur> logList { set; get; }
+        public List<MotifModel> motifs { set; get; }
     }
 }

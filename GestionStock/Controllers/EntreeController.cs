@@ -126,7 +126,7 @@ namespace GestionStock.Controllers
         public JsonResult EntreeAtelier(int idProduit,int qte)
         {
 
-
+           
             entreeBusiness.EntreeAtelier(idProduit,qte);
             Log.TransactionsWriter(_env, GetChefFromCookie(), "Entrée produit id:"+idProduit+"   Qté: "+qte);
             return Json("true");
@@ -138,10 +138,10 @@ namespace GestionStock.Controllers
 
         [HttpPost]
         [VerifyUserAttribute]
-        public JsonResult SortieAtelier(int idProduit, int qte)
+        public JsonResult SortieAtelier(int idProduit, int qte,String motif)
         {
-
-
+            Produit prod= produitBusiness.getProduitById(idProduit);
+            Log.MotifWriter(_env, GetChefFromCookie(), motif, prod.nom, qte.ToString());
             entreeBusiness.SortieAtelier(idProduit, qte);
             Log.TransactionsWriter(_env, GetChefFromCookie(), "Sortie produit id:" + idProduit + "  Qté: " + qte);
             return Json("true");

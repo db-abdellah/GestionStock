@@ -67,6 +67,34 @@ namespace GestionStock.Handlers
         }
 
 
+        public static void MotifWriter(IHostEnvironment env, Utilisateur util, String motif, String produit,String qte)
+        {
+            try
+            {
+                String filePath = env.ContentRootPath + @"/motif.txt";
+                using (StreamWriter sw = File.AppendText(filePath))
+                {
+                    sw.WriteLine(util.nom +" "+ util.prenom  +" ||"  + produit + " || " + qte+ " || " + DateTime.Now + " || " + motif);
+
+
+                }
+
+
+
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Executing finally block.");
+            }
+        }
+
+
         public static List<Utilisateur> fileToList(IHostEnvironment env)
         {
             List<Utilisateur> utilisateurs = new List<Utilisateur>();
@@ -102,6 +130,26 @@ namespace GestionStock.Handlers
                 util.date = col[3];
                 util.transaction = col[4];
                 utilisateurs.Add(util);
+
+
+            }
+            return utilisateurs;
+        }
+        public static List<MotifModel> fileToListMotif(IHostEnvironment env)
+        {
+            List<MotifModel> utilisateurs = new List<MotifModel>();
+            String filePath = env.ContentRootPath + @"/motif.txt";
+            string[] lines = File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                MotifModel model = new MotifModel();
+                string[] col = line.Split("||");
+                model.nom = col[0];
+                model.produit = col[1];
+                model.qte= col[2];
+                model.date = col[3];
+                model.motif = col[4];
+                utilisateurs.Add(model);
 
 
             }
