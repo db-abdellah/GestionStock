@@ -1,0 +1,119 @@
+﻿
+@model GestionStock.Models.Models.TransactionListModel
+@{
+    ViewData["Title"] = "Transaction utilisateur";
+    ViewData["fonction"] = Model.util.fonction.ToString();
+    String fullName = Model.util.nom + " " + Model.util.prenom;
+    ViewData["nom"] = fullName;
+    ViewData["UserId"] = Model.util.id;
+
+
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="card card-default color-palette-box">
+
+            <div class="card-header">
+                <div class="col-md-6 float-left">
+                    <h3 class="card-title">Log d'utilisateurs</h3>
+                </div>
+                <div class="col-md-6 float-right">
+                    <div class="input-group input-group-sm">
+                        <input type="text" name="table_search" id="searchBar" class="form-control float-right" placeholder="Rechercher" onkeyup="Search()" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-body table-responsive p-0">
+
+                <table class="table table-striped table-bordered" style="text-align:center" id="table">
+
+                    <thead>
+                        <tr>
+
+                            <th>
+                                Nom
+                            </th>
+
+                            <th>
+                                Fonction
+                            </th>
+                            <th>
+                                Date Transaction
+                            </th>
+                            <th>
+                                Transaction
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+
+
+                        @for (int i = Model.list.Count - 1; i >= 0; i--)
+                        {
+                            <tr>
+                                <td>
+                                    @Model.list[i].nom @Model.list[i].prenom
+
+                                </td>
+                                <td>
+                                    @Model.list[i].fonction
+                                </td>
+                                <td>
+                                    @Model.list[i].date
+                                </td>
+                                <td>
+                                    @Model.list[i].transaction
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        function Search() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchBar");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+
+        }
+
+
+        $(document).ready(function () {
+            $('#table').DataTable();
+        });
+        $('#table').dataTable({
+            "searching": false,
+            "paging": false,
+            "bInfo": false
+
+        });
+
+    </script>
+}

@@ -204,15 +204,7 @@
                                     </p>
                                 </a>
                             </li>
-                            <li class="nav-item has-treeview">
-                                <a asp-controller="Log" asp-action="Motif" class="nav-link">
-                                    <i class="nav-icon fa fa-fax"></i>
-                                    <p>
-                                        Log Sortie
 
-                                    </p>
-                                </a>
-                            </li>
 
                         }
                         @if (ViewData["fonction"].ToString() == "administrateur")
@@ -239,10 +231,19 @@
                                 </a>
                             </li>
                             <li class="nav-item has-treeview">
-                                <a asp-controller="Log" asp-action="Transactions" class="nav-link">
+                                <a asp-controller="Transaction" asp-action="Index" class="nav-link">
                                     <i class="nav-icon 	fa fa-outdent"></i>
                                     <p>
                                         Log des transactions
+
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item has-treeview">
+                                <a asp-controller="Motif" asp-action="Index" class="nav-link">
+                                    <i class="nav-icon fa fa-fax"></i>
+                                    <p>
+                                        Log Sortie
 
                                     </p>
                                 </a>

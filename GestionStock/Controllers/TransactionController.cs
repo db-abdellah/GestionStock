@@ -15,57 +15,33 @@ using Newtonsoft.Json;
 
 namespace GestionStock.Controllers
 {
-    public class LogController : Controller
+    public class TransactionController : Controller
     {
 
         static Utilisateur utilisateur = new Utilisateur();
         private IHostEnvironment _env;
 
-        public LogController(IHostEnvironment env)
+        public TransactionController(IHostEnvironment env)
         {
             _env = env;
 
         }
-        [VerifyUserAttribute]
-        public ActionResult Index()
-        {
-            LogModel model = new LogModel();
-            model.util= GetChefFromCookie();
-            model.logList = Log.fileToList(_env);
-            
-            return View(model);
-        }
+
 
         [VerifyUserAttribute]
-        public ActionResult Transactions()
+        public IActionResult Index()
         {
-            TransactionListModel model = new TransactionListModel();
-            model.util = GetChefFromCookie();
-            model.list = Log.fileToListTransactions(_env);
-
-            return View(model);
-        }
-
-        [VerifyUserAttribute]
-        public ActionResult Motif()
-        {
-            LogModel model = new LogModel();
-            model.util = GetChefFromCookie();
-            model.motifs = Log.fileToListMotif(_env);
-
-            return View(model);
+            return View(GetChefFromCookie());
         }
 
 
-
-        
 
         //----------------------------------------------------------------------
         [VerifyUserAttribute]
         private Utilisateur GetChefFromCookie()
         {
             var jsonResult = HttpContext.Session.GetString("administrateur");
-          
+
             return JsonConvert.DeserializeObject<Utilisateur>(jsonResult);
         }
         //----------------------------------------------------------------------
@@ -78,11 +54,10 @@ namespace GestionStock.Controllers
                 var magasinier = filterContext.HttpContext.Session.GetString("magasinier");
                 var admin = filterContext.HttpContext.Session.GetString("administrateur");
 
-                if ( admin == null)
+                if (admin == null)
                     filterContext.Result = new RedirectResult(string.Format("/Login"));
             }
         }
 
-       
     }
 }

@@ -91,86 +91,87 @@
                     <br />
                     <div class="row d-flex align-items-stretch">
 
-
+                        
                         @foreach (String group in Model.groups)
                         {
+                            int num = 0;
 
                             if (group == "Null")
                                 continue;
                             @for (int i = 0; i < Model.ProduitList.Count; i++)
                             {
 
-                                if (Model.ProduitList[i].groupProduit != group || Model.ProduitList[i].categorie != cat)
-                                    continue;
-
+                                if (Model.ProduitList[i].groupProduit == group && Model.ProduitList[i].categorie == cat) {
+                                    num = 1;
+                                    imagePath = "/images/Produits/" + Model.ProduitList[i].id + ".jpeg";
+                                }
                                 else
                                 {
-                                    imagePath = "/images/Produits/" + Model.ProduitList[i].id + ".jpeg";
-                                    break;
+                                    continue;
                                 }
 
                             }
 
 
-
-
-                            <div class="searchHelper2 col-md-4">
-                                <div class="card bg-light ">
-                                    <div class="card-header  border-bottom-0 ">
-                                        <h2 class="lead nomProduit"><b> @group</b></h2>
-                                    </div>
-                                    <div class="card-body pt-0">
-                                        <div class="row-cols-1 ">
-                                            <br />
-                                            <div class=" text-center ">
-                                                <img src="@imagePath" id="@group" style="height:128px;width:128px; border: 1px solid #D3D3D3;object-fit:contain;" class=" img-fluid img-thumbnail img-responsive" onerror="this.src='/images/error.png' ">
-                                            </div>
-                                            <br />
-                                            <div class="col-12" hidden>
-                                                <p class="text-muted text-sm"><b>Quantité en atelier: </b> </p>
-                                                <p class="text-muted text-sm" id="@group">0</p>
-
-                                            </div>
-
-
+                            if (num == 1)
+                            {
+                                <div class="searchHelper2 col-md-4">
+                                    <div class="card bg-light ">
+                                        <div class="card-header  border-bottom-0 ">
+                                            <h2 class="lead nomProduit"><b> @group</b></h2>
                                         </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="text-right">
-                                            <form>
+                                        <div class="card-body pt-0">
+                                            <div class="row-cols-1 ">
+                                                <br />
+                                                <div class=" text-center ">
+                                                    <img src="@imagePath" id="@group" style="height:128px;width:128px; border: 1px solid #D3D3D3;object-fit:contain;" class=" img-fluid img-thumbnail img-responsive" onerror="this.src='/images/error.png' ">
+                                                </div>
+                                                <br />
+                                                <div class="col-12" hidden>
+                                                    <p class="text-muted text-sm"><b>Quantité en atelier: </b> </p>
+                                                    <p class="text-muted text-sm" id="@group">0</p>
 
-                                                <input style="float:left ;" type="number" disabled step="1" min="0" value="0" name="qteEntree" class="form-control" />&nbsp;
+                                                </div>
 
-                                                <select name="produit" disabled onchange="updateStock(this,'@group')" class="form-control">
 
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="text-right">
+                                                <form>
+
+                                                    <input style="float:left ;" type="number" disabled step="1" min="0" value="0" name="qteEntree" class="form-control" />&nbsp;
+
+                                                    <select name="produit" disabled onchange="updateStock(this,'@group')" class="form-control">
+
+
+                                                        @for (int i = 0; i < Model.ProduitList.Count; i++)
+                                                        {
+                                                            if (Model.ProduitList[i].groupProduit != group)
+                                                                continue;
+                                                            <option value="@Model.ProduitList[i].id">@Model.ProduitList[i].nom</option>
+
+                                                        }
+                                                    </select>
 
                                                     @for (int i = 0; i < Model.ProduitList.Count; i++)
                                                     {
                                                         if (Model.ProduitList[i].groupProduit != group)
                                                             continue;
-                                                        <option value="@Model.ProduitList[i].id">@Model.ProduitList[i].nom</option>
+                                                        <span id="@Model.ProduitList[i].id" hidden>@Model.stockList[i].qteEstimee</span>
 
                                                     }
-                                                </select>
+                                                    <br />
 
-                                                @for (int i = 0; i < Model.ProduitList.Count; i++)
-                                                {
-                                                    if (Model.ProduitList[i].groupProduit != group)
-                                                        continue;
-                                                    <span id="@Model.ProduitList[i].id" hidden>@Model.stockList[i].qteEstimee</span>
+                                                    <input style="float:left ;" type="text" disabled placeholder="Motif" name="motif" class="form-control" />&nbsp;
 
-                                                }
-                                                <br />
+                                                    <button type="button" class="btn btn-md btn-primary " onclick="Initialisation2(this)" style="float:right;margin-top:3px">Ajouter</button>
 
-                                                <input style="float:left ;" type="text" disabled placeholder="Motif" name="motif" class="form-control" />&nbsp;
-
-                                                <button type="button" class="btn btn-md btn-primary " onclick="Initialisation2(this)" style="float:right;margin-top:3px">Ajouter</button>
-
-                                            </form>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
 
 
@@ -185,12 +186,13 @@
 
 
 
+                            }
+                            else
+                                continue;
 
 
 
-
-
-                          }
+                        }
 
 
                     </div>
@@ -377,7 +379,7 @@
 
             }
         }
-        //initialSelect();
+        initialSelect();
         initialise();
     </script>
 }

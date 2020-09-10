@@ -1,0 +1,45 @@
+﻿
+@model GestionStock.Models.Entities.Utilisateur
+@{
+    ViewData["Title"] = "Page d'acceuil";
+    ViewData["fonction"] = Model.fonction.ToString();
+    String fullName = Model.nom + " " + Model.prenom;
+    ViewData["nom"] = fullName;
+    ViewData["UserId"] = Model.id;
+
+
+}
+<section class="content">
+    <div class="container-fluid">
+        <div class="card card-default color-palette-box">
+            <div class="card-body">
+                <div class="text-center">
+                    <img src="~/login/img/téléchargement.jfif" class=" img-fluid img-circle elevation-3" alt="logo">
+                    <h1>Bonjour, @Model.prenom</h1>
+                    <h4 id="mainText">Vous avez @ViewData["Notification"] notifications et @ViewData["alerts"] alertes</h4>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        updateNotifications();
+
+        function updateNotifications() {
+            var alerts = document.getElementById("alerts").innerHTML;
+            var notifications = document.getElementById("notifications").innerHTML;
+            var text = "Vous avez " + notifications + " notifications et " + alerts + " alerts."
+            var mainText = document.getElementById("mainText").innerHTML = text;
+        }
+
+
+    </script>
+}
+
+
