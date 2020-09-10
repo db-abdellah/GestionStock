@@ -36,6 +36,8 @@ namespace GestionStock.Controllers
             return View(model);
         }
 
+
+
         [VerifyUserAttribute]
         public ActionResult Transactions()
         {
@@ -58,7 +60,8 @@ namespace GestionStock.Controllers
 
 
 
-        
+
+
 
         //----------------------------------------------------------------------
         [VerifyUserAttribute]
