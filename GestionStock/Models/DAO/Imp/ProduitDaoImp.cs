@@ -51,6 +51,7 @@ namespace GestionStock.Models.DAO.Imp
             }
         }
 
+
         public ESModel getProduitsAndStock()
         {
             using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
@@ -204,6 +205,18 @@ namespace GestionStock.Models.DAO.Imp
 
                 }
 
+
+            }
+        }
+
+        public List<Produit> getProduits2()
+        {
+            using (IDbConnection connection = ConnectionHandler.Instance.getConnection())
+            {
+
+                List<Produit> produits = connection.Query<Produit>($"SELECT * FROM produit ").ToList();
+
+                return produits;
 
             }
         }

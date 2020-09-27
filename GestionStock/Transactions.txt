@@ -1,0 +1,104 @@
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:36:24 AM || Entrée produit id:217   Qté: 30
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:37:07 AM || Entrée produit id:218   Qté: 30
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:37:16 AM || Entrée produit id:219   Qté: 30
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:37:26 AM || Entrée produit id:220   Qté: 40
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:37:40 AM || Entrée produit id:221   Qté: 30
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:37:50 AM || Entrée produit id:222   Qté: 30
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:38:01 AM || Entrée produit id:223   Qté: 30
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:38:12 AM || Entrée produit id:224   Qté: 30
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:38:23 AM || Entrée produit id:225   Qté: 30
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:38:42 AM || Entrée produit id:226   Qté: 30
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:40:14 AM || Sortie produit id:220  Qté: 10
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:42:14 AM || Entrée produit id:198   Qté: 0
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:45:02 AM || Suppression Group  :  Profile Aluminuim
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:46:33 AM || Entrée produit id:227   Qté: 21
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:47:03 AM || Entrée produit id:228   Qté: 21
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:47:24 AM || Entrée produit id:229   Qté: 21
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:47:42 AM || Entrée produit id:230   Qté: 21
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:47:55 AM || Entrée produit id:231   Qté: 21
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:48:10 AM || Entrée produit id:232   Qté: 21
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:48:26 AM || Entrée produit id:233   Qté: 21
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:48:53 AM || Entrée produit id:234   Qté: 21
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:49:08 AM || Entrée produit id:235   Qté: 21
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:49:21 AM || Entrée produit id:236   Qté: 21
+Zakaria ||Casabache  || magasinier || 9/14/2020 10:50:03 AM || Entrée produit id:236   Qté: 0
+Hidaoui ||Hamza || administrateur || 9/14/2020 3:55:23 PM || Entrée produit id:44   Qté: 0
+Zakaria ||Casabache  || magasinier || 9/16/2020 9:36:37 AM || Creation Produit : JEU D ACCESSOIRES EN PLASTIQUE
+Zakaria ||Casabache  || magasinier || 9/16/2020 9:36:38 AM || Creation Produit : JEU D ACCESSOIRES EN PLASTIQUE
+Zakaria ||Casabache  || magasinier || 9/16/2020 9:37:41 AM || Creation Produit : KIT D ACCESSOIRES
+Zakaria ||Casabache  || magasinier || 9/16/2020 9:46:49 AM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/16/2020 9:48:53 AM || Creation Produit : Chaîne Guillotine
+Zakaria ||Casabache  || magasinier || 9/16/2020 10:48:55 AM || Creation Produit : Télécommande 4 channel
+Zakaria ||Casabache  || magasinier || 9/16/2020 4:48:06 PM || Suppression Group  :  Courroi de distrubition     
+Zakaria ||Casabache  || magasinier || 9/16/2020 4:52:17 PM || Creation Produit : Courroi de distrubition 100ML 
+Zakaria ||Casabache  || magasinier || 9/16/2020 4:54:58 PM || Suppression Group  :  Joint du RAIL     
+Zakaria ||Casabache  || magasinier || 9/16/2020 4:56:51 PM || Creation Produit : Joint du RAIL 100ML
+Zakaria ||Casabache  || magasinier || 9/16/2020 4:57:20 PM || Suppression Group  :  Joint du Cablage      
+Zakaria ||Casabache  || magasinier || 9/16/2020 4:58:18 PM || Creation Produit : Joint du Cablage
+Zakaria ||Casabache  || magasinier || 9/16/2020 4:58:54 PM || Suppression Group  :  Joint de Traverse      
+Zakaria ||Casabache  || magasinier || 9/16/2020 5:00:09 PM || Creation Produit : Joint de Traverse      100Ml
+Zakaria ||Casabache  || magasinier || 9/17/2020 8:21:08 AM || Suppression Group  :  PROFILE
+Zakaria ||Casabache  || magasinier || 9/17/2020 8:25:59 AM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/17/2020 8:37:24 AM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/17/2020 8:43:35 AM || Creation Produit : KIT D ACCESSOIRES
+Zakaria ||Casabache  || magasinier || 9/17/2020 9:19:11 AM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/17/2020 9:19:13 AM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/17/2020 9:19:16 AM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/17/2020 9:19:18 AM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/17/2020 9:19:23 AM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/17/2020 9:19:27 AM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/17/2020 9:22:11 AM || Creation Produit : TÉLÉCOMMANDE 1 CH
+Zakaria ||Casabache  || magasinier || 9/17/2020 9:22:48 AM || Creation Produit : TÉLÉCOMMANDE 4CH
+Zakaria ||Casabache  || magasinier || 9/17/2020 9:23:19 AM || Creation Produit : RALL MECHANISM BIG ROLL
+Zakaria ||Casabache  || magasinier || 9/17/2020 9:23:49 AM || Creation Produit : PETIT ROULEAU MÉCANISME FERROVIAIRE
+Zakaria ||Casabache  || magasinier || 9/17/2020 9:24:25 AM || Creation Produit : ANNEAU CARRÉ ET VIS
+Zakaria ||Casabache  || magasinier || 9/17/2020 9:24:53 AM || Creation Produit : ACCESSOIRE MOTEUR
+Hidaoui ||Hamza || administrateur || 9/21/2020 6:49:39 PM || Entrée produit id:138   Qté: 2
+Hidaoui ||Hamza || administrateur || 9/21/2020 6:49:46 PM || Entrée produit id:138   Qté: 2
+Hidaoui ||Hamza || administrateur || 9/21/2020 6:51:20 PM || Sortie produit id:138  Qté: 2
+Hidaoui ||Hamza || administrateur || 9/21/2020 6:51:22 PM || Sortie produit id:138  Qté: 2
+Hidaoui ||Hamza || administrateur || 9/21/2020 8:15:24 PM || Suppression Produit 
+Hidaoui ||Hamza || administrateur || 9/21/2020 8:16:24 PM || Suppression Group  :  Tube Octogonale 
+Hidaoui ||Hamza || administrateur || 9/21/2020 8:16:25 PM || Suppression Group  :  Tube Octogonale 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:04:34 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:05:41 PM || Creation Produit : BOUCHON DE COTE GRAND TRAVERSE 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:18:59 PM || Suppression Group  :  Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:19:04 PM || Suppression Group  :  Parclause cache petite Traverse  
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:19:09 PM || Suppression Group  :  Grand traverse  
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:19:14 PM || Suppression Group  :  Profile Couver   3*13  
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:19:20 PM || Suppression Group  :  Profile du cote   8*13  
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:19:25 PM || Suppression Group  :  Poteux   10*13  
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:19:29 PM || Suppression Group  :  Parclause cache Poteux       
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:19:40 PM || Suppression Group  :  Gautiere    14*15   
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:19:45 PM || Suppression Group  :  RAIL    
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:29:53 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:31:20 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:31:45 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:32:10 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:32:45 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:33:24 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:34:06 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:34:47 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:35:39 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:36:09 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:36:50 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:37:30 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:38:06 PM || Creation Produit : Petit  traverse 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:38:54 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:39:48 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:39:52 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:39:56 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:39:59 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:40:02 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:40:06 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:40:13 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:40:17 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:40:20 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:40:24 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:40:27 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:40:32 PM || Suppression Produit 
+Zakaria ||Casabache  || magasinier || 9/23/2020 2:43:13 PM || Suppression Produit 
+Eddrayef ||Hamza || administrateur || 27/09/2020 14:08:49 || Nouvelle vente: HOLA
+Eddrayef ||Hamza || administrateur || 27/09/2020 14:09:18 || Achat document :  HI
+Eddrayef ||Hamza || administrateur || 27/09/2020 14:10:29 || Achat document :  ZZ
+Eddrayef ||Hamza || administrateur || 27/09/2020 14:12:01 || Achat document :  ZZZZZ

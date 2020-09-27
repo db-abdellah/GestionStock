@@ -47,7 +47,7 @@ namespace GestionStock.Controllers
             AchatModel model = new AchatModel();
             model.utilisateur = GetChefFromCookie();
             model.fournisseurList = fournisseurBusiness.getFournisseurs();
-            model.ProduitList = produitBusiness.getProduits();
+            model.ProduitList = produitBusiness.getProduits2();
 
             return View(model);
         }

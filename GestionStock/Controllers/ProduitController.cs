@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -117,15 +118,15 @@ namespace GestionStock.Controllers
         [VerifyUserAttribute]
         public ActionResult CreateGroup(Produit produit, IFormFile file,int min, int max)
         {
-            produit.groupProduit = produit.nom;
+     
             produit.qteEstime = 0;
             produit = clearInput(produit);
-            
-            int prixAchat = Int32.Parse( produit.prixAchat )/ min;
-            int prixVente = Int32.Parse( produit.prixVente )/ min;
+
+            float prixAchat = float.Parse(produit.prixAchat, CultureInfo.InvariantCulture.NumberFormat)/ min;
+            float prixVente = float.Parse( produit.prixVente, CultureInfo.InvariantCulture.NumberFormat) / min;
             Utilisateur util = GetChefFromCookie();
 
-            String nom = produit.nom;
+            String nom = produit.groupProduit;
             ViewBag.utilisateur = util;
             for(int i = min; i < max + 1; i++)
             {

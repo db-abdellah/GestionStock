@@ -47,7 +47,7 @@ namespace GestionStock.Controllers
             VenteModel model = new VenteModel();
             model.utilisateur = GetChefFromCookie();
             model.ClientList = clientBusiness.getClients();
-            model.ProduitList = produitBusiness.getProduits();
+            model.ProduitList = produitBusiness.getProduits2();
 
             return View(model);
         }

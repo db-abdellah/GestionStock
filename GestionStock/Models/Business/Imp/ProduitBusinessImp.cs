@@ -43,6 +43,11 @@ namespace GestionStock.Models.Business.Imp
             return produitDao.getProduits();
         }
 
+        public List<Produit> getProduits2()
+        {
+            return produitDao.getProduits2();
+        }
+
         public ESModel getProduitsAndAtelierStock()
         {
             return produitDao.getProduitsAndAtelierStock();

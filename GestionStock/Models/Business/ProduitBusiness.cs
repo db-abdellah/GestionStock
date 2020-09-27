@@ -20,5 +20,6 @@ namespace GestionStock.Models.Business
         Produit getProduitByIdProduit(String idProduit);
         List<Produit> getAllProduits();
         void DeleteProduitByGroup(string group);
+        List<Produit> getProduits2();
     }
 }

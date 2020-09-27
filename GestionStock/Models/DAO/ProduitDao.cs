@@ -20,5 +20,6 @@ namespace GestionStock.Models.DAO
         List<Produit> getProduitsByGroup(string group);
         Produit getProduitByIdProduit(string idProduit);
         List<Produit> getAllProduits();
+        List<Produit> getProduits2();
     }
 }

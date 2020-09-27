@@ -53,13 +53,14 @@
         </div>
         <label>Produit</label>
         <br />
-        <div class="form-check-inline " style="width:100%">
+        <div class="form-check-inline optDiv" style="width:100%">
 
 
 
 
 
             <select class="form-control float-lg-left" id="produitId">
+
                 @foreach (GestionStock.Models.Entities.Produit item in Model.ProduitList)
                 {
                     <option value="@item.id">@item.nom</option>
@@ -120,6 +121,8 @@
         //ajout d'un produit
         function ajouterProduit() {
             var produitId = $("#produitId").val();
+          
+     
             $.ajax({
                 type: "GET",
                 url: "/Achat/AchatProduit",
@@ -135,8 +138,11 @@
         //suppression d'un produit
         function deleteRow(caller) {
             var parent = caller.parentNode;
-            parent.parentNode.remove();
+            var grandparent = parent.parentNode;
+            grandparent.remove();
             setTotal();
+           
+         
         }
         //calcule de facture
         function calcule(idProduit) {
