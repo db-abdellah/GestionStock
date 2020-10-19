@@ -23,10 +23,10 @@
         <label> @Model.produit.nom</label>
     </td>
     <td>
-        <input class="form-control qte" type="number" min="0" max="@Model.stock.qteEstimee" name="Qte" value="0" id="@qteId" onfocus="calcule(@Model.produit.id)" onclick="calcule(@Model.produit.id);" />
+        <input class="form-control qte text-center" type="number" min="0" max="@Model.stock.qteEstimee" name="Qte" value="0" id="@qteId" onfocus="calcule(@Model.produit.id)" onclick="calcule(@Model.produit.id);"  onKeyDown="return false"/>
     </td>
     <td>
-        <span id="@prixId"> @Model.produit.prixVente  </span><span>DH</span>
+        <input type="number"  class="form-control text-center" value="0" min="0" onfocus="calcule(@Model.produit.id)" onclick="calcule(@Model.produit.id);" onKeyDown="return false" id="@prixId" /> 
     </td>
     <td>
         <span id="@totalId" class="total">0.00 </span><span>DH</span>

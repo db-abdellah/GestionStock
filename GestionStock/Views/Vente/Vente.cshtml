@@ -147,7 +147,7 @@
             var quantiteId = "qte";
             quantiteId = quantiteId.concat(idProduit);
             var quantite = $('#' + quantiteId).val();
-            var prix = $('#' + prixId).html();
+            var prix = $('#' + prixId).val();
             var total = quantite * prix
             total = parseFloat(total).toPrecision(4);
             $('#' + totalId).html(total);
@@ -165,6 +165,7 @@
         }
         //validation d'achat
         function validerAchat() {
+            setTotal();
             document.getElementById("submitBtn").disabled = true;
             document.getElementById("ErrorContainer").hidden = true;
             if (inputCheck()) {

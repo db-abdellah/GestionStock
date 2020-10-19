@@ -23,7 +23,7 @@
         <label> @Model.produit.nom</label>
     </td>
     <td>
-        <input class="form-control qte" type="number" min="0" name="Qte" value="0" id="@qteId" onfocus="calcule(@Model.produit.id)" onclick="calcule(@Model.produit.id);" />
+        <input class="form-control qte text-center" type="number" min="0" name="Qte" value="0" id="@qteId" onfocus="calcule(@Model.produit.id)" onclick="calcule(@Model.produit.id);"  onkeypress="calcule(@Model.produit.id);" />
     </td>
     <td>
         <span id="@prixId"> @Model.produit.prixAchat  </span><span>DH</span>

@@ -102,3 +102,7 @@ Eddrayef ||Hamza || administrateur || 27/09/2020 14:08:49 || Nouvelle vente: HOL
 Eddrayef ||Hamza || administrateur || 27/09/2020 14:09:18 || Achat document :  HI
 Eddrayef ||Hamza || administrateur || 27/09/2020 14:10:29 || Achat document :  ZZ
 Eddrayef ||Hamza || administrateur || 27/09/2020 14:12:01 || Achat document :  ZZZZZ
+Eddrayef ||Hamza || administrateur || 19/10/2020 14:32:19 || Nouvelle vente: test
+Eddrayef ||Hamza || administrateur || 19/10/2020 14:40:11 || Nouvelle vente: 22222
+Eddrayef ||Hamza || administrateur || 19/10/2020 14:50:46 || Nouvelle vente: WORKING?
+Eddrayef ||Hamza || administrateur || 19/10/2020 14:53:47 || Nouvelle vente: DOC
