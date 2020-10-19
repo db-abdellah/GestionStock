@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Détails d'utilisateur";
     ViewData["fonction"] = Model.Chef.fonction;
-    ViewData["UserId"] = Model.utilisateur.id;
+    ViewData["UserId"] = Model.Chef.id;
     String fullName = Model.Chef.nom.ToString() + " " + Model.Chef.prenom.ToString();
     ViewData["nom"] = fullName;
     String imagePath = "/images/Utilisateur/" + Model.utilisateur.id + ".jpeg";
